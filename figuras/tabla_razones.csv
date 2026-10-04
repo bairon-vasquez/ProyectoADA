@@ -1,0 +1,6 @@
+experimento,instancias,razon_media,razon_max,pct_optimo,viola_cota_Hd
+set_cover_voraz,280,1.0188,1.3333,91.7857,0
+set_cover_voraz_ponderado,280,1.0642,1.4667,54.6429,0
+set_cover_adversarial,10,2.8,5.0,20.0,0
+dag_heuristica,320,1.0127,1.2821,80.9375,0
+combinado_heuristica,160,1.006,1.1132,89.375,0

@@ -1,0 +1,24 @@
+serie,algoritmo,barrido,modelo,tamanos,c_ajustada_s,R2,err_rel_medio,razon_min,razon_max,pendiente_medida,pendiente_modelo,exponente_asintotico,factor_medido_+1,factor_modelo_+1
+"Mochila DP, B fijo",mochila_dp,n,n·B,6,0.0,0.999953,0.024819,0.942879,1.002561,1.018727,1.0,1.0,,
+"Mochila DP, n fijo",mochila_dp,B,n·B,6,0.0,0.999831,0.053618,0.86741,1.002984,1.040735,0.998966,1.0,,
+Mochila fuerza bruta,mochila_fuerza_bruta,n,n·2^n,6,0.0,0.999953,0.05058,0.974219,1.123177,,,,2.138644,2.167156
+"Set Cover voraz, r fijo",cobertura_voraz,n,n·r²,6,0.0,0.998644,0.066443,0.917764,1.170171,0.954692,1.0,1.0,,
+"Set Cover voraz, r fijo",cobertura_voraz,n,rondas·Σ|S_j|,6,0.0,0.99862,0.050879,0.911261,1.014386,0.954692,0.941101,,,
+"Set Cover voraz, n fijo",cobertura_voraz,r,n·r²,6,0.0,0.935498,0.608532,0.95356,12.419106,1.253624,2.0,2.0,,
+"Set Cover voraz, n fijo",cobertura_voraz,r,rondas·Σ|S_j|,6,0.0,0.999597,0.087667,0.995309,1.222767,1.253624,1.318381,,,
+"Set Cover voraz ponderado (A1), r fijo",cobertura_voraz_ponderada,n,n·r²,6,0.0,0.989552,0.096276,0.959829,1.230513,0.966552,1.0,1.0,,
+"Set Cover voraz ponderado (A1), r fijo",cobertura_voraz_ponderada,n,rondas·Σ|S_j|,6,0.0,0.99921,0.042162,0.932562,1.00971,0.966552,0.944585,,,
+"Set Cover voraz ponderado (A1), n fijo",cobertura_voraz_ponderada,r,n·r²,6,0.0,0.909512,0.631779,0.945795,20.514461,1.149107,2.0,2.0,,
+"Set Cover voraz ponderado (A1), n fijo",cobertura_voraz_ponderada,r,rondas·Σ|S_j|,6,0.0,0.998833,0.136641,0.988894,1.573664,1.149107,1.274208,,,
+Set Cover exacto (por tamaño creciente),cobertura_exacta,n,"Σ_{k≤k*} C(n,k)·k·r",6,0.0,0.996496,0.146141,0.985995,1.365721,,,,2.034954,2.091748
+Set Cover exacto ponderado (A1),cobertura_exacta_ponderada,n,2^n·n·r,5,0.0,0.999934,0.072542,0.970963,1.260239,,,,2.118488,2.179914
+"Ruta crítica, m fijo",ruta_critica,n,n+m,6,0.0,0.893775,0.253546,0.599358,1.147979,0.426233,0.292593,1.0,,
+"Ruta crítica, n fijo",ruta_critica,m,n+m,6,0.0,0.995421,0.098582,0.985861,1.239317,0.63472,0.707407,1.0,,
+"Heurística DAG, m fijo",dag_heuristica,n,n·(n+m),5,0.0,-1.125123,0.75138,0.593533,7.776468,0.382055,1.224011,2.0,,
+"Heurística DAG, m fijo",dag_heuristica,n,(pasos+2)·(n+m),5,0.0,0.928006,0.189221,0.754571,1.282048,0.382055,0.194716,,,
+"Heurística DAG, n fijo",dag_heuristica,m,n·(n+m),5,0.0,0.954533,0.558648,0.361843,1.073954,1.009347,0.818732,1.0,,
+"Heurística DAG, n fijo",dag_heuristica,m,(pasos+2)·(n+m),5,0.0,0.997103,0.153586,0.989257,1.515388,1.009347,1.167875,,,
+DAG exacto,dag_exacto,n,2^n·(n+m),5,0.0,0.999198,0.17501,0.994879,1.643025,,,,2.055152,2.179914
+"Combinado heurística, B fijo",combinado_heuristica,n,n·B (+ cobertura constante),5,0.0,0.999923,0.023587,0.982875,1.097691,1.053885,1.0,1.0,,
+"Combinado heurística, n fijo",combinado_heuristica,B,n·B (+ cobertura constante),5,0.0,0.999942,0.020649,0.984153,1.071494,1.063432,0.998704,1.0,,
+Combinado exacto,combinado_exacto,N,2^N·N·r (+ n·B constante),5,0.0,0.999918,0.052742,0.970385,1.168548,,,,2.086873,2.221428
