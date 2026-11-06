@@ -1,3 +1,4 @@
+
 """Variante B: aceleración y auditoría con presupuesto conjunto.
 
 Tamaño de la entrada: n (etapas), N (interacciones), r (categorías) y B.
@@ -18,7 +19,11 @@ from dataclasses import dataclass
 
 from core.instancias import InstanciaCombinada, InstanciaMochila
 from core.mochila import construir_tabla_dp, mochila_dp
-from core.set_cover import cobertura_exacta_ponderada, cobertura_voraz_ponderada
+from core.set_cover import (
+    cobertura_exacta_dp,
+    cobertura_exacta_ponderada,
+    cobertura_voraz_ponderada,
+)
 
 
 @dataclass(frozen=True)
@@ -90,6 +95,21 @@ def combinado_cobertura_obligatoria(
         return None
     resto = inst.B - cob.costo  # O(1)
     sol = mochila_dp(_cadena_con_presupuesto(inst, resto))  # O(n·resto) ≤ O(n·B)
+    return evaluar_combinada(inst, sol.etapas, cob.indices)  # O(n + N·r)
+
+
+def combinado_cobertura_obligatoria_dp(inst: InstanciaCombinada) -> SolucionCombinada | None:
+    """Igual que ``combinado_cobertura_obligatoria(exacta=True)``, pero la cobertura
+    de costo mínimo se halla por DP sobre máscaras de categorías (viable para N grande, r pequeño).
+
+    T = O(N·2^r) + O(n·B). Es óptimo para λ grande por el mismo argumento de la
+    versión por enumeración. Devuelve None si no hay cobertura o a(C*) > B.
+    """
+    cob = cobertura_exacta_dp(inst.cobertura)  # O(N·2^r)
+    if cob is None or cob.costo > inst.B:  # O(1)
+        return None
+    resto = inst.B - cob.costo  # O(1)
+    sol = mochila_dp(_cadena_con_presupuesto(inst, resto))  # O(n·B)
     return evaluar_combinada(inst, sol.etapas, cob.indices)  # O(n + N·r)
 
 

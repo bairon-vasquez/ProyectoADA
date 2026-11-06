@@ -191,3 +191,53 @@ def cobertura_exacta_ponderada(inst: InstanciaSetCover) -> SolucionCobertura | N
     if mejor_costo == -1:
         return None
     return SolucionCobertura(indices=mejor, costo=mejor_costo)
+
+
+def cobertura_exacta_dp(inst: InstanciaSetCover) -> SolucionCobertura | None:
+    """Variante A1, exacto por DP sobre máscaras de categorías (útil cuando r es pequeño).
+
+    ``costo[m]`` = menor Σ a_j de un grupo de interacciones cuya unión es EXACTAMENTE
+    el conjunto de categorías codificado por la máscara m. Transición, para cada j:
+        costo[m | S_j] = min(costo[m | S_j], costo[m] + a_j).
+    Se reconstruye con ``previo[m] = (máscara anterior, j)``. Devuelve None si es infactible.
+    T(N, r) = O(N·r + N·2^r) tiempo y O(2^r) espacio: pseudo-polinomial en N para r fijo,
+    exponencial solo en r (con r = 12 son 4096 estados; la enumeración 2^N sería inviable).
+    """
+    r = inst.r  # O(1)
+    N = inst.n  # O(1)
+    estados = 1 << r  # 2^r
+    mascaras = [0] * N  # O(N)
+    for j in range(N):  # N iteraciones
+        m = 0
+        for k in inst.conjuntos[j]:  # |S_j| ≤ r iteraciones
+            m |= 1 << k  # O(1)
+        mascaras[j] = m
+    # construir máscaras: O(N·r)
+    sin_valor = -1
+    costo = [sin_valor] * estados  # O(2^r)
+    previo: list[tuple[int, int]] = [(-1, -1)] * estados  # O(2^r)
+    costo[0] = 0  # el vacío no cuesta nada
+    for j in range(N):  # N iteraciones
+        mj = mascaras[j]
+        aj = inst.a[j]
+        for m in range(estados):  # 2^r iteraciones por cada j
+            if costo[m] == sin_valor:  # O(1): estado aún inalcanzable
+                continue
+            nuevo = m | mj  # O(1)
+            if nuevo == m:  # S_j no aporta nada nuevo a este estado
+                continue
+            c = costo[m] + aj  # O(1)
+            if costo[nuevo] == sin_valor or c < costo[nuevo]:  # O(1)
+                costo[nuevo] = c
+                previo[nuevo] = (m, j)
+    # Total de las transiciones: N · 2^r · O(1) = O(N·2^r)
+    llena = estados - 1
+    if costo[llena] == sin_valor:  # U no es alcanzable: infactible
+        return None
+    elegidos: list[int] = []
+    m = llena
+    while m != 0:  # ≤ N pasos (cada paso agrega una interacción distinta)
+        m, j = previo[m]
+        elegidos.append(j)
+    elegidos.sort()  # O(N log N)
+    return SolucionCobertura(indices=tuple(elegidos), costo=costo[llena])

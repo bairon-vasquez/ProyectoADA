@@ -43,6 +43,8 @@ Todos los valores son enteros no negativos. Instancias sintéticas con semilla f
 - Gráficas: paleta de referencia validada (slots 1-3, todos los pares), trazos finos, rejilla recesiva, leyenda siempre, PNG en `figuras/`.
 - App (Fase 7): `visualizacion/app.py` + `dibujos.py`; tema claro en `.streamlit/config.toml`. Usa `core` solo para mostrar resultados y lee los CSV; no mide. Tope de tamaños en la UI para que el exacto sea instantáneo (Mochila n ≤ 10, Set Cover n ≤ 12, DAG n ≤ 11, Combinado N ≤ 10). `tests/test_app.py` usa `streamlit.testing.v1.AppTest`.
 
+- Casos de la profesora (JSON en `casos/`): `experimentos/cargar_caso.py` los traduce a instancias (cada variación de auditoría = una interacción) y `python -m experimentos.correr_caso <json|carpeta>` escribe en `experimentos/resultados/casos/` la traza (`_traza.md`), la tabla DP (`_dp.csv`) y los tiempos (`_tiempos.csv`). Con N = 35 la enumeración 2^N es inviable, por eso se añadió `cobertura_exacta_dp` (DP sobre máscaras de categorías, O(N·2^r)) y `combinado_cobertura_obligatoria_dp`.
+
 ## Preguntas abiertas para el docente (de la Etapa 0)
 
 - Variante ponderada: ¿A1 (costos por interacción) o A2 (pesos por categoría con límite de auditorías)? Se implementa A1.
