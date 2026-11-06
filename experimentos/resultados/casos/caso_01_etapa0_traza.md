@@ -7,7 +7,7 @@ Ejemplo de la Etapa 0: óptimo de la Parte 1 = {2, 3} (duración 23 → 18); óp
 - Entrada: n = 4 etapas, presupuesto B = 6.
 - **Etapas aceleradas: {2, 3}** · costo 6 / 6
 - Duración: 23 → **18** (reducción 5).
-- Tiempo: **0.000005 s** (mediana de 7 repeticiones; mín 0.000004, máx 0.000013). T(n, B) = O(n·B), pseudo-polinomial; 35 celdas.
+- Tiempo: **0.000005 s** (mediana de 7 repeticiones; mín 0.000004, máx 0.000014). T(n, B) = O(n·B), pseudo-polinomial; 35 celdas.
 
 - Verificación con fuerza bruta (2^n): reducción óptima 5 ✔ coincide
 
@@ -32,12 +32,14 @@ Ejemplo de la Etapa 0: óptimo de la Parte 1 = {2, 3} (duración 23 → 18); óp
 
 ### Reconstrucción (de DP[n][B] hacia atrás)
 
-| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |
-|---|---|---|---|---|---|
-| 4 | 6 | 5 | 5 | no acelerar | 6 |
-| 3 | 6 | 5 | 4 | acelerar | 4 |
-| 2 | 4 | 4 | 2 | acelerar | 0 |
-| 1 | 0 | 0 | 0 | no acelerar | 0 |
+Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) y se queda el mayor:
+
+| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |
+|---|---|---|---|---|---|---|
+| 4 | 6 | 5 | 4 | 5 | no acelerar | 6 |
+| 3 | 6 | 4 | 5 | 5 | acelerar | 4 |
+| 2 | 4 | 2 | 4 | 4 | acelerar | 0 |
+| 1 | 0 | 0 | — | 0 | no acelerar | 0 |
 
 ## Parte 2 — Cobertura de auditoría (Parte 2)
 

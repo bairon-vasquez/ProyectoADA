@@ -31,10 +31,19 @@
     },
     "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
     "celdas_dp": 1533,
-    "tiempo_s": 9.15000018721912e-05,
-    "tiempo_min_s": 8.680000246386044e-05,
-    "tiempo_max_s": 0.00014539999756379984,
+    "tiempo_s": 9.470000077271834e-05,
+    "tiempo_min_s": 9.1799998699571e-05,
+    "tiempo_max_s": 0.00010300000030838419,
     "repeticiones": 7,
+    "tiempos_s": [
+      0.00010300000030838419,
+      9.649999992689118e-05,
+      9.470000077271834e-05,
+      9.469999895372894e-05,
+      9.1799998699571e-05,
+      9.639999916544184e-05,
+      9.4600000011269e-05
+    ],
     "traza": {
       "etapas": [
         {
@@ -204,6 +213,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -212,6 +222,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -220,6 +231,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 55,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -228,6 +240,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -236,6 +249,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 55,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -244,6 +258,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -252,6 +267,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -260,6 +276,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 54,
           "decision": "no acelerar",
           "presupuesto_siguiente": 72
         },
@@ -268,6 +285,7 @@
           "presupuesto_b": 72,
           "dp_i_b": 55,
           "dp_i_1_b": 54,
+          "dp_acelerando_i": 55,
           "decision": "acelerar",
           "presupuesto_siguiente": 63
         },
@@ -276,6 +294,7 @@
           "presupuesto_b": 63,
           "dp_i_b": 48,
           "dp_i_1_b": 48,
+          "dp_acelerando_i": 47,
           "decision": "no acelerar",
           "presupuesto_siguiente": 63
         },
@@ -284,6 +303,7 @@
           "presupuesto_b": 63,
           "dp_i_b": 48,
           "dp_i_1_b": 48,
+          "dp_acelerando_i": 48,
           "decision": "no acelerar",
           "presupuesto_siguiente": 63
         },
@@ -292,6 +312,7 @@
           "presupuesto_b": 63,
           "dp_i_b": 48,
           "dp_i_1_b": 48,
+          "dp_acelerando_i": 47,
           "decision": "no acelerar",
           "presupuesto_siguiente": 63
         },
@@ -300,6 +321,7 @@
           "presupuesto_b": 63,
           "dp_i_b": 48,
           "dp_i_1_b": 47,
+          "dp_acelerando_i": 48,
           "decision": "acelerar",
           "presupuesto_siguiente": 46
         },
@@ -308,6 +330,7 @@
           "presupuesto_b": 46,
           "dp_i_b": 35,
           "dp_i_1_b": 35,
+          "dp_acelerando_i": 34,
           "decision": "no acelerar",
           "presupuesto_siguiente": 46
         },
@@ -316,6 +339,7 @@
           "presupuesto_b": 46,
           "dp_i_b": 35,
           "dp_i_1_b": 32,
+          "dp_acelerando_i": 35,
           "decision": "acelerar",
           "presupuesto_siguiente": 33
         },
@@ -324,6 +348,7 @@
           "presupuesto_b": 33,
           "dp_i_b": 25,
           "dp_i_1_b": 25,
+          "dp_acelerando_i": 24,
           "decision": "no acelerar",
           "presupuesto_siguiente": 33
         },
@@ -332,6 +357,7 @@
           "presupuesto_b": 33,
           "dp_i_b": 25,
           "dp_i_1_b": 18,
+          "dp_acelerando_i": 25,
           "decision": "acelerar",
           "presupuesto_siguiente": 17
         },
@@ -340,6 +366,7 @@
           "presupuesto_b": 17,
           "dp_i_b": 13,
           "dp_i_1_b": 9,
+          "dp_acelerando_i": 13,
           "decision": "acelerar",
           "presupuesto_siguiente": 12
         },
@@ -348,6 +375,7 @@
           "presupuesto_b": 12,
           "dp_i_b": 9,
           "dp_i_1_b": 5,
+          "dp_acelerando_i": 9,
           "decision": "acelerar",
           "presupuesto_siguiente": 0
         },
@@ -356,6 +384,7 @@
           "presupuesto_b": 0,
           "dp_i_b": 0,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": null,
           "decision": "no acelerar",
           "presupuesto_siguiente": 0
         }
@@ -1944,6 +1973,176 @@
       "coincide": true
     }
   },
+  "variante_c": {
+    "entrada": {
+      "n": 20,
+      "m": 19,
+      "B": 72,
+      "es_cadena": true
+    },
+    "complejidad": "T(n, m) = O(n·(n+m)); sin garantía de optimalidad (docs/04)",
+    "resultado": {
+      "etapas_aceleradas": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        12
+      ],
+      "costo_usado": 72,
+      "duracion_inicial": 501,
+      "duracion_final": 446,
+      "ruta_critica_inicial": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "ruta_critica_final": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "etapas_aceleradas_nombres": [
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E08",
+        "E12"
+      ],
+      "ruta_critica_inicial_nombres": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E17",
+        "E18",
+        "E19",
+        "E20"
+      ],
+      "ruta_critica_final_nombres": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E17",
+        "E18",
+        "E19",
+        "E20"
+      ]
+    },
+    "traza": {
+      "pasos": [
+        {
+          "paso": 1,
+          "etapa": 3,
+          "ruta_critica_tras": 497
+        },
+        {
+          "paso": 2,
+          "etapa": 12,
+          "ruta_critica_tras": 490
+        },
+        {
+          "paso": 3,
+          "etapa": 6,
+          "ruta_critica_tras": 480
+        },
+        {
+          "paso": 4,
+          "etapa": 8,
+          "ruta_critica_tras": 467
+        },
+        {
+          "paso": 5,
+          "etapa": 2,
+          "ruta_critica_tras": 458
+        },
+        {
+          "paso": 6,
+          "etapa": 4,
+          "ruta_critica_tras": 446
+        }
+      ]
+    },
+    "tiempo_s": 6.600000051548705e-05,
+    "tiempo_min_s": 6.209999992279336e-05,
+    "tiempo_max_s": 8.990000060293823e-05,
+    "repeticiones": 7,
+    "tiempos_s": [
+      8.990000060293823e-05,
+      6.849999954283703e-05,
+      6.649999886576552e-05,
+      6.279999979597051e-05,
+      6.260000009206124e-05,
+      6.209999992279336e-05,
+      6.600000051548705e-05
+    ],
+    "verificacion": {
+      "metodo": "Mochila (óptimo en una cadena)",
+      "duracion_optima": 446,
+      "coincide": true
+    }
+  },
   "parte2": {
     "entrada": {
       "interacciones": 35,
@@ -1955,10 +2154,19 @@
     "cota": "G ≤ H_d · óptimo (Chvátal, 1979)",
     "H_d": 2.083333333333333,
     "H_r": 3.103210678210678,
-    "tiempo_s": 2.0200001017656177e-05,
-    "tiempo_min_s": 1.9600000086938962e-05,
-    "tiempo_max_s": 3.429999924264848e-05,
+    "tiempo_s": 2.789999962260481e-05,
+    "tiempo_min_s": 2.5899998945533298e-05,
+    "tiempo_max_s": 4.3199999709031545e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      4.3199999709031545e-05,
+      3.319999996165279e-05,
+      2.9800001357216388e-05,
+      2.789999962260481e-05,
+      2.6199999410891905e-05,
+      2.6199999410891905e-05,
+      2.5899998945533298e-05
+    ],
     "factible": true,
     "resultado": {
       "interacciones_auditadas": [
@@ -2112,10 +2320,19 @@
       "costo_total": 100,
       "duracion_final": 443,
       "reduccion": 58,
-      "tiempo_s": 0.0038662000006297603,
-      "tiempo_min_s": 0.003791700000874698,
-      "tiempo_max_s": 0.004661099999793805,
+      "tiempo_s": 0.0045898000007582596,
+      "tiempo_min_s": 0.004393999999592779,
+      "tiempo_max_s": 0.0047880999991321005,
       "repeticiones": 7,
+      "tiempos_s": [
+        0.004528899999058922,
+        0.0047880999991321005,
+        0.004393999999592779,
+        0.004600900001605623,
+        0.0046302999999170424,
+        0.0045898000007582596,
+        0.004509399999733432
+      ],
       "etapas_aceleradas_nombres": [
         "E03",
         "E04",
@@ -2152,7 +2369,7 @@
       "costo_total": 100,
       "duracion_final": 444,
       "reduccion": 57,
-      "tiempo_mochila_s": 9.87999992503319e-05,
+      "tiempo_mochila_s": 0.00010690000090107787,
       "nota": "el tiempo del voraz de cobertura está en parte2",
       "etapas_aceleradas_nombres": [
         "E02",

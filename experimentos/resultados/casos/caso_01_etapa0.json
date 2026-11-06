@@ -19,10 +19,19 @@
     },
     "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
     "celdas_dp": 35,
-    "tiempo_s": 5.199999577598646e-06,
-    "tiempo_min_s": 3.6999990697950125e-06,
-    "tiempo_max_s": 1.349999729427509e-05,
+    "tiempo_s": 5.300000339047983e-06,
+    "tiempo_min_s": 4.300000000512227e-06,
+    "tiempo_max_s": 1.3699998817173764e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      1.3699998817173764e-05,
+      7.5000007200287655e-06,
+      1.300000076298602e-05,
+      4.399998942972161e-06,
+      4.300000000512227e-06,
+      4.300000000512227e-06,
+      5.300000339047983e-06
+    ],
     "traza": {
       "etapas": [
         {
@@ -64,6 +73,7 @@
           "presupuesto_b": 6,
           "dp_i_b": 5,
           "dp_i_1_b": 5,
+          "dp_acelerando_i": 4,
           "decision": "no acelerar",
           "presupuesto_siguiente": 6
         },
@@ -72,6 +82,7 @@
           "presupuesto_b": 6,
           "dp_i_b": 5,
           "dp_i_1_b": 4,
+          "dp_acelerando_i": 5,
           "decision": "acelerar",
           "presupuesto_siguiente": 4
         },
@@ -80,6 +91,7 @@
           "presupuesto_b": 4,
           "dp_i_b": 4,
           "dp_i_1_b": 2,
+          "dp_acelerando_i": 4,
           "decision": "acelerar",
           "presupuesto_siguiente": 0
         },
@@ -88,6 +100,7 @@
           "presupuesto_b": 0,
           "dp_i_b": 0,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": null,
           "decision": "no acelerar",
           "presupuesto_siguiente": 0
         }
@@ -157,10 +170,19 @@
     "cota": "G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979)",
     "H_d": 1.8333333333333333,
     "H_r": 2.283333333333333,
-    "tiempo_s": 3.0000010156072676e-06,
-    "tiempo_min_s": 2.3000029614195228e-06,
-    "tiempo_max_s": 8.700000762473792e-06,
+    "tiempo_s": 3.4000004234258085e-06,
+    "tiempo_min_s": 2.599999788799323e-06,
+    "tiempo_max_s": 1.3799999578623101e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      1.3799999578623101e-05,
+      5.699999746866524e-06,
+      3.4000004234258085e-06,
+      2.800001311697997e-06,
+      2.599999788799323e-06,
+      2.6999987312592566e-06,
+      3.499999365885742e-06
+    ],
     "factible": true,
     "resultado": {
       "interacciones_auditadas": [

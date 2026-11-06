@@ -7,11 +7,13 @@ from pathlib import Path
 
 import pytest
 
-from core.generadores import generar_set_cover
+from core.combinado import combinado_cobertura_obligatoria, combinado_cobertura_obligatoria_mascaras
+from core.generadores import generar_combinada, generar_set_cover
 from core.instancias import InstanciaSetCover
 from core.set_cover import cobertura_exacta_mascaras, cobertura_exacta_ponderada, cobertura_voraz_ponderada
 from experimentos.casos import CasoInvalido, cargar_caso, parsear_caso
 from experimentos.correr_casos import COLUMNAS_RESUMEN, main, resolver_caso, traza_markdown
+from experimentos.medir import COLUMNAS
 
 ARCHIVO = Path(__file__).resolve().parent.parent / "casos" / "entrada_G3_mochila_20_nodos.json"
 
@@ -114,8 +116,9 @@ def test_salida_con_ids_originales(tmp_path):
     (lambda d: d["etapas"][0]["variaciones_auditoria"][0].update(riesgos_cubiertos=["R99"]), "riesgo inexistente"),
     (lambda d: d["etapas"][0]["variaciones_auditoria"][0].update(costo=0), "costo"),
     (lambda d: d["etapas"][0]["variaciones_auditoria"][0].update(id="completa"), "variación repetida"),
-    (lambda d: d["flujo"].pop(), "necesita 19"),
-    (lambda d: d["flujo"].append({"origen": "E05", "destino": "E09"}), "no es una cadena"),
+    (lambda d: d["flujo"].append({"origen": "E20", "destino": "E01"}), "ciclo"),
+    (lambda d: d["flujo"].append({"origen": "E01", "destino": "E02"}), "arista repetida"),
+    (lambda d: d["flujo"].append({"origen": "E03", "destino": "E03"}), "sí misma"),
     (lambda d: d["flujo"].__setitem__(0, {"origen": "E01", "destino": "E99"}), "etapa inexistente"),
     (lambda d: d["parametros"].pop("presupuesto_aceleracion_B"), "presupuesto_aceleracion_B"),
 ])
@@ -124,6 +127,76 @@ def test_validacion_del_formato_del_docente(datos, mutar, texto):
     mutar(d)
     with pytest.raises(CasoInvalido, match=texto):
         parsear_caso(d, "x")
+
+
+def test_flujo_en_cadena_corre_la_variante_c_y_coincide_con_la_mochila():
+    res = resolver_caso(cargar_caso(ARCHIVO), repeticiones=2)
+    vc = res["variante_c"]
+    assert vc["entrada"]["es_cadena"]
+    assert vc["entrada"]["m"] == 19
+    assert vc["resultado"]["duracion_inicial"] == 501
+    assert vc["resultado"]["duracion_final"] == res["parte1"]["resultado"]["duracion_final"] == 446
+    assert vc["verificacion"]["coincide"]
+
+
+DIAMANTE = {  # E1 → {E2, E3} → E4: dos rutas paralelas, el flujo NO es una cadena
+    "parametros": {"presupuesto_aceleracion_B": 6},
+    "flujo": [{"origen": "E1", "destino": "E2"}, {"origen": "E1", "destino": "E3"},
+              {"origen": "E2", "destino": "E4"}, {"origen": "E3", "destino": "E4"}],
+    "categorias_riesgo": [{"id": "R1", "importancia": 1}],
+    "etapas": [
+        {"id": "E1", "duracion_normal": 2, "costo_aceleracion": 1, "reduccion_tiempo_si_acelera": 1,
+         "variaciones_auditoria": [{"id": "completa", "costo": 2, "riesgos_cubiertos": ["R1"]}]},
+        {"id": "E2", "duracion_normal": 5, "costo_aceleracion": 3, "reduccion_tiempo_si_acelera": 3},
+        {"id": "E3", "duracion_normal": 4, "costo_aceleracion": 3, "reduccion_tiempo_si_acelera": 3},
+        {"id": "E4", "duracion_normal": 2, "costo_aceleracion": 1, "reduccion_tiempo_si_acelera": 1},
+    ],
+}
+
+
+def test_flujo_con_ramas_omite_la_mochila_y_resuelve_la_variante_c(tmp_path):
+    caso = parsear_caso(DIAMANTE, "diamante")
+    assert not caso.es_cadena
+    res = resolver_caso(caso, repeticiones=2)
+    assert "omitida" in res["parte1"]
+    assert "variante_b" not in res  # la Variante B parte de la Mochila (cadena)
+    vc = res["variante_c"]
+    assert vc["resultado"]["duracion_inicial"] == 9  # E1(2) + E2(5) + E4(2)
+    assert vc["verificacion"]["metodo"].startswith("exacto")
+    assert vc["resultado"]["duracion_final"] >= vc["verificacion"]["duracion_optima"]
+    assert "Omitida" in traza_markdown(res)
+    caso_json = tmp_path / "diamante.json"
+    caso_json.write_text(json.dumps(DIAMANTE), encoding="utf-8")
+    main(caso_json, tmp_path / "salida", repeticiones=2)  # no debe fallar con la Parte 1 omitida
+    assert (tmp_path / "salida" / "diamante_tiempos.csv").exists()
+
+
+def test_salida_incluye_tabla_dp_y_tiempos_por_repeticion(tmp_path):
+    main(ARCHIVO, tmp_path, repeticiones=3)
+    dp = (tmp_path / "entrada_G3_mochila_20_nodos_dp.csv").read_text(encoding="utf-8").splitlines()
+    assert len(dp) == 1 + 21  # encabezado + una fila por i = 0..20
+    assert len(dp[1].split(",")) == 73 + 1  # i y las columnas b = 0..72
+    tiempos = (tmp_path / "entrada_G3_mochila_20_nodos_tiempos.csv").read_text(encoding="utf-8").splitlines()
+    assert tiempos[0].split(",") == COLUMNAS
+    assert len(tiempos) == 1 + 3 * 4  # 3 repeticiones × (Mochila, voraz, DAG, Variante B exacta)
+
+
+def test_reconstruccion_muestra_las_dos_opciones_de_la_recurrencia():
+    p1 = resolver_caso(cargar_caso(ARCHIVO), repeticiones=2)["parte1"]
+    for q in p1["traza"]["reconstruccion"]:
+        mejor = max(q["dp_i_1_b"], q["dp_acelerando_i"] if q["dp_acelerando_i"] is not None else -1)
+        assert q["dp_i_b"] == mejor
+        assert (q["decision"] == "acelerar") == (q["dp_i_b"] != q["dp_i_1_b"])
+
+
+@pytest.mark.parametrize("semilla", range(15))
+def test_variante_b_por_mascaras_coincide_con_la_enumeracion(semilla):
+    inst = generar_combinada(n=6, N=7, r=5, semilla=semilla)
+    por_mascaras = combinado_cobertura_obligatoria_mascaras(inst)
+    por_enumeracion = combinado_cobertura_obligatoria(inst)
+    assert (por_mascaras is None) == (por_enumeracion is None)
+    if por_mascaras is not None and por_enumeracion is not None:
+        assert por_mascaras.objetivo == por_enumeracion.objetivo
 
 
 def test_sin_variante_b_si_no_hay_presupuesto_conjunto(datos):

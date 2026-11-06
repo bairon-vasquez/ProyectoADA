@@ -276,10 +276,19 @@
     },
     "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
     "celdas_dp": 451801,
-    "tiempo_s": 0.035156400001142174,
-    "tiempo_min_s": 0.03307479999784846,
-    "tiempo_max_s": 0.03690160000041942,
+    "tiempo_s": 0.035441400001218426,
+    "tiempo_min_s": 0.03462240000044403,
+    "tiempo_max_s": 0.03774599999997008,
     "repeticiones": 7,
+    "tiempos_s": [
+      0.03540430000066408,
+      0.03494160000082047,
+      0.03724779999902239,
+      0.03588179999860586,
+      0.03774599999997008,
+      0.035441400001218426,
+      0.03462240000044403
+    ],
     "traza": {
       "etapas": [
         {
@@ -2689,6 +2698,7 @@
           "presupuesto_b": 1500,
           "dp_i_b": 1580,
           "dp_i_1_b": 1579,
+          "dp_acelerando_i": 1580,
           "decision": "acelerar",
           "presupuesto_siguiente": 1492
         },
@@ -2697,6 +2707,7 @@
           "presupuesto_b": 1492,
           "dp_i_b": 1579,
           "dp_i_1_b": 1577,
+          "dp_acelerando_i": 1579,
           "decision": "acelerar",
           "presupuesto_siguiente": 1488
         },
@@ -2705,6 +2716,7 @@
           "presupuesto_b": 1488,
           "dp_i_b": 1577,
           "dp_i_1_b": 1574,
+          "dp_acelerando_i": 1577,
           "decision": "acelerar",
           "presupuesto_siguiente": 1480
         },
@@ -2713,6 +2725,7 @@
           "presupuesto_b": 1480,
           "dp_i_b": 1574,
           "dp_i_1_b": 1572,
+          "dp_acelerando_i": 1574,
           "decision": "acelerar",
           "presupuesto_siguiente": 1470
         },
@@ -2721,6 +2734,7 @@
           "presupuesto_b": 1470,
           "dp_i_b": 1572,
           "dp_i_1_b": 1562,
+          "dp_acelerando_i": 1572,
           "decision": "acelerar",
           "presupuesto_siguiente": 1465
         },
@@ -2729,6 +2743,7 @@
           "presupuesto_b": 1465,
           "dp_i_b": 1562,
           "dp_i_1_b": 1544,
+          "dp_acelerando_i": 1562,
           "decision": "acelerar",
           "presupuesto_siguiente": 1464
         },
@@ -2737,6 +2752,7 @@
           "presupuesto_b": 1464,
           "dp_i_b": 1544,
           "dp_i_1_b": 1533,
+          "dp_acelerando_i": 1544,
           "decision": "acelerar",
           "presupuesto_siguiente": 1461
         },
@@ -2745,6 +2761,7 @@
           "presupuesto_b": 1461,
           "dp_i_b": 1533,
           "dp_i_1_b": 1532,
+          "dp_acelerando_i": 1533,
           "decision": "acelerar",
           "presupuesto_siguiente": 1458
         },
@@ -2753,6 +2770,7 @@
           "presupuesto_b": 1458,
           "dp_i_b": 1532,
           "dp_i_1_b": 1519,
+          "dp_acelerando_i": 1532,
           "decision": "acelerar",
           "presupuesto_siguiente": 1455
         },
@@ -2761,6 +2779,7 @@
           "presupuesto_b": 1455,
           "dp_i_b": 1519,
           "dp_i_1_b": 1517,
+          "dp_acelerando_i": 1519,
           "decision": "acelerar",
           "presupuesto_siguiente": 1449
         },
@@ -2769,6 +2788,7 @@
           "presupuesto_b": 1449,
           "dp_i_b": 1517,
           "dp_i_1_b": 1517,
+          "dp_acelerando_i": 1517,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1449
         },
@@ -2777,6 +2797,7 @@
           "presupuesto_b": 1449,
           "dp_i_b": 1517,
           "dp_i_1_b": 1512,
+          "dp_acelerando_i": 1517,
           "decision": "acelerar",
           "presupuesto_siguiente": 1448
         },
@@ -2785,6 +2806,7 @@
           "presupuesto_b": 1448,
           "dp_i_b": 1512,
           "dp_i_1_b": 1500,
+          "dp_acelerando_i": 1512,
           "decision": "acelerar",
           "presupuesto_siguiente": 1438
         },
@@ -2793,6 +2815,7 @@
           "presupuesto_b": 1438,
           "dp_i_b": 1500,
           "dp_i_1_b": 1500,
+          "dp_acelerando_i": 1500,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1438
         },
@@ -2801,6 +2824,7 @@
           "presupuesto_b": 1438,
           "dp_i_b": 1500,
           "dp_i_1_b": 1490,
+          "dp_acelerando_i": 1500,
           "decision": "acelerar",
           "presupuesto_siguiente": 1436
         },
@@ -2809,6 +2833,7 @@
           "presupuesto_b": 1436,
           "dp_i_b": 1490,
           "dp_i_1_b": 1488,
+          "dp_acelerando_i": 1490,
           "decision": "acelerar",
           "presupuesto_siguiente": 1432
         },
@@ -2817,6 +2842,7 @@
           "presupuesto_b": 1432,
           "dp_i_b": 1488,
           "dp_i_1_b": 1486,
+          "dp_acelerando_i": 1488,
           "decision": "acelerar",
           "presupuesto_siguiente": 1431
         },
@@ -2825,6 +2851,7 @@
           "presupuesto_b": 1431,
           "dp_i_b": 1486,
           "dp_i_1_b": 1483,
+          "dp_acelerando_i": 1486,
           "decision": "acelerar",
           "presupuesto_siguiente": 1430
         },
@@ -2833,6 +2860,7 @@
           "presupuesto_b": 1430,
           "dp_i_b": 1483,
           "dp_i_1_b": 1481,
+          "dp_acelerando_i": 1483,
           "decision": "acelerar",
           "presupuesto_siguiente": 1424
         },
@@ -2841,6 +2869,7 @@
           "presupuesto_b": 1424,
           "dp_i_b": 1481,
           "dp_i_1_b": 1478,
+          "dp_acelerando_i": 1481,
           "decision": "acelerar",
           "presupuesto_siguiente": 1419
         },
@@ -2849,6 +2878,7 @@
           "presupuesto_b": 1419,
           "dp_i_b": 1478,
           "dp_i_1_b": 1477,
+          "dp_acelerando_i": 1478,
           "decision": "acelerar",
           "presupuesto_siguiente": 1409
         },
@@ -2857,6 +2887,7 @@
           "presupuesto_b": 1409,
           "dp_i_b": 1477,
           "dp_i_1_b": 1471,
+          "dp_acelerando_i": 1477,
           "decision": "acelerar",
           "presupuesto_siguiente": 1405
         },
@@ -2865,6 +2896,7 @@
           "presupuesto_b": 1405,
           "dp_i_b": 1471,
           "dp_i_1_b": 1470,
+          "dp_acelerando_i": 1471,
           "decision": "acelerar",
           "presupuesto_siguiente": 1398
         },
@@ -2873,6 +2905,7 @@
           "presupuesto_b": 1398,
           "dp_i_b": 1470,
           "dp_i_1_b": 1463,
+          "dp_acelerando_i": 1470,
           "decision": "acelerar",
           "presupuesto_siguiente": 1391
         },
@@ -2881,6 +2914,7 @@
           "presupuesto_b": 1391,
           "dp_i_b": 1463,
           "dp_i_1_b": 1462,
+          "dp_acelerando_i": 1463,
           "decision": "acelerar",
           "presupuesto_siguiente": 1382
         },
@@ -2889,6 +2923,7 @@
           "presupuesto_b": 1382,
           "dp_i_b": 1462,
           "dp_i_1_b": 1459,
+          "dp_acelerando_i": 1462,
           "decision": "acelerar",
           "presupuesto_siguiente": 1374
         },
@@ -2897,6 +2932,7 @@
           "presupuesto_b": 1374,
           "dp_i_b": 1459,
           "dp_i_1_b": 1444,
+          "dp_acelerando_i": 1459,
           "decision": "acelerar",
           "presupuesto_siguiente": 1368
         },
@@ -2905,6 +2941,7 @@
           "presupuesto_b": 1368,
           "dp_i_b": 1444,
           "dp_i_1_b": 1444,
+          "dp_acelerando_i": 1444,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1368
         },
@@ -2913,6 +2950,7 @@
           "presupuesto_b": 1368,
           "dp_i_b": 1444,
           "dp_i_1_b": 1444,
+          "dp_acelerando_i": 1444,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1368
         },
@@ -2921,6 +2959,7 @@
           "presupuesto_b": 1368,
           "dp_i_b": 1444,
           "dp_i_1_b": 1440,
+          "dp_acelerando_i": 1444,
           "decision": "acelerar",
           "presupuesto_siguiente": 1367
         },
@@ -2929,6 +2968,7 @@
           "presupuesto_b": 1367,
           "dp_i_b": 1440,
           "dp_i_1_b": 1435,
+          "dp_acelerando_i": 1440,
           "decision": "acelerar",
           "presupuesto_siguiente": 1362
         },
@@ -2937,6 +2977,7 @@
           "presupuesto_b": 1362,
           "dp_i_b": 1435,
           "dp_i_1_b": 1429,
+          "dp_acelerando_i": 1435,
           "decision": "acelerar",
           "presupuesto_siguiente": 1357
         },
@@ -2945,6 +2986,7 @@
           "presupuesto_b": 1357,
           "dp_i_b": 1429,
           "dp_i_1_b": 1414,
+          "dp_acelerando_i": 1429,
           "decision": "acelerar",
           "presupuesto_siguiente": 1354
         },
@@ -2953,6 +2995,7 @@
           "presupuesto_b": 1354,
           "dp_i_b": 1414,
           "dp_i_1_b": 1412,
+          "dp_acelerando_i": 1414,
           "decision": "acelerar",
           "presupuesto_siguiente": 1351
         },
@@ -2961,6 +3004,7 @@
           "presupuesto_b": 1351,
           "dp_i_b": 1412,
           "dp_i_1_b": 1403,
+          "dp_acelerando_i": 1412,
           "decision": "acelerar",
           "presupuesto_siguiente": 1343
         },
@@ -2969,6 +3013,7 @@
           "presupuesto_b": 1343,
           "dp_i_b": 1403,
           "dp_i_1_b": 1403,
+          "dp_acelerando_i": 1403,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1343
         },
@@ -2977,6 +3022,7 @@
           "presupuesto_b": 1343,
           "dp_i_b": 1403,
           "dp_i_1_b": 1396,
+          "dp_acelerando_i": 1403,
           "decision": "acelerar",
           "presupuesto_siguiente": 1334
         },
@@ -2985,6 +3031,7 @@
           "presupuesto_b": 1334,
           "dp_i_b": 1396,
           "dp_i_1_b": 1386,
+          "dp_acelerando_i": 1396,
           "decision": "acelerar",
           "presupuesto_siguiente": 1326
         },
@@ -2993,6 +3040,7 @@
           "presupuesto_b": 1326,
           "dp_i_b": 1386,
           "dp_i_1_b": 1385,
+          "dp_acelerando_i": 1386,
           "decision": "acelerar",
           "presupuesto_siguiente": 1322
         },
@@ -3001,6 +3049,7 @@
           "presupuesto_b": 1322,
           "dp_i_b": 1385,
           "dp_i_1_b": 1385,
+          "dp_acelerando_i": 1385,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1322
         },
@@ -3009,6 +3058,7 @@
           "presupuesto_b": 1322,
           "dp_i_b": 1385,
           "dp_i_1_b": 1384,
+          "dp_acelerando_i": 1385,
           "decision": "acelerar",
           "presupuesto_siguiente": 1318
         },
@@ -3017,6 +3067,7 @@
           "presupuesto_b": 1318,
           "dp_i_b": 1384,
           "dp_i_1_b": 1376,
+          "dp_acelerando_i": 1384,
           "decision": "acelerar",
           "presupuesto_siguiente": 1317
         },
@@ -3025,6 +3076,7 @@
           "presupuesto_b": 1317,
           "dp_i_b": 1376,
           "dp_i_1_b": 1369,
+          "dp_acelerando_i": 1376,
           "decision": "acelerar",
           "presupuesto_siguiente": 1313
         },
@@ -3033,6 +3085,7 @@
           "presupuesto_b": 1313,
           "dp_i_b": 1369,
           "dp_i_1_b": 1355,
+          "dp_acelerando_i": 1369,
           "decision": "acelerar",
           "presupuesto_siguiente": 1311
         },
@@ -3041,6 +3094,7 @@
           "presupuesto_b": 1311,
           "dp_i_b": 1355,
           "dp_i_1_b": 1349,
+          "dp_acelerando_i": 1355,
           "decision": "acelerar",
           "presupuesto_siguiente": 1310
         },
@@ -3049,6 +3103,7 @@
           "presupuesto_b": 1310,
           "dp_i_b": 1349,
           "dp_i_1_b": 1347,
+          "dp_acelerando_i": 1349,
           "decision": "acelerar",
           "presupuesto_siguiente": 1306
         },
@@ -3057,6 +3112,7 @@
           "presupuesto_b": 1306,
           "dp_i_b": 1347,
           "dp_i_1_b": 1341,
+          "dp_acelerando_i": 1347,
           "decision": "acelerar",
           "presupuesto_siguiente": 1299
         },
@@ -3065,6 +3121,7 @@
           "presupuesto_b": 1299,
           "dp_i_b": 1341,
           "dp_i_1_b": 1339,
+          "dp_acelerando_i": 1341,
           "decision": "acelerar",
           "presupuesto_siguiente": 1294
         },
@@ -3073,6 +3130,7 @@
           "presupuesto_b": 1294,
           "dp_i_b": 1339,
           "dp_i_1_b": 1338,
+          "dp_acelerando_i": 1339,
           "decision": "acelerar",
           "presupuesto_siguiente": 1284
         },
@@ -3081,6 +3139,7 @@
           "presupuesto_b": 1284,
           "dp_i_b": 1338,
           "dp_i_1_b": 1336,
+          "dp_acelerando_i": 1338,
           "decision": "acelerar",
           "presupuesto_siguiente": 1274
         },
@@ -3089,6 +3148,7 @@
           "presupuesto_b": 1274,
           "dp_i_b": 1336,
           "dp_i_1_b": 1333,
+          "dp_acelerando_i": 1336,
           "decision": "acelerar",
           "presupuesto_siguiente": 1264
         },
@@ -3097,6 +3157,7 @@
           "presupuesto_b": 1264,
           "dp_i_b": 1333,
           "dp_i_1_b": 1322,
+          "dp_acelerando_i": 1333,
           "decision": "acelerar",
           "presupuesto_siguiente": 1260
         },
@@ -3105,6 +3166,7 @@
           "presupuesto_b": 1260,
           "dp_i_b": 1322,
           "dp_i_1_b": 1306,
+          "dp_acelerando_i": 1322,
           "decision": "acelerar",
           "presupuesto_siguiente": 1253
         },
@@ -3113,6 +3175,7 @@
           "presupuesto_b": 1253,
           "dp_i_b": 1306,
           "dp_i_1_b": 1304,
+          "dp_acelerando_i": 1306,
           "decision": "acelerar",
           "presupuesto_siguiente": 1252
         },
@@ -3121,6 +3184,7 @@
           "presupuesto_b": 1252,
           "dp_i_b": 1304,
           "dp_i_1_b": 1299,
+          "dp_acelerando_i": 1304,
           "decision": "acelerar",
           "presupuesto_siguiente": 1249
         },
@@ -3129,6 +3193,7 @@
           "presupuesto_b": 1249,
           "dp_i_b": 1299,
           "dp_i_1_b": 1295,
+          "dp_acelerando_i": 1299,
           "decision": "acelerar",
           "presupuesto_siguiente": 1240
         },
@@ -3137,6 +3202,7 @@
           "presupuesto_b": 1240,
           "dp_i_b": 1295,
           "dp_i_1_b": 1290,
+          "dp_acelerando_i": 1295,
           "decision": "acelerar",
           "presupuesto_siguiente": 1234
         },
@@ -3145,6 +3211,7 @@
           "presupuesto_b": 1234,
           "dp_i_b": 1290,
           "dp_i_1_b": 1279,
+          "dp_acelerando_i": 1290,
           "decision": "acelerar",
           "presupuesto_siguiente": 1230
         },
@@ -3153,6 +3220,7 @@
           "presupuesto_b": 1230,
           "dp_i_b": 1279,
           "dp_i_1_b": 1271,
+          "dp_acelerando_i": 1279,
           "decision": "acelerar",
           "presupuesto_siguiente": 1225
         },
@@ -3161,6 +3229,7 @@
           "presupuesto_b": 1225,
           "dp_i_b": 1271,
           "dp_i_1_b": 1270,
+          "dp_acelerando_i": 1271,
           "decision": "acelerar",
           "presupuesto_siguiente": 1218
         },
@@ -3169,6 +3238,7 @@
           "presupuesto_b": 1218,
           "dp_i_b": 1270,
           "dp_i_1_b": 1255,
+          "dp_acelerando_i": 1270,
           "decision": "acelerar",
           "presupuesto_siguiente": 1210
         },
@@ -3177,6 +3247,7 @@
           "presupuesto_b": 1210,
           "dp_i_b": 1255,
           "dp_i_1_b": 1255,
+          "dp_acelerando_i": 1255,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1210
         },
@@ -3185,6 +3256,7 @@
           "presupuesto_b": 1210,
           "dp_i_b": 1255,
           "dp_i_1_b": 1251,
+          "dp_acelerando_i": 1255,
           "decision": "acelerar",
           "presupuesto_siguiente": 1207
         },
@@ -3193,6 +3265,7 @@
           "presupuesto_b": 1207,
           "dp_i_b": 1251,
           "dp_i_1_b": 1248,
+          "dp_acelerando_i": 1251,
           "decision": "acelerar",
           "presupuesto_siguiente": 1197
         },
@@ -3201,6 +3274,7 @@
           "presupuesto_b": 1197,
           "dp_i_b": 1248,
           "dp_i_1_b": 1247,
+          "dp_acelerando_i": 1248,
           "decision": "acelerar",
           "presupuesto_siguiente": 1188
         },
@@ -3209,6 +3283,7 @@
           "presupuesto_b": 1188,
           "dp_i_b": 1247,
           "dp_i_1_b": 1247,
+          "dp_acelerando_i": 1247,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1188
         },
@@ -3217,6 +3292,7 @@
           "presupuesto_b": 1188,
           "dp_i_b": 1247,
           "dp_i_1_b": 1237,
+          "dp_acelerando_i": 1247,
           "decision": "acelerar",
           "presupuesto_siguiente": 1185
         },
@@ -3225,6 +3301,7 @@
           "presupuesto_b": 1185,
           "dp_i_b": 1237,
           "dp_i_1_b": 1235,
+          "dp_acelerando_i": 1237,
           "decision": "acelerar",
           "presupuesto_siguiente": 1184
         },
@@ -3233,6 +3310,7 @@
           "presupuesto_b": 1184,
           "dp_i_b": 1235,
           "dp_i_1_b": 1231,
+          "dp_acelerando_i": 1235,
           "decision": "acelerar",
           "presupuesto_siguiente": 1177
         },
@@ -3241,6 +3319,7 @@
           "presupuesto_b": 1177,
           "dp_i_b": 1231,
           "dp_i_1_b": 1227,
+          "dp_acelerando_i": 1231,
           "decision": "acelerar",
           "presupuesto_siguiente": 1169
         },
@@ -3249,6 +3328,7 @@
           "presupuesto_b": 1169,
           "dp_i_b": 1227,
           "dp_i_1_b": 1225,
+          "dp_acelerando_i": 1227,
           "decision": "acelerar",
           "presupuesto_siguiente": 1165
         },
@@ -3257,6 +3337,7 @@
           "presupuesto_b": 1165,
           "dp_i_b": 1225,
           "dp_i_1_b": 1225,
+          "dp_acelerando_i": 1225,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1165
         },
@@ -3265,6 +3346,7 @@
           "presupuesto_b": 1165,
           "dp_i_b": 1225,
           "dp_i_1_b": 1225,
+          "dp_acelerando_i": 1225,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1165
         },
@@ -3273,6 +3355,7 @@
           "presupuesto_b": 1165,
           "dp_i_b": 1225,
           "dp_i_1_b": 1223,
+          "dp_acelerando_i": 1225,
           "decision": "acelerar",
           "presupuesto_siguiente": 1157
         },
@@ -3281,6 +3364,7 @@
           "presupuesto_b": 1157,
           "dp_i_b": 1223,
           "dp_i_1_b": 1221,
+          "dp_acelerando_i": 1223,
           "decision": "acelerar",
           "presupuesto_siguiente": 1151
         },
@@ -3289,6 +3373,7 @@
           "presupuesto_b": 1151,
           "dp_i_b": 1221,
           "dp_i_1_b": 1214,
+          "dp_acelerando_i": 1221,
           "decision": "acelerar",
           "presupuesto_siguiente": 1144
         },
@@ -3297,6 +3382,7 @@
           "presupuesto_b": 1144,
           "dp_i_b": 1214,
           "dp_i_1_b": 1212,
+          "dp_acelerando_i": 1214,
           "decision": "acelerar",
           "presupuesto_siguiente": 1142
         },
@@ -3305,6 +3391,7 @@
           "presupuesto_b": 1142,
           "dp_i_b": 1212,
           "dp_i_1_b": 1212,
+          "dp_acelerando_i": 1212,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1142
         },
@@ -3313,6 +3400,7 @@
           "presupuesto_b": 1142,
           "dp_i_b": 1212,
           "dp_i_1_b": 1210,
+          "dp_acelerando_i": 1212,
           "decision": "acelerar",
           "presupuesto_siguiente": 1139
         },
@@ -3321,6 +3409,7 @@
           "presupuesto_b": 1139,
           "dp_i_b": 1210,
           "dp_i_1_b": 1209,
+          "dp_acelerando_i": 1210,
           "decision": "acelerar",
           "presupuesto_siguiente": 1136
         },
@@ -3329,6 +3418,7 @@
           "presupuesto_b": 1136,
           "dp_i_b": 1209,
           "dp_i_1_b": 1200,
+          "dp_acelerando_i": 1209,
           "decision": "acelerar",
           "presupuesto_siguiente": 1133
         },
@@ -3337,6 +3427,7 @@
           "presupuesto_b": 1133,
           "dp_i_b": 1200,
           "dp_i_1_b": 1195,
+          "dp_acelerando_i": 1200,
           "decision": "acelerar",
           "presupuesto_siguiente": 1125
         },
@@ -3345,6 +3436,7 @@
           "presupuesto_b": 1125,
           "dp_i_b": 1195,
           "dp_i_1_b": 1191,
+          "dp_acelerando_i": 1195,
           "decision": "acelerar",
           "presupuesto_siguiente": 1124
         },
@@ -3353,6 +3445,7 @@
           "presupuesto_b": 1124,
           "dp_i_b": 1191,
           "dp_i_1_b": 1187,
+          "dp_acelerando_i": 1191,
           "decision": "acelerar",
           "presupuesto_siguiente": 1114
         },
@@ -3361,6 +3454,7 @@
           "presupuesto_b": 1114,
           "dp_i_b": 1187,
           "dp_i_1_b": 1184,
+          "dp_acelerando_i": 1187,
           "decision": "acelerar",
           "presupuesto_siguiente": 1108
         },
@@ -3369,6 +3463,7 @@
           "presupuesto_b": 1108,
           "dp_i_b": 1184,
           "dp_i_1_b": 1180,
+          "dp_acelerando_i": 1184,
           "decision": "acelerar",
           "presupuesto_siguiente": 1103
         },
@@ -3377,6 +3472,7 @@
           "presupuesto_b": 1103,
           "dp_i_b": 1180,
           "dp_i_1_b": 1180,
+          "dp_acelerando_i": 1180,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1103
         },
@@ -3385,6 +3481,7 @@
           "presupuesto_b": 1103,
           "dp_i_b": 1180,
           "dp_i_1_b": 1180,
+          "dp_acelerando_i": 1180,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1103
         },
@@ -3393,6 +3490,7 @@
           "presupuesto_b": 1103,
           "dp_i_b": 1180,
           "dp_i_1_b": 1180,
+          "dp_acelerando_i": 1180,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1103
         },
@@ -3401,6 +3499,7 @@
           "presupuesto_b": 1103,
           "dp_i_b": 1180,
           "dp_i_1_b": 1173,
+          "dp_acelerando_i": 1180,
           "decision": "acelerar",
           "presupuesto_siguiente": 1094
         },
@@ -3409,6 +3508,7 @@
           "presupuesto_b": 1094,
           "dp_i_b": 1173,
           "dp_i_1_b": 1162,
+          "dp_acelerando_i": 1173,
           "decision": "acelerar",
           "presupuesto_siguiente": 1092
         },
@@ -3417,6 +3517,7 @@
           "presupuesto_b": 1092,
           "dp_i_b": 1162,
           "dp_i_1_b": 1161,
+          "dp_acelerando_i": 1162,
           "decision": "acelerar",
           "presupuesto_siguiente": 1091
         },
@@ -3425,6 +3526,7 @@
           "presupuesto_b": 1091,
           "dp_i_b": 1161,
           "dp_i_1_b": 1160,
+          "dp_acelerando_i": 1161,
           "decision": "acelerar",
           "presupuesto_siguiente": 1090
         },
@@ -3433,6 +3535,7 @@
           "presupuesto_b": 1090,
           "dp_i_b": 1160,
           "dp_i_1_b": 1147,
+          "dp_acelerando_i": 1160,
           "decision": "acelerar",
           "presupuesto_siguiente": 1088
         },
@@ -3441,6 +3544,7 @@
           "presupuesto_b": 1088,
           "dp_i_b": 1147,
           "dp_i_1_b": 1146,
+          "dp_acelerando_i": 1147,
           "decision": "acelerar",
           "presupuesto_siguiente": 1080
         },
@@ -3449,6 +3553,7 @@
           "presupuesto_b": 1080,
           "dp_i_b": 1146,
           "dp_i_1_b": 1145,
+          "dp_acelerando_i": 1146,
           "decision": "acelerar",
           "presupuesto_siguiente": 1077
         },
@@ -3457,6 +3562,7 @@
           "presupuesto_b": 1077,
           "dp_i_b": 1145,
           "dp_i_1_b": 1135,
+          "dp_acelerando_i": 1145,
           "decision": "acelerar",
           "presupuesto_siguiente": 1070
         },
@@ -3465,6 +3571,7 @@
           "presupuesto_b": 1070,
           "dp_i_b": 1135,
           "dp_i_1_b": 1132,
+          "dp_acelerando_i": 1135,
           "decision": "acelerar",
           "presupuesto_siguiente": 1063
         },
@@ -3473,6 +3580,7 @@
           "presupuesto_b": 1063,
           "dp_i_b": 1132,
           "dp_i_1_b": 1121,
+          "dp_acelerando_i": 1132,
           "decision": "acelerar",
           "presupuesto_siguiente": 1053
         },
@@ -3481,6 +3589,7 @@
           "presupuesto_b": 1053,
           "dp_i_b": 1121,
           "dp_i_1_b": 1109,
+          "dp_acelerando_i": 1121,
           "decision": "acelerar",
           "presupuesto_siguiente": 1045
         },
@@ -3489,6 +3598,7 @@
           "presupuesto_b": 1045,
           "dp_i_b": 1109,
           "dp_i_1_b": 1109,
+          "dp_acelerando_i": 1109,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1045
         },
@@ -3497,6 +3607,7 @@
           "presupuesto_b": 1045,
           "dp_i_b": 1109,
           "dp_i_1_b": 1094,
+          "dp_acelerando_i": 1109,
           "decision": "acelerar",
           "presupuesto_siguiente": 1041
         },
@@ -3505,6 +3616,7 @@
           "presupuesto_b": 1041,
           "dp_i_b": 1094,
           "dp_i_1_b": 1084,
+          "dp_acelerando_i": 1094,
           "decision": "acelerar",
           "presupuesto_siguiente": 1032
         },
@@ -3513,6 +3625,7 @@
           "presupuesto_b": 1032,
           "dp_i_b": 1084,
           "dp_i_1_b": 1081,
+          "dp_acelerando_i": 1084,
           "decision": "acelerar",
           "presupuesto_siguiente": 1023
         },
@@ -3521,6 +3634,7 @@
           "presupuesto_b": 1023,
           "dp_i_b": 1081,
           "dp_i_1_b": 1076,
+          "dp_acelerando_i": 1081,
           "decision": "acelerar",
           "presupuesto_siguiente": 1022
         },
@@ -3529,6 +3643,7 @@
           "presupuesto_b": 1022,
           "dp_i_b": 1076,
           "dp_i_1_b": 1066,
+          "dp_acelerando_i": 1076,
           "decision": "acelerar",
           "presupuesto_siguiente": 1020
         },
@@ -3537,6 +3652,7 @@
           "presupuesto_b": 1020,
           "dp_i_b": 1066,
           "dp_i_1_b": 1051,
+          "dp_acelerando_i": 1066,
           "decision": "acelerar",
           "presupuesto_siguiente": 1017
         },
@@ -3545,6 +3661,7 @@
           "presupuesto_b": 1017,
           "dp_i_b": 1051,
           "dp_i_1_b": 1041,
+          "dp_acelerando_i": 1051,
           "decision": "acelerar",
           "presupuesto_siguiente": 1013
         },
@@ -3553,6 +3670,7 @@
           "presupuesto_b": 1013,
           "dp_i_b": 1041,
           "dp_i_1_b": 1041,
+          "dp_acelerando_i": 1041,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1013
         },
@@ -3561,6 +3679,7 @@
           "presupuesto_b": 1013,
           "dp_i_b": 1041,
           "dp_i_1_b": 1041,
+          "dp_acelerando_i": 1041,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1013
         },
@@ -3569,6 +3688,7 @@
           "presupuesto_b": 1013,
           "dp_i_b": 1041,
           "dp_i_1_b": 1040,
+          "dp_acelerando_i": 1041,
           "decision": "acelerar",
           "presupuesto_siguiente": 1009
         },
@@ -3577,6 +3697,7 @@
           "presupuesto_b": 1009,
           "dp_i_b": 1040,
           "dp_i_1_b": 1040,
+          "dp_acelerando_i": 1040,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1009
         },
@@ -3585,6 +3706,7 @@
           "presupuesto_b": 1009,
           "dp_i_b": 1040,
           "dp_i_1_b": 1034,
+          "dp_acelerando_i": 1040,
           "decision": "acelerar",
           "presupuesto_siguiente": 1001
         },
@@ -3593,6 +3715,7 @@
           "presupuesto_b": 1001,
           "dp_i_b": 1034,
           "dp_i_1_b": 1026,
+          "dp_acelerando_i": 1034,
           "decision": "acelerar",
           "presupuesto_siguiente": 1000
         },
@@ -3601,6 +3724,7 @@
           "presupuesto_b": 1000,
           "dp_i_b": 1026,
           "dp_i_1_b": 1018,
+          "dp_acelerando_i": 1026,
           "decision": "acelerar",
           "presupuesto_siguiente": 995
         },
@@ -3609,6 +3733,7 @@
           "presupuesto_b": 995,
           "dp_i_b": 1018,
           "dp_i_1_b": 1013,
+          "dp_acelerando_i": 1018,
           "decision": "acelerar",
           "presupuesto_siguiente": 985
         },
@@ -3617,6 +3742,7 @@
           "presupuesto_b": 985,
           "dp_i_b": 1013,
           "dp_i_1_b": 997,
+          "dp_acelerando_i": 1013,
           "decision": "acelerar",
           "presupuesto_siguiente": 977
         },
@@ -3625,6 +3751,7 @@
           "presupuesto_b": 977,
           "dp_i_b": 997,
           "dp_i_1_b": 994,
+          "dp_acelerando_i": 997,
           "decision": "acelerar",
           "presupuesto_siguiente": 975
         },
@@ -3633,6 +3760,7 @@
           "presupuesto_b": 975,
           "dp_i_b": 994,
           "dp_i_1_b": 990,
+          "dp_acelerando_i": 994,
           "decision": "acelerar",
           "presupuesto_siguiente": 970
         },
@@ -3641,6 +3769,7 @@
           "presupuesto_b": 970,
           "dp_i_b": 990,
           "dp_i_1_b": 978,
+          "dp_acelerando_i": 990,
           "decision": "acelerar",
           "presupuesto_siguiente": 966
         },
@@ -3649,6 +3778,7 @@
           "presupuesto_b": 966,
           "dp_i_b": 978,
           "dp_i_1_b": 978,
+          "dp_acelerando_i": 978,
           "decision": "no acelerar",
           "presupuesto_siguiente": 966
         },
@@ -3657,6 +3787,7 @@
           "presupuesto_b": 966,
           "dp_i_b": 978,
           "dp_i_1_b": 974,
+          "dp_acelerando_i": 978,
           "decision": "acelerar",
           "presupuesto_siguiente": 960
         },
@@ -3665,6 +3796,7 @@
           "presupuesto_b": 960,
           "dp_i_b": 974,
           "dp_i_1_b": 967,
+          "dp_acelerando_i": 974,
           "decision": "acelerar",
           "presupuesto_siguiente": 954
         },
@@ -3673,6 +3805,7 @@
           "presupuesto_b": 954,
           "dp_i_b": 967,
           "dp_i_1_b": 963,
+          "dp_acelerando_i": 967,
           "decision": "acelerar",
           "presupuesto_siguiente": 949
         },
@@ -3681,6 +3814,7 @@
           "presupuesto_b": 949,
           "dp_i_b": 963,
           "dp_i_1_b": 958,
+          "dp_acelerando_i": 963,
           "decision": "acelerar",
           "presupuesto_siguiente": 940
         },
@@ -3689,6 +3823,7 @@
           "presupuesto_b": 940,
           "dp_i_b": 958,
           "dp_i_1_b": 951,
+          "dp_acelerando_i": 958,
           "decision": "acelerar",
           "presupuesto_siguiente": 933
         },
@@ -3697,6 +3832,7 @@
           "presupuesto_b": 933,
           "dp_i_b": 951,
           "dp_i_1_b": 946,
+          "dp_acelerando_i": 951,
           "decision": "acelerar",
           "presupuesto_siguiente": 932
         },
@@ -3705,6 +3841,7 @@
           "presupuesto_b": 932,
           "dp_i_b": 946,
           "dp_i_1_b": 936,
+          "dp_acelerando_i": 946,
           "decision": "acelerar",
           "presupuesto_siguiente": 928
         },
@@ -3713,6 +3850,7 @@
           "presupuesto_b": 928,
           "dp_i_b": 936,
           "dp_i_1_b": 928,
+          "dp_acelerando_i": 936,
           "decision": "acelerar",
           "presupuesto_siguiente": 918
         },
@@ -3721,6 +3859,7 @@
           "presupuesto_b": 918,
           "dp_i_b": 928,
           "dp_i_1_b": 925,
+          "dp_acelerando_i": 928,
           "decision": "acelerar",
           "presupuesto_siguiente": 911
         },
@@ -3729,6 +3868,7 @@
           "presupuesto_b": 911,
           "dp_i_b": 925,
           "dp_i_1_b": 910,
+          "dp_acelerando_i": 925,
           "decision": "acelerar",
           "presupuesto_siguiente": 910
         },
@@ -3737,6 +3877,7 @@
           "presupuesto_b": 910,
           "dp_i_b": 910,
           "dp_i_1_b": 910,
+          "dp_acelerando_i": 910,
           "decision": "no acelerar",
           "presupuesto_siguiente": 910
         },
@@ -3745,6 +3886,7 @@
           "presupuesto_b": 910,
           "dp_i_b": 910,
           "dp_i_1_b": 910,
+          "dp_acelerando_i": 910,
           "decision": "no acelerar",
           "presupuesto_siguiente": 910
         },
@@ -3753,6 +3895,7 @@
           "presupuesto_b": 910,
           "dp_i_b": 910,
           "dp_i_1_b": 909,
+          "dp_acelerando_i": 910,
           "decision": "acelerar",
           "presupuesto_siguiente": 909
         },
@@ -3761,6 +3904,7 @@
           "presupuesto_b": 909,
           "dp_i_b": 909,
           "dp_i_1_b": 909,
+          "dp_acelerando_i": 909,
           "decision": "no acelerar",
           "presupuesto_siguiente": 909
         },
@@ -3769,6 +3913,7 @@
           "presupuesto_b": 909,
           "dp_i_b": 909,
           "dp_i_1_b": 908,
+          "dp_acelerando_i": 909,
           "decision": "acelerar",
           "presupuesto_siguiente": 908
         },
@@ -3777,6 +3922,7 @@
           "presupuesto_b": 908,
           "dp_i_b": 908,
           "dp_i_1_b": 908,
+          "dp_acelerando_i": 908,
           "decision": "no acelerar",
           "presupuesto_siguiente": 908
         },
@@ -3785,6 +3931,7 @@
           "presupuesto_b": 908,
           "dp_i_b": 908,
           "dp_i_1_b": 898,
+          "dp_acelerando_i": 908,
           "decision": "acelerar",
           "presupuesto_siguiente": 907
         },
@@ -3793,6 +3940,7 @@
           "presupuesto_b": 907,
           "dp_i_b": 898,
           "dp_i_1_b": 895,
+          "dp_acelerando_i": 898,
           "decision": "acelerar",
           "presupuesto_siguiente": 899
         },
@@ -3801,6 +3949,7 @@
           "presupuesto_b": 899,
           "dp_i_b": 895,
           "dp_i_1_b": 890,
+          "dp_acelerando_i": 895,
           "decision": "acelerar",
           "presupuesto_siguiente": 894
         },
@@ -3809,6 +3958,7 @@
           "presupuesto_b": 894,
           "dp_i_b": 890,
           "dp_i_1_b": 880,
+          "dp_acelerando_i": 890,
           "decision": "acelerar",
           "presupuesto_siguiente": 888
         },
@@ -3817,6 +3967,7 @@
           "presupuesto_b": 888,
           "dp_i_b": 880,
           "dp_i_1_b": 879,
+          "dp_acelerando_i": 880,
           "decision": "acelerar",
           "presupuesto_siguiente": 887
         },
@@ -3825,6 +3976,7 @@
           "presupuesto_b": 887,
           "dp_i_b": 879,
           "dp_i_1_b": 877,
+          "dp_acelerando_i": 879,
           "decision": "acelerar",
           "presupuesto_siguiente": 886
         },
@@ -3833,6 +3985,7 @@
           "presupuesto_b": 886,
           "dp_i_b": 877,
           "dp_i_1_b": 870,
+          "dp_acelerando_i": 877,
           "decision": "acelerar",
           "presupuesto_siguiente": 884
         },
@@ -3841,6 +3994,7 @@
           "presupuesto_b": 884,
           "dp_i_b": 870,
           "dp_i_1_b": 862,
+          "dp_acelerando_i": 870,
           "decision": "acelerar",
           "presupuesto_siguiente": 882
         },
@@ -3849,6 +4003,7 @@
           "presupuesto_b": 882,
           "dp_i_b": 862,
           "dp_i_1_b": 856,
+          "dp_acelerando_i": 862,
           "decision": "acelerar",
           "presupuesto_siguiente": 878
         },
@@ -3857,6 +4012,7 @@
           "presupuesto_b": 878,
           "dp_i_b": 856,
           "dp_i_1_b": 850,
+          "dp_acelerando_i": 856,
           "decision": "acelerar",
           "presupuesto_siguiente": 869
         },
@@ -3865,6 +4021,7 @@
           "presupuesto_b": 869,
           "dp_i_b": 850,
           "dp_i_1_b": 848,
+          "dp_acelerando_i": 850,
           "decision": "acelerar",
           "presupuesto_siguiente": 860
         },
@@ -3873,6 +4030,7 @@
           "presupuesto_b": 860,
           "dp_i_b": 848,
           "dp_i_1_b": 848,
+          "dp_acelerando_i": 848,
           "decision": "no acelerar",
           "presupuesto_siguiente": 860
         },
@@ -3881,6 +4039,7 @@
           "presupuesto_b": 860,
           "dp_i_b": 848,
           "dp_i_1_b": 836,
+          "dp_acelerando_i": 848,
           "decision": "acelerar",
           "presupuesto_siguiente": 850
         },
@@ -3889,6 +4048,7 @@
           "presupuesto_b": 850,
           "dp_i_b": 836,
           "dp_i_1_b": 833,
+          "dp_acelerando_i": 836,
           "decision": "acelerar",
           "presupuesto_siguiente": 847
         },
@@ -3897,6 +4057,7 @@
           "presupuesto_b": 847,
           "dp_i_b": 833,
           "dp_i_1_b": 825,
+          "dp_acelerando_i": 833,
           "decision": "acelerar",
           "presupuesto_siguiente": 845
         },
@@ -3905,6 +4066,7 @@
           "presupuesto_b": 845,
           "dp_i_b": 825,
           "dp_i_1_b": 823,
+          "dp_acelerando_i": 825,
           "decision": "acelerar",
           "presupuesto_siguiente": 838
         },
@@ -3913,6 +4075,7 @@
           "presupuesto_b": 838,
           "dp_i_b": 823,
           "dp_i_1_b": 816,
+          "dp_acelerando_i": 823,
           "decision": "acelerar",
           "presupuesto_siguiente": 837
         },
@@ -3921,6 +4084,7 @@
           "presupuesto_b": 837,
           "dp_i_b": 816,
           "dp_i_1_b": 803,
+          "dp_acelerando_i": 816,
           "decision": "acelerar",
           "presupuesto_siguiente": 827
         },
@@ -3929,6 +4093,7 @@
           "presupuesto_b": 827,
           "dp_i_b": 803,
           "dp_i_1_b": 791,
+          "dp_acelerando_i": 803,
           "decision": "acelerar",
           "presupuesto_siguiente": 822
         },
@@ -3937,6 +4102,7 @@
           "presupuesto_b": 822,
           "dp_i_b": 791,
           "dp_i_1_b": 787,
+          "dp_acelerando_i": 791,
           "decision": "acelerar",
           "presupuesto_siguiente": 815
         },
@@ -3945,6 +4111,7 @@
           "presupuesto_b": 815,
           "dp_i_b": 787,
           "dp_i_1_b": 782,
+          "dp_acelerando_i": 787,
           "decision": "acelerar",
           "presupuesto_siguiente": 814
         },
@@ -3953,6 +4120,7 @@
           "presupuesto_b": 814,
           "dp_i_b": 782,
           "dp_i_1_b": 781,
+          "dp_acelerando_i": 782,
           "decision": "acelerar",
           "presupuesto_siguiente": 805
         },
@@ -3961,6 +4129,7 @@
           "presupuesto_b": 805,
           "dp_i_b": 781,
           "dp_i_1_b": 774,
+          "dp_acelerando_i": 781,
           "decision": "acelerar",
           "presupuesto_siguiente": 801
         },
@@ -3969,6 +4138,7 @@
           "presupuesto_b": 801,
           "dp_i_b": 774,
           "dp_i_1_b": 774,
+          "dp_acelerando_i": 774,
           "decision": "no acelerar",
           "presupuesto_siguiente": 801
         },
@@ -3977,6 +4147,7 @@
           "presupuesto_b": 801,
           "dp_i_b": 774,
           "dp_i_1_b": 773,
+          "dp_acelerando_i": 774,
           "decision": "acelerar",
           "presupuesto_siguiente": 793
         },
@@ -3985,6 +4156,7 @@
           "presupuesto_b": 793,
           "dp_i_b": 773,
           "dp_i_1_b": 772,
+          "dp_acelerando_i": 773,
           "decision": "acelerar",
           "presupuesto_siguiente": 789
         },
@@ -3993,6 +4165,7 @@
           "presupuesto_b": 789,
           "dp_i_b": 772,
           "dp_i_1_b": 771,
+          "dp_acelerando_i": 772,
           "decision": "acelerar",
           "presupuesto_siguiente": 785
         },
@@ -4001,6 +4174,7 @@
           "presupuesto_b": 785,
           "dp_i_b": 771,
           "dp_i_1_b": 761,
+          "dp_acelerando_i": 771,
           "decision": "acelerar",
           "presupuesto_siguiente": 779
         },
@@ -4009,6 +4183,7 @@
           "presupuesto_b": 779,
           "dp_i_b": 761,
           "dp_i_1_b": 744,
+          "dp_acelerando_i": 761,
           "decision": "acelerar",
           "presupuesto_siguiente": 771
         },
@@ -4017,6 +4192,7 @@
           "presupuesto_b": 771,
           "dp_i_b": 744,
           "dp_i_1_b": 740,
+          "dp_acelerando_i": 744,
           "decision": "acelerar",
           "presupuesto_siguiente": 769
         },
@@ -4025,6 +4201,7 @@
           "presupuesto_b": 769,
           "dp_i_b": 740,
           "dp_i_1_b": 739,
+          "dp_acelerando_i": 740,
           "decision": "acelerar",
           "presupuesto_siguiente": 766
         },
@@ -4033,6 +4210,7 @@
           "presupuesto_b": 766,
           "dp_i_b": 739,
           "dp_i_1_b": 735,
+          "dp_acelerando_i": 739,
           "decision": "acelerar",
           "presupuesto_siguiente": 764
         },
@@ -4041,6 +4219,7 @@
           "presupuesto_b": 764,
           "dp_i_b": 735,
           "dp_i_1_b": 719,
+          "dp_acelerando_i": 735,
           "decision": "acelerar",
           "presupuesto_siguiente": 761
         },
@@ -4049,6 +4228,7 @@
           "presupuesto_b": 761,
           "dp_i_b": 719,
           "dp_i_1_b": 703,
+          "dp_acelerando_i": 719,
           "decision": "acelerar",
           "presupuesto_siguiente": 756
         },
@@ -4057,6 +4237,7 @@
           "presupuesto_b": 756,
           "dp_i_b": 703,
           "dp_i_1_b": 698,
+          "dp_acelerando_i": 703,
           "decision": "acelerar",
           "presupuesto_siguiente": 755
         },
@@ -4065,6 +4246,7 @@
           "presupuesto_b": 755,
           "dp_i_b": 698,
           "dp_i_1_b": 692,
+          "dp_acelerando_i": 698,
           "decision": "acelerar",
           "presupuesto_siguiente": 749
         },
@@ -4073,6 +4255,7 @@
           "presupuesto_b": 749,
           "dp_i_b": 692,
           "dp_i_1_b": 680,
+          "dp_acelerando_i": 692,
           "decision": "acelerar",
           "presupuesto_siguiente": 741
         },
@@ -4081,6 +4264,7 @@
           "presupuesto_b": 741,
           "dp_i_b": 680,
           "dp_i_1_b": 676,
+          "dp_acelerando_i": 680,
           "decision": "acelerar",
           "presupuesto_siguiente": 731
         },
@@ -4089,6 +4273,7 @@
           "presupuesto_b": 731,
           "dp_i_b": 676,
           "dp_i_1_b": 671,
+          "dp_acelerando_i": 676,
           "decision": "acelerar",
           "presupuesto_siguiente": 728
         },
@@ -4097,6 +4282,7 @@
           "presupuesto_b": 728,
           "dp_i_b": 671,
           "dp_i_1_b": 667,
+          "dp_acelerando_i": 671,
           "decision": "acelerar",
           "presupuesto_siguiente": 723
         },
@@ -4105,6 +4291,7 @@
           "presupuesto_b": 723,
           "dp_i_b": 667,
           "dp_i_1_b": 664,
+          "dp_acelerando_i": 667,
           "decision": "acelerar",
           "presupuesto_siguiente": 713
         },
@@ -4113,6 +4300,7 @@
           "presupuesto_b": 713,
           "dp_i_b": 664,
           "dp_i_1_b": 662,
+          "dp_acelerando_i": 664,
           "decision": "acelerar",
           "presupuesto_siguiente": 703
         },
@@ -4121,6 +4309,7 @@
           "presupuesto_b": 703,
           "dp_i_b": 662,
           "dp_i_1_b": 660,
+          "dp_acelerando_i": 662,
           "decision": "acelerar",
           "presupuesto_siguiente": 694
         },
@@ -4129,6 +4318,7 @@
           "presupuesto_b": 694,
           "dp_i_b": 660,
           "dp_i_1_b": 646,
+          "dp_acelerando_i": 660,
           "decision": "acelerar",
           "presupuesto_siguiente": 685
         },
@@ -4137,6 +4327,7 @@
           "presupuesto_b": 685,
           "dp_i_b": 646,
           "dp_i_1_b": 643,
+          "dp_acelerando_i": 646,
           "decision": "acelerar",
           "presupuesto_siguiente": 679
         },
@@ -4145,6 +4336,7 @@
           "presupuesto_b": 679,
           "dp_i_b": 643,
           "dp_i_1_b": 636,
+          "dp_acelerando_i": 643,
           "decision": "acelerar",
           "presupuesto_siguiente": 673
         },
@@ -4153,6 +4345,7 @@
           "presupuesto_b": 673,
           "dp_i_b": 636,
           "dp_i_1_b": 634,
+          "dp_acelerando_i": 636,
           "decision": "acelerar",
           "presupuesto_siguiente": 665
         },
@@ -4161,6 +4354,7 @@
           "presupuesto_b": 665,
           "dp_i_b": 634,
           "dp_i_1_b": 634,
+          "dp_acelerando_i": 634,
           "decision": "no acelerar",
           "presupuesto_siguiente": 665
         },
@@ -4169,6 +4363,7 @@
           "presupuesto_b": 665,
           "dp_i_b": 634,
           "dp_i_1_b": 625,
+          "dp_acelerando_i": 634,
           "decision": "acelerar",
           "presupuesto_siguiente": 664
         },
@@ -4177,6 +4372,7 @@
           "presupuesto_b": 664,
           "dp_i_b": 625,
           "dp_i_1_b": 610,
+          "dp_acelerando_i": 625,
           "decision": "acelerar",
           "presupuesto_siguiente": 661
         },
@@ -4185,6 +4381,7 @@
           "presupuesto_b": 661,
           "dp_i_b": 610,
           "dp_i_1_b": 609,
+          "dp_acelerando_i": 610,
           "decision": "acelerar",
           "presupuesto_siguiente": 657
         },
@@ -4193,6 +4390,7 @@
           "presupuesto_b": 657,
           "dp_i_b": 609,
           "dp_i_1_b": 600,
+          "dp_acelerando_i": 609,
           "decision": "acelerar",
           "presupuesto_siguiente": 653
         },
@@ -4201,6 +4399,7 @@
           "presupuesto_b": 653,
           "dp_i_b": 600,
           "dp_i_1_b": 597,
+          "dp_acelerando_i": 600,
           "decision": "acelerar",
           "presupuesto_siguiente": 651
         },
@@ -4209,6 +4408,7 @@
           "presupuesto_b": 651,
           "dp_i_b": 597,
           "dp_i_1_b": 594,
+          "dp_acelerando_i": 597,
           "decision": "acelerar",
           "presupuesto_siguiente": 642
         },
@@ -4217,6 +4417,7 @@
           "presupuesto_b": 642,
           "dp_i_b": 594,
           "dp_i_1_b": 576,
+          "dp_acelerando_i": 594,
           "decision": "acelerar",
           "presupuesto_siguiente": 639
         },
@@ -4225,6 +4426,7 @@
           "presupuesto_b": 639,
           "dp_i_b": 576,
           "dp_i_1_b": 576,
+          "dp_acelerando_i": 576,
           "decision": "no acelerar",
           "presupuesto_siguiente": 639
         },
@@ -4233,6 +4435,7 @@
           "presupuesto_b": 639,
           "dp_i_b": 576,
           "dp_i_1_b": 575,
+          "dp_acelerando_i": 576,
           "decision": "acelerar",
           "presupuesto_siguiente": 629
         },
@@ -4241,6 +4444,7 @@
           "presupuesto_b": 629,
           "dp_i_b": 575,
           "dp_i_1_b": 566,
+          "dp_acelerando_i": 575,
           "decision": "acelerar",
           "presupuesto_siguiente": 627
         },
@@ -4249,6 +4453,7 @@
           "presupuesto_b": 627,
           "dp_i_b": 566,
           "dp_i_1_b": 565,
+          "dp_acelerando_i": 566,
           "decision": "acelerar",
           "presupuesto_siguiente": 619
         },
@@ -4257,6 +4462,7 @@
           "presupuesto_b": 619,
           "dp_i_b": 565,
           "dp_i_1_b": 563,
+          "dp_acelerando_i": 565,
           "decision": "acelerar",
           "presupuesto_siguiente": 609
         },
@@ -4265,6 +4471,7 @@
           "presupuesto_b": 609,
           "dp_i_b": 563,
           "dp_i_1_b": 562,
+          "dp_acelerando_i": 563,
           "decision": "acelerar",
           "presupuesto_siguiente": 607
         },
@@ -4273,6 +4480,7 @@
           "presupuesto_b": 607,
           "dp_i_b": 562,
           "dp_i_1_b": 546,
+          "dp_acelerando_i": 562,
           "decision": "acelerar",
           "presupuesto_siguiente": 602
         },
@@ -4281,6 +4489,7 @@
           "presupuesto_b": 602,
           "dp_i_b": 546,
           "dp_i_1_b": 544,
+          "dp_acelerando_i": 546,
           "decision": "acelerar",
           "presupuesto_siguiente": 595
         },
@@ -4289,6 +4498,7 @@
           "presupuesto_b": 595,
           "dp_i_b": 544,
           "dp_i_1_b": 541,
+          "dp_acelerando_i": 544,
           "decision": "acelerar",
           "presupuesto_siguiente": 589
         },
@@ -4297,6 +4507,7 @@
           "presupuesto_b": 589,
           "dp_i_b": 541,
           "dp_i_1_b": 541,
+          "dp_acelerando_i": 541,
           "decision": "no acelerar",
           "presupuesto_siguiente": 589
         },
@@ -4305,6 +4516,7 @@
           "presupuesto_b": 589,
           "dp_i_b": 541,
           "dp_i_1_b": 534,
+          "dp_acelerando_i": 541,
           "decision": "acelerar",
           "presupuesto_siguiente": 581
         },
@@ -4313,6 +4525,7 @@
           "presupuesto_b": 581,
           "dp_i_b": 534,
           "dp_i_1_b": 517,
+          "dp_acelerando_i": 534,
           "decision": "acelerar",
           "presupuesto_siguiente": 577
         },
@@ -4321,6 +4534,7 @@
           "presupuesto_b": 577,
           "dp_i_b": 517,
           "dp_i_1_b": 515,
+          "dp_acelerando_i": 517,
           "decision": "acelerar",
           "presupuesto_siguiente": 573
         },
@@ -4329,6 +4543,7 @@
           "presupuesto_b": 573,
           "dp_i_b": 515,
           "dp_i_1_b": 515,
+          "dp_acelerando_i": 515,
           "decision": "no acelerar",
           "presupuesto_siguiente": 573
         },
@@ -4337,6 +4552,7 @@
           "presupuesto_b": 573,
           "dp_i_b": 515,
           "dp_i_1_b": 504,
+          "dp_acelerando_i": 515,
           "decision": "acelerar",
           "presupuesto_siguiente": 565
         },
@@ -4345,6 +4561,7 @@
           "presupuesto_b": 565,
           "dp_i_b": 504,
           "dp_i_1_b": 493,
+          "dp_acelerando_i": 504,
           "decision": "acelerar",
           "presupuesto_siguiente": 559
         },
@@ -4353,6 +4570,7 @@
           "presupuesto_b": 559,
           "dp_i_b": 493,
           "dp_i_1_b": 491,
+          "dp_acelerando_i": 493,
           "decision": "acelerar",
           "presupuesto_siguiente": 555
         },
@@ -4361,6 +4579,7 @@
           "presupuesto_b": 555,
           "dp_i_b": 491,
           "dp_i_1_b": 491,
+          "dp_acelerando_i": 491,
           "decision": "no acelerar",
           "presupuesto_siguiente": 555
         },
@@ -4369,6 +4588,7 @@
           "presupuesto_b": 555,
           "dp_i_b": 491,
           "dp_i_1_b": 490,
+          "dp_acelerando_i": 491,
           "decision": "acelerar",
           "presupuesto_siguiente": 552
         },
@@ -4377,6 +4597,7 @@
           "presupuesto_b": 552,
           "dp_i_b": 490,
           "dp_i_1_b": 490,
+          "dp_acelerando_i": 490,
           "decision": "no acelerar",
           "presupuesto_siguiente": 552
         },
@@ -4385,6 +4606,7 @@
           "presupuesto_b": 552,
           "dp_i_b": 490,
           "dp_i_1_b": 490,
+          "dp_acelerando_i": 490,
           "decision": "no acelerar",
           "presupuesto_siguiente": 552
         },
@@ -4393,6 +4615,7 @@
           "presupuesto_b": 552,
           "dp_i_b": 490,
           "dp_i_1_b": 489,
+          "dp_acelerando_i": 490,
           "decision": "acelerar",
           "presupuesto_siguiente": 550
         },
@@ -4401,6 +4624,7 @@
           "presupuesto_b": 550,
           "dp_i_b": 489,
           "dp_i_1_b": 488,
+          "dp_acelerando_i": 489,
           "decision": "acelerar",
           "presupuesto_siguiente": 548
         },
@@ -4409,6 +4633,7 @@
           "presupuesto_b": 548,
           "dp_i_b": 488,
           "dp_i_1_b": 485,
+          "dp_acelerando_i": 488,
           "decision": "acelerar",
           "presupuesto_siguiente": 547
         },
@@ -4417,6 +4642,7 @@
           "presupuesto_b": 547,
           "dp_i_b": 485,
           "dp_i_1_b": 485,
+          "dp_acelerando_i": 485,
           "decision": "no acelerar",
           "presupuesto_siguiente": 547
         },
@@ -4425,6 +4651,7 @@
           "presupuesto_b": 547,
           "dp_i_b": 485,
           "dp_i_1_b": 474,
+          "dp_acelerando_i": 485,
           "decision": "acelerar",
           "presupuesto_siguiente": 541
         },
@@ -4433,6 +4660,7 @@
           "presupuesto_b": 541,
           "dp_i_b": 474,
           "dp_i_1_b": 464,
+          "dp_acelerando_i": 474,
           "decision": "acelerar",
           "presupuesto_siguiente": 533
         },
@@ -4441,6 +4669,7 @@
           "presupuesto_b": 533,
           "dp_i_b": 464,
           "dp_i_1_b": 460,
+          "dp_acelerando_i": 464,
           "decision": "acelerar",
           "presupuesto_siguiente": 530
         },
@@ -4449,6 +4678,7 @@
           "presupuesto_b": 530,
           "dp_i_b": 460,
           "dp_i_1_b": 457,
+          "dp_acelerando_i": 460,
           "decision": "acelerar",
           "presupuesto_siguiente": 520
         },
@@ -4457,6 +4687,7 @@
           "presupuesto_b": 520,
           "dp_i_b": 457,
           "dp_i_1_b": 443,
+          "dp_acelerando_i": 457,
           "decision": "acelerar",
           "presupuesto_siguiente": 510
         },
@@ -4465,6 +4696,7 @@
           "presupuesto_b": 510,
           "dp_i_b": 443,
           "dp_i_1_b": 435,
+          "dp_acelerando_i": 443,
           "decision": "acelerar",
           "presupuesto_siguiente": 501
         },
@@ -4473,6 +4705,7 @@
           "presupuesto_b": 501,
           "dp_i_b": 435,
           "dp_i_1_b": 430,
+          "dp_acelerando_i": 435,
           "decision": "acelerar",
           "presupuesto_siguiente": 492
         },
@@ -4481,6 +4714,7 @@
           "presupuesto_b": 492,
           "dp_i_b": 430,
           "dp_i_1_b": 421,
+          "dp_acelerando_i": 430,
           "decision": "acelerar",
           "presupuesto_siguiente": 485
         },
@@ -4489,6 +4723,7 @@
           "presupuesto_b": 485,
           "dp_i_b": 421,
           "dp_i_1_b": 403,
+          "dp_acelerando_i": 421,
           "decision": "acelerar",
           "presupuesto_siguiente": 481
         },
@@ -4497,6 +4732,7 @@
           "presupuesto_b": 481,
           "dp_i_b": 403,
           "dp_i_1_b": 403,
+          "dp_acelerando_i": 403,
           "decision": "no acelerar",
           "presupuesto_siguiente": 481
         },
@@ -4505,6 +4741,7 @@
           "presupuesto_b": 481,
           "dp_i_b": 403,
           "dp_i_1_b": 388,
+          "dp_acelerando_i": 403,
           "decision": "acelerar",
           "presupuesto_siguiente": 476
         },
@@ -4513,6 +4750,7 @@
           "presupuesto_b": 476,
           "dp_i_b": 388,
           "dp_i_1_b": 386,
+          "dp_acelerando_i": 388,
           "decision": "acelerar",
           "presupuesto_siguiente": 468
         },
@@ -4521,6 +4759,7 @@
           "presupuesto_b": 468,
           "dp_i_b": 386,
           "dp_i_1_b": 377,
+          "dp_acelerando_i": 386,
           "decision": "acelerar",
           "presupuesto_siguiente": 466
         },
@@ -4529,6 +4768,7 @@
           "presupuesto_b": 466,
           "dp_i_b": 377,
           "dp_i_1_b": 366,
+          "dp_acelerando_i": 377,
           "decision": "acelerar",
           "presupuesto_siguiente": 465
         },
@@ -4537,6 +4777,7 @@
           "presupuesto_b": 465,
           "dp_i_b": 366,
           "dp_i_1_b": 363,
+          "dp_acelerando_i": 366,
           "decision": "acelerar",
           "presupuesto_siguiente": 464
         },
@@ -4545,6 +4786,7 @@
           "presupuesto_b": 464,
           "dp_i_b": 363,
           "dp_i_1_b": 356,
+          "dp_acelerando_i": 363,
           "decision": "acelerar",
           "presupuesto_siguiente": 458
         },
@@ -4553,6 +4795,7 @@
           "presupuesto_b": 458,
           "dp_i_b": 356,
           "dp_i_1_b": 354,
+          "dp_acelerando_i": 356,
           "decision": "acelerar",
           "presupuesto_siguiente": 452
         },
@@ -4561,6 +4804,7 @@
           "presupuesto_b": 452,
           "dp_i_b": 354,
           "dp_i_1_b": 350,
+          "dp_acelerando_i": 354,
           "decision": "acelerar",
           "presupuesto_siguiente": 443
         },
@@ -4569,6 +4813,7 @@
           "presupuesto_b": 443,
           "dp_i_b": 350,
           "dp_i_1_b": 346,
+          "dp_acelerando_i": 350,
           "decision": "acelerar",
           "presupuesto_siguiente": 435
         },
@@ -4577,6 +4822,7 @@
           "presupuesto_b": 435,
           "dp_i_b": 346,
           "dp_i_1_b": 336,
+          "dp_acelerando_i": 346,
           "decision": "acelerar",
           "presupuesto_siguiente": 429
         },
@@ -4585,6 +4831,7 @@
           "presupuesto_b": 429,
           "dp_i_b": 336,
           "dp_i_1_b": 332,
+          "dp_acelerando_i": 336,
           "decision": "acelerar",
           "presupuesto_siguiente": 428
         },
@@ -4593,6 +4840,7 @@
           "presupuesto_b": 428,
           "dp_i_b": 332,
           "dp_i_1_b": 320,
+          "dp_acelerando_i": 332,
           "decision": "acelerar",
           "presupuesto_siguiente": 423
         },
@@ -4601,6 +4849,7 @@
           "presupuesto_b": 423,
           "dp_i_b": 320,
           "dp_i_1_b": 315,
+          "dp_acelerando_i": 320,
           "decision": "acelerar",
           "presupuesto_siguiente": 413
         },
@@ -4609,6 +4858,7 @@
           "presupuesto_b": 413,
           "dp_i_b": 315,
           "dp_i_1_b": 312,
+          "dp_acelerando_i": 315,
           "decision": "acelerar",
           "presupuesto_siguiente": 409
         },
@@ -4617,6 +4867,7 @@
           "presupuesto_b": 409,
           "dp_i_b": 312,
           "dp_i_1_b": 302,
+          "dp_acelerando_i": 312,
           "decision": "acelerar",
           "presupuesto_siguiente": 404
         },
@@ -4625,6 +4876,7 @@
           "presupuesto_b": 404,
           "dp_i_b": 302,
           "dp_i_1_b": 298,
+          "dp_acelerando_i": 302,
           "decision": "acelerar",
           "presupuesto_siguiente": 394
         },
@@ -4633,6 +4885,7 @@
           "presupuesto_b": 394,
           "dp_i_b": 298,
           "dp_i_1_b": 288,
+          "dp_acelerando_i": 298,
           "decision": "acelerar",
           "presupuesto_siguiente": 391
         },
@@ -4641,6 +4894,7 @@
           "presupuesto_b": 391,
           "dp_i_b": 288,
           "dp_i_1_b": 287,
+          "dp_acelerando_i": 288,
           "decision": "acelerar",
           "presupuesto_siguiente": 381
         },
@@ -4649,6 +4903,7 @@
           "presupuesto_b": 381,
           "dp_i_b": 287,
           "dp_i_1_b": 281,
+          "dp_acelerando_i": 287,
           "decision": "acelerar",
           "presupuesto_siguiente": 378
         },
@@ -4657,6 +4912,7 @@
           "presupuesto_b": 378,
           "dp_i_b": 281,
           "dp_i_1_b": 280,
+          "dp_acelerando_i": 281,
           "decision": "acelerar",
           "presupuesto_siguiente": 374
         },
@@ -4665,6 +4921,7 @@
           "presupuesto_b": 374,
           "dp_i_b": 280,
           "dp_i_1_b": 269,
+          "dp_acelerando_i": 280,
           "decision": "acelerar",
           "presupuesto_siguiente": 366
         },
@@ -4673,6 +4930,7 @@
           "presupuesto_b": 366,
           "dp_i_b": 269,
           "dp_i_1_b": 261,
+          "dp_acelerando_i": 269,
           "decision": "acelerar",
           "presupuesto_siguiente": 363
         },
@@ -4681,6 +4939,7 @@
           "presupuesto_b": 363,
           "dp_i_b": 261,
           "dp_i_1_b": 245,
+          "dp_acelerando_i": 261,
           "decision": "acelerar",
           "presupuesto_siguiente": 362
         },
@@ -4689,6 +4948,7 @@
           "presupuesto_b": 362,
           "dp_i_b": 245,
           "dp_i_1_b": 241,
+          "dp_acelerando_i": 245,
           "decision": "acelerar",
           "presupuesto_siguiente": 352
         },
@@ -4697,6 +4957,7 @@
           "presupuesto_b": 352,
           "dp_i_b": 241,
           "dp_i_1_b": 240,
+          "dp_acelerando_i": 241,
           "decision": "acelerar",
           "presupuesto_siguiente": 347
         },
@@ -4705,6 +4966,7 @@
           "presupuesto_b": 347,
           "dp_i_b": 240,
           "dp_i_1_b": 239,
+          "dp_acelerando_i": 240,
           "decision": "acelerar",
           "presupuesto_siguiente": 338
         },
@@ -4713,6 +4975,7 @@
           "presupuesto_b": 338,
           "dp_i_b": 239,
           "dp_i_1_b": 239,
+          "dp_acelerando_i": 239,
           "decision": "no acelerar",
           "presupuesto_siguiente": 338
         },
@@ -4721,6 +4984,7 @@
           "presupuesto_b": 338,
           "dp_i_b": 239,
           "dp_i_1_b": 239,
+          "dp_acelerando_i": 239,
           "decision": "no acelerar",
           "presupuesto_siguiente": 338
         },
@@ -4729,6 +4993,7 @@
           "presupuesto_b": 338,
           "dp_i_b": 239,
           "dp_i_1_b": 231,
+          "dp_acelerando_i": 239,
           "decision": "acelerar",
           "presupuesto_siguiente": 336
         },
@@ -4737,6 +5002,7 @@
           "presupuesto_b": 336,
           "dp_i_b": 231,
           "dp_i_1_b": 218,
+          "dp_acelerando_i": 231,
           "decision": "acelerar",
           "presupuesto_siguiente": 334
         },
@@ -4745,6 +5011,7 @@
           "presupuesto_b": 334,
           "dp_i_b": 218,
           "dp_i_1_b": 215,
+          "dp_acelerando_i": 218,
           "decision": "acelerar",
           "presupuesto_siguiente": 331
         },
@@ -4753,6 +5020,7 @@
           "presupuesto_b": 331,
           "dp_i_b": 215,
           "dp_i_1_b": 212,
+          "dp_acelerando_i": 215,
           "decision": "acelerar",
           "presupuesto_siguiente": 321
         },
@@ -4761,6 +5029,7 @@
           "presupuesto_b": 321,
           "dp_i_b": 212,
           "dp_i_1_b": 209,
+          "dp_acelerando_i": 212,
           "decision": "acelerar",
           "presupuesto_siguiente": 313
         },
@@ -4769,6 +5038,7 @@
           "presupuesto_b": 313,
           "dp_i_b": 209,
           "dp_i_1_b": 203,
+          "dp_acelerando_i": 209,
           "decision": "acelerar",
           "presupuesto_siguiente": 307
         },
@@ -4777,6 +5047,7 @@
           "presupuesto_b": 307,
           "dp_i_b": 203,
           "dp_i_1_b": 201,
+          "dp_acelerando_i": 203,
           "decision": "acelerar",
           "presupuesto_siguiente": 297
         },
@@ -4785,6 +5056,7 @@
           "presupuesto_b": 297,
           "dp_i_b": 201,
           "dp_i_1_b": 198,
+          "dp_acelerando_i": 201,
           "decision": "acelerar",
           "presupuesto_siguiente": 288
         },
@@ -4793,6 +5065,7 @@
           "presupuesto_b": 288,
           "dp_i_b": 198,
           "dp_i_1_b": 198,
+          "dp_acelerando_i": 198,
           "decision": "no acelerar",
           "presupuesto_siguiente": 288
         },
@@ -4801,6 +5074,7 @@
           "presupuesto_b": 288,
           "dp_i_b": 198,
           "dp_i_1_b": 196,
+          "dp_acelerando_i": 198,
           "decision": "acelerar",
           "presupuesto_siguiente": 282
         },
@@ -4809,6 +5083,7 @@
           "presupuesto_b": 282,
           "dp_i_b": 196,
           "dp_i_1_b": 192,
+          "dp_acelerando_i": 196,
           "decision": "acelerar",
           "presupuesto_siguiente": 272
         },
@@ -4817,6 +5092,7 @@
           "presupuesto_b": 272,
           "dp_i_b": 192,
           "dp_i_1_b": 185,
+          "dp_acelerando_i": 192,
           "decision": "acelerar",
           "presupuesto_siguiente": 264
         },
@@ -4825,6 +5101,7 @@
           "presupuesto_b": 264,
           "dp_i_b": 185,
           "dp_i_1_b": 175,
+          "dp_acelerando_i": 185,
           "decision": "acelerar",
           "presupuesto_siguiente": 260
         },
@@ -4833,6 +5110,7 @@
           "presupuesto_b": 260,
           "dp_i_b": 175,
           "dp_i_1_b": 175,
+          "dp_acelerando_i": 175,
           "decision": "no acelerar",
           "presupuesto_siguiente": 260
         },
@@ -4841,6 +5119,7 @@
           "presupuesto_b": 260,
           "dp_i_b": 175,
           "dp_i_1_b": 167,
+          "dp_acelerando_i": 175,
           "decision": "acelerar",
           "presupuesto_siguiente": 251
         },
@@ -4849,6 +5128,7 @@
           "presupuesto_b": 251,
           "dp_i_b": 167,
           "dp_i_1_b": 163,
+          "dp_acelerando_i": 167,
           "decision": "acelerar",
           "presupuesto_siguiente": 250
         },
@@ -4857,6 +5137,7 @@
           "presupuesto_b": 250,
           "dp_i_b": 163,
           "dp_i_1_b": 150,
+          "dp_acelerando_i": 163,
           "decision": "acelerar",
           "presupuesto_siguiente": 244
         },
@@ -4865,6 +5146,7 @@
           "presupuesto_b": 244,
           "dp_i_b": 150,
           "dp_i_1_b": 148,
+          "dp_acelerando_i": 150,
           "decision": "acelerar",
           "presupuesto_siguiente": 238
         },
@@ -4873,6 +5155,7 @@
           "presupuesto_b": 238,
           "dp_i_b": 148,
           "dp_i_1_b": 146,
+          "dp_acelerando_i": 148,
           "decision": "acelerar",
           "presupuesto_siguiente": 234
         },
@@ -4881,6 +5164,7 @@
           "presupuesto_b": 234,
           "dp_i_b": 146,
           "dp_i_1_b": 143,
+          "dp_acelerando_i": 146,
           "decision": "acelerar",
           "presupuesto_siguiente": 228
         },
@@ -4889,6 +5173,7 @@
           "presupuesto_b": 228,
           "dp_i_b": 143,
           "dp_i_1_b": 134,
+          "dp_acelerando_i": 143,
           "decision": "acelerar",
           "presupuesto_siguiente": 220
         },
@@ -4897,6 +5182,7 @@
           "presupuesto_b": 220,
           "dp_i_b": 134,
           "dp_i_1_b": 129,
+          "dp_acelerando_i": 134,
           "decision": "acelerar",
           "presupuesto_siguiente": 210
         },
@@ -4905,6 +5191,7 @@
           "presupuesto_b": 210,
           "dp_i_b": 129,
           "dp_i_1_b": 128,
+          "dp_acelerando_i": 129,
           "decision": "acelerar",
           "presupuesto_siguiente": 200
         },
@@ -4913,6 +5200,7 @@
           "presupuesto_b": 200,
           "dp_i_b": 128,
           "dp_i_1_b": 128,
+          "dp_acelerando_i": 128,
           "decision": "no acelerar",
           "presupuesto_siguiente": 200
         },
@@ -4921,6 +5209,7 @@
           "presupuesto_b": 200,
           "dp_i_b": 128,
           "dp_i_1_b": 128,
+          "dp_acelerando_i": 128,
           "decision": "no acelerar",
           "presupuesto_siguiente": 200
         },
@@ -4929,6 +5218,7 @@
           "presupuesto_b": 200,
           "dp_i_b": 128,
           "dp_i_1_b": 128,
+          "dp_acelerando_i": 128,
           "decision": "no acelerar",
           "presupuesto_siguiente": 200
         },
@@ -4937,6 +5227,7 @@
           "presupuesto_b": 200,
           "dp_i_b": 128,
           "dp_i_1_b": 118,
+          "dp_acelerando_i": 128,
           "decision": "acelerar",
           "presupuesto_siguiente": 194
         },
@@ -4945,6 +5236,7 @@
           "presupuesto_b": 194,
           "dp_i_b": 118,
           "dp_i_1_b": 110,
+          "dp_acelerando_i": 118,
           "decision": "acelerar",
           "presupuesto_siguiente": 189
         },
@@ -4953,6 +5245,7 @@
           "presupuesto_b": 189,
           "dp_i_b": 110,
           "dp_i_1_b": 109,
+          "dp_acelerando_i": 110,
           "decision": "acelerar",
           "presupuesto_siguiente": 182
         },
@@ -4961,6 +5254,7 @@
           "presupuesto_b": 182,
           "dp_i_b": 109,
           "dp_i_1_b": 94,
+          "dp_acelerando_i": 109,
           "decision": "acelerar",
           "presupuesto_siguiente": 180
         },
@@ -4969,6 +5263,7 @@
           "presupuesto_b": 180,
           "dp_i_b": 94,
           "dp_i_1_b": 87,
+          "dp_acelerando_i": 94,
           "decision": "acelerar",
           "presupuesto_siguiente": 171
         },
@@ -4977,6 +5272,7 @@
           "presupuesto_b": 171,
           "dp_i_b": 87,
           "dp_i_1_b": 75,
+          "dp_acelerando_i": 87,
           "decision": "acelerar",
           "presupuesto_siguiente": 163
         },
@@ -4985,6 +5281,7 @@
           "presupuesto_b": 163,
           "dp_i_b": 75,
           "dp_i_1_b": 55,
+          "dp_acelerando_i": 75,
           "decision": "acelerar",
           "presupuesto_siguiente": 155
         },
@@ -4993,6 +5290,7 @@
           "presupuesto_b": 155,
           "dp_i_b": 55,
           "dp_i_1_b": 53,
+          "dp_acelerando_i": 55,
           "decision": "acelerar",
           "presupuesto_siguiente": 145
         },
@@ -5001,6 +5299,7 @@
           "presupuesto_b": 145,
           "dp_i_b": 53,
           "dp_i_1_b": 52,
+          "dp_acelerando_i": 53,
           "decision": "acelerar",
           "presupuesto_siguiente": 138
         },
@@ -5009,6 +5308,7 @@
           "presupuesto_b": 138,
           "dp_i_b": 52,
           "dp_i_1_b": 45,
+          "dp_acelerando_i": 52,
           "decision": "acelerar",
           "presupuesto_siguiente": 130
         },
@@ -5017,6 +5317,7 @@
           "presupuesto_b": 130,
           "dp_i_b": 45,
           "dp_i_1_b": 30,
+          "dp_acelerando_i": 45,
           "decision": "acelerar",
           "presupuesto_siguiente": 121
         },
@@ -5025,6 +5326,7 @@
           "presupuesto_b": 121,
           "dp_i_b": 30,
           "dp_i_1_b": 29,
+          "dp_acelerando_i": 30,
           "decision": "acelerar",
           "presupuesto_siguiente": 119
         },
@@ -5033,6 +5335,7 @@
           "presupuesto_b": 119,
           "dp_i_b": 29,
           "dp_i_1_b": 19,
+          "dp_acelerando_i": 29,
           "decision": "acelerar",
           "presupuesto_siguiente": 117
         },
@@ -5041,6 +5344,7 @@
           "presupuesto_b": 117,
           "dp_i_b": 19,
           "dp_i_1_b": 14,
+          "dp_acelerando_i": 19,
           "decision": "acelerar",
           "presupuesto_siguiente": 113
         },
@@ -5049,6 +5353,7 @@
           "presupuesto_b": 113,
           "dp_i_b": 14,
           "dp_i_1_b": 12,
+          "dp_acelerando_i": 14,
           "decision": "acelerar",
           "presupuesto_siguiente": 110
         },
@@ -5057,6 +5362,7 @@
           "presupuesto_b": 110,
           "dp_i_b": 12,
           "dp_i_1_b": 10,
+          "dp_acelerando_i": 12,
           "decision": "acelerar",
           "presupuesto_siguiente": 101
         },
@@ -5065,6 +5371,7 @@
           "presupuesto_b": 101,
           "dp_i_b": 10,
           "dp_i_1_b": 6,
+          "dp_acelerando_i": 10,
           "decision": "acelerar",
           "presupuesto_siguiente": 93
         },
@@ -5073,6 +5380,7 @@
           "presupuesto_b": 93,
           "dp_i_b": 6,
           "dp_i_1_b": 5,
+          "dp_acelerando_i": 6,
           "decision": "acelerar",
           "presupuesto_siguiente": 85
         },
@@ -5081,6 +5389,7 @@
           "presupuesto_b": 85,
           "dp_i_b": 5,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": 5,
           "decision": "acelerar",
           "presupuesto_siguiente": 79
         }
@@ -5103,10 +5412,19 @@
     "cota": "G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979)",
     "H_d": 3.3182289932289937,
     "H_r": 4.965479278945517,
-    "tiempo_s": 0.0005046999976912048,
-    "tiempo_min_s": 0.0004981000020052306,
-    "tiempo_max_s": 0.0005218000005697832,
+    "tiempo_s": 0.0005452000004879665,
+    "tiempo_min_s": 0.0005221000010351418,
+    "tiempo_max_s": 0.000632499999483116,
     "repeticiones": 7,
+    "tiempos_s": [
+      0.000632499999483116,
+      0.0005550999994738959,
+      0.0005452000004879665,
+      0.0005545000003621681,
+      0.0005381000009947456,
+      0.0005221000010351418,
+      0.0005254000006971182
+    ],
     "factible": true,
     "resultado": {
       "interacciones_auditadas": [

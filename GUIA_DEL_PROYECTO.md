@@ -2,7 +2,7 @@
 
 Documento de estudio para la sustentación. Reúne, fase por fase, **qué se hizo, cómo correrlo, qué ideas hay que saber defender, qué decisiones se tomaron y qué conviene revisar**. La bitácora cronológica de cada interacción está en [HISTORIAL.md](HISTORIAL.md); el contexto y las convenciones, en [CLAUDE.md](CLAUDE.md).
 
-**Estado:** las 7 fases están completas. La suite tiene **394 tests** y pasan todos.
+**Estado:** las 7 fases están completas. La suite tiene **414 tests** y pasan todos.
 
 ---
 
@@ -86,7 +86,7 @@ ProyectoADA/
 │   ├── 03_eficiencia_exactos.md        deducción de T(n)
 │   ├── 04_aproximaciones.md            cotas y límites de las heurísticas
 │   └── 05_validacion_experimental.md   diseño y análisis experimental
-└── tests/                pytest (394 tests)
+└── tests/                pytest (414 tests)
 ```
 
 **Regla de las tres capas:** `core/` no imprime ni grafica; los tiempos solo se miden en `experimentos/`; `visualizacion/` solo lee. Así, lo que se mide es exactamente el código que se analiza.

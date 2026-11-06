@@ -7,7 +7,7 @@ Variante A1: la auditoría tiene costo a_j por interacción (minimizar el costo 
 - Entrada: n = 16 etapas, presupuesto B = 60.
 - **Etapas aceleradas: {2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16}** · costo 59 / 60
 - Duración: 108 → **67** (reducción 41).
-- Tiempo: **0.000064 s** (mediana de 7 repeticiones; mín 0.000063, máx 0.000077). T(n, B) = O(n·B), pseudo-polinomial; 1037 celdas.
+- Tiempo: **0.000076 s** (mediana de 7 repeticiones; mín 0.000075, máx 0.000084). T(n, B) = O(n·B), pseudo-polinomial; 1037 celdas.
 
 - Verificación con fuerza bruta (2^n): reducción óptima 41 ✔ coincide
 
@@ -38,29 +38,31 @@ Variante A1: la auditoría tiene costo a_j por interacción (minimizar el costo 
 
 ### Reconstrucción (de DP[n][B] hacia atrás)
 
-| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |
-|---|---|---|---|---|---|
-| 16 | 60 | 41 | 32 | acelerar | 55 |
-| 15 | 55 | 32 | 32 | no acelerar | 55 |
-| 14 | 55 | 32 | 31 | acelerar | 46 |
-| 13 | 46 | 30 | 29 | acelerar | 41 |
-| 12 | 41 | 29 | 27 | acelerar | 34 |
-| 11 | 34 | 26 | 25 | acelerar | 29 |
-| 10 | 29 | 25 | 23 | acelerar | 26 |
-| 9 | 26 | 23 | 18 | acelerar | 17 |
-| 8 | 17 | 17 | 10 | acelerar | 14 |
-| 7 | 14 | 10 | 9 | acelerar | 10 |
-| 6 | 10 | 9 | 8 | acelerar | 7 |
-| 5 | 7 | 8 | 7 | acelerar | 4 |
-| 4 | 4 | 7 | 6 | acelerar | 3 |
-| 3 | 3 | 6 | 6 | no acelerar | 3 |
-| 2 | 3 | 6 | 0 | acelerar | 1 |
-| 1 | 1 | 0 | 0 | no acelerar | 1 |
+Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) y se queda el mayor:
+
+| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |
+|---|---|---|---|---|---|---|
+| 16 | 60 | 32 | 41 | 41 | acelerar | 55 |
+| 15 | 55 | 32 | 32 | 32 | no acelerar | 55 |
+| 14 | 55 | 31 | 32 | 32 | acelerar | 46 |
+| 13 | 46 | 29 | 30 | 30 | acelerar | 41 |
+| 12 | 41 | 27 | 29 | 29 | acelerar | 34 |
+| 11 | 34 | 25 | 26 | 26 | acelerar | 29 |
+| 10 | 29 | 23 | 25 | 25 | acelerar | 26 |
+| 9 | 26 | 18 | 23 | 23 | acelerar | 17 |
+| 8 | 17 | 10 | 17 | 17 | acelerar | 14 |
+| 7 | 14 | 9 | 10 | 10 | acelerar | 10 |
+| 6 | 10 | 8 | 9 | 9 | acelerar | 7 |
+| 5 | 7 | 7 | 8 | 8 | acelerar | 4 |
+| 4 | 4 | 6 | 7 | 7 | acelerar | 3 |
+| 3 | 3 | 6 | — | 6 | no acelerar | 3 |
+| 2 | 3 | 0 | 6 | 6 | acelerar | 1 |
+| 1 | 1 | 0 | — | 0 | no acelerar | 1 |
 
 ## Parte 2 — Cobertura de auditoría (A1 (costos))
 
 - Entrada: 12 interacciones, 10 categorías (d = 7).
-- Tiempo: **0.000008 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
+- Tiempo: **0.000010 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
 - **Interacciones auditadas: {1, 3, 5, 12}** (orden de elección: ['1', '3', '12', '5']) · cantidad 4 · costo total 10.
 - Cobertura: 10/10 categorías (completa).
 - Cota: G ≤ H_d · óptimo (Chvátal, 1979) · H_d = 2.593 · H_r = 2.929.

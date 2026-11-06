@@ -355,7 +355,7 @@ classDiagram
     }
     class tests {
         <<pytest>>
-        394 tests
+        414 tests
     }
 
     experimentos --> core : mide

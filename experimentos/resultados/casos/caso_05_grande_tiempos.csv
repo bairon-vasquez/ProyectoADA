@@ -1,0 +1,15 @@
+algoritmo,barrido,n,parametro,valor_parametro,repeticion,tiempo_s,valor_solucion,extra
+mochila_dp,caso_05_grande,300,B,1500,1,0.035404300,1590,0
+mochila_dp,caso_05_grande,300,B,1500,2,0.034941600,1590,0
+mochila_dp,caso_05_grande,300,B,1500,3,0.037247800,1590,0
+mochila_dp,caso_05_grande,300,B,1500,4,0.035881800,1590,0
+mochila_dp,caso_05_grande,300,B,1500,5,0.037746000,1590,0
+mochila_dp,caso_05_grande,300,B,1500,6,0.035441400,1590,0
+mochila_dp,caso_05_grande,300,B,1500,7,0.034622400,1590,0
+cobertura_voraz,caso_05_grande,200,r,80,1,0.000632500,11,0
+cobertura_voraz,caso_05_grande,200,r,80,2,0.000555100,11,0
+cobertura_voraz,caso_05_grande,200,r,80,3,0.000545200,11,0
+cobertura_voraz,caso_05_grande,200,r,80,4,0.000554500,11,0
+cobertura_voraz,caso_05_grande,200,r,80,5,0.000538100,11,0
+cobertura_voraz,caso_05_grande,200,r,80,6,0.000522100,11,0
+cobertura_voraz,caso_05_grande,200,r,80,7,0.000525400,11,0

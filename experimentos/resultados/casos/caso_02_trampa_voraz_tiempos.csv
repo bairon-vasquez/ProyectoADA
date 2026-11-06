@@ -1,0 +1,15 @@
+algoritmo,barrido,n,parametro,valor_parametro,repeticion,tiempo_s,valor_solucion,extra
+mochila_dp,caso_02_trampa_voraz,8,B,20,1,0.000022700,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,2,0.000018800,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,3,0.000017600,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,4,0.000017600,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,5,0.000017300,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,6,0.000016800,36,0
+mochila_dp,caso_02_trampa_voraz,8,B,20,7,0.000017200,36,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,1,0.000010900,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,2,0.000005600,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,3,0.000003600,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,4,0.000003300,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,5,0.000003100,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,6,0.000003400,3,0
+cobertura_voraz,caso_02_trampa_voraz,3,r,6,7,0.000003100,3,0

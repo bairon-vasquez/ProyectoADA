@@ -21,10 +21,19 @@
     },
     "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
     "celdas_dp": 189,
-    "tiempo_s": 1.349999729427509e-05,
-    "tiempo_min_s": 1.2900000001536682e-05,
-    "tiempo_max_s": 1.8500002624932677e-05,
+    "tiempo_s": 1.7600001228856854e-05,
+    "tiempo_min_s": 1.680000059423037e-05,
+    "tiempo_max_s": 2.2700000045006163e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      2.2700000045006163e-05,
+      1.8799999452312477e-05,
+      1.7600001228856854e-05,
+      1.7600001228856854e-05,
+      1.7300000763498247e-05,
+      1.680000059423037e-05,
+      1.720000000204891e-05
+    ],
     "traza": {
       "etapas": [
         {
@@ -98,6 +107,7 @@
           "presupuesto_b": 20,
           "dp_i_b": 23,
           "dp_i_1_b": 23,
+          "dp_acelerando_i": 23,
           "decision": "no acelerar",
           "presupuesto_siguiente": 20
         },
@@ -106,6 +116,7 @@
           "presupuesto_b": 20,
           "dp_i_b": 23,
           "dp_i_1_b": 23,
+          "dp_acelerando_i": 23,
           "decision": "no acelerar",
           "presupuesto_siguiente": 20
         },
@@ -114,6 +125,7 @@
           "presupuesto_b": 20,
           "dp_i_b": 23,
           "dp_i_1_b": 23,
+          "dp_acelerando_i": 22,
           "decision": "no acelerar",
           "presupuesto_siguiente": 20
         },
@@ -122,6 +134,7 @@
           "presupuesto_b": 20,
           "dp_i_b": 23,
           "dp_i_1_b": 15,
+          "dp_acelerando_i": 23,
           "decision": "acelerar",
           "presupuesto_siguiente": 15
         },
@@ -130,6 +143,7 @@
           "presupuesto_b": 15,
           "dp_i_b": 15,
           "dp_i_1_b": 15,
+          "dp_acelerando_i": 9,
           "decision": "no acelerar",
           "presupuesto_siguiente": 15
         },
@@ -138,6 +152,7 @@
           "presupuesto_b": 15,
           "dp_i_b": 15,
           "dp_i_1_b": 13,
+          "dp_acelerando_i": 15,
           "decision": "acelerar",
           "presupuesto_siguiente": 13
         },
@@ -146,6 +161,7 @@
           "presupuesto_b": 13,
           "dp_i_b": 13,
           "dp_i_1_b": 6,
+          "dp_acelerando_i": 13,
           "decision": "acelerar",
           "presupuesto_siguiente": 10
         },
@@ -154,6 +170,7 @@
           "presupuesto_b": 10,
           "dp_i_b": 6,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": 6,
           "decision": "acelerar",
           "presupuesto_siguiente": 2
         }
@@ -385,10 +402,19 @@
     "cota": "G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979)",
     "H_d": 2.083333333333333,
     "H_r": 2.4499999999999997,
-    "tiempo_s": 2.8999966161791235e-06,
-    "tiempo_min_s": 2.5999979698099196e-06,
-    "tiempo_max_s": 8.299997716676444e-06,
+    "tiempo_s": 3.4000004234258085e-06,
+    "tiempo_min_s": 3.099999958067201e-06,
+    "tiempo_max_s": 1.089999932446517e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      1.089999932446517e-05,
+      5.600000804406591e-06,
+      3.600000127335079e-06,
+      3.2999996619764715e-06,
+      3.099999958067201e-06,
+      3.4000004234258085e-06,
+      3.099999958067201e-06
+    ],
     "factible": true,
     "resultado": {
       "interacciones_auditadas": [

@@ -5,7 +5,7 @@
 - Entrada: n = 20 etapas, presupuesto B = 72.
 - **Etapas aceleradas: {E02, E03, E04, E06, E08, E12}** · costo 72 / 72
 - Duración: 501 → **446** (reducción 55).
-- Tiempo: **0.000092 s** (mediana de 7 repeticiones; mín 0.000087, máx 0.000145). T(n, B) = O(n·B), pseudo-polinomial; 1533 celdas.
+- Tiempo: **0.000095 s** (mediana de 7 repeticiones; mín 0.000092, máx 0.000103). T(n, B) = O(n·B), pseudo-polinomial; 1533 celdas.
 
 - Verificación con fuerza bruta (2^n): reducción óptima 55 ✔ coincide
 
@@ -40,33 +40,35 @@
 
 ### Reconstrucción (de DP[n][B] hacia atrás)
 
-| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |
-|---|---|---|---|---|---|
-| E20 | 72 | 55 | 55 | no acelerar | 72 |
-| E19 | 72 | 55 | 55 | no acelerar | 72 |
-| E18 | 72 | 55 | 55 | no acelerar | 72 |
-| E17 | 72 | 55 | 55 | no acelerar | 72 |
-| E16 | 72 | 55 | 55 | no acelerar | 72 |
-| E15 | 72 | 55 | 55 | no acelerar | 72 |
-| E14 | 72 | 55 | 55 | no acelerar | 72 |
-| E13 | 72 | 55 | 55 | no acelerar | 72 |
-| E12 | 72 | 55 | 54 | acelerar | 63 |
-| E11 | 63 | 48 | 48 | no acelerar | 63 |
-| E10 | 63 | 48 | 48 | no acelerar | 63 |
-| E09 | 63 | 48 | 48 | no acelerar | 63 |
-| E08 | 63 | 48 | 47 | acelerar | 46 |
-| E07 | 46 | 35 | 35 | no acelerar | 46 |
-| E06 | 46 | 35 | 32 | acelerar | 33 |
-| E05 | 33 | 25 | 25 | no acelerar | 33 |
-| E04 | 33 | 25 | 18 | acelerar | 17 |
-| E03 | 17 | 13 | 9 | acelerar | 12 |
-| E02 | 12 | 9 | 5 | acelerar | 0 |
-| E01 | 0 | 0 | 0 | no acelerar | 0 |
+Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) y se queda el mayor:
+
+| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |
+|---|---|---|---|---|---|---|
+| E20 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E19 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E18 | 72 | 55 | 55 | 55 | no acelerar | 72 |
+| E17 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E16 | 72 | 55 | 55 | 55 | no acelerar | 72 |
+| E15 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E14 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E13 | 72 | 55 | 54 | 55 | no acelerar | 72 |
+| E12 | 72 | 54 | 55 | 55 | acelerar | 63 |
+| E11 | 63 | 48 | 47 | 48 | no acelerar | 63 |
+| E10 | 63 | 48 | 48 | 48 | no acelerar | 63 |
+| E09 | 63 | 48 | 47 | 48 | no acelerar | 63 |
+| E08 | 63 | 47 | 48 | 48 | acelerar | 46 |
+| E07 | 46 | 35 | 34 | 35 | no acelerar | 46 |
+| E06 | 46 | 32 | 35 | 35 | acelerar | 33 |
+| E05 | 33 | 25 | 24 | 25 | no acelerar | 33 |
+| E04 | 33 | 18 | 25 | 25 | acelerar | 17 |
+| E03 | 17 | 9 | 13 | 13 | acelerar | 12 |
+| E02 | 12 | 5 | 9 | 9 | acelerar | 0 |
+| E01 | 0 | 0 | — | 0 | no acelerar | 0 |
 
 ## Parte 2 — Cobertura de auditoría (A1 (costos))
 
 - Entrada: 35 interacciones, 12 categorías (d = 4).
-- Tiempo: **0.000020 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
+- Tiempo: **0.000028 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
 - **Interacciones auditadas: {E01 parcial, E11 completa, E12 completa, E13 completa, E18 parcial}** (orden de elección: ['E01 parcial', 'E12 completa', 'E13 completa', 'E11 completa', 'E18 parcial']) · cantidad 5 · costo total 25.
 - Cobertura: 12/12 categorías (completa).
 - Cota: G ≤ H_d · óptimo (Chvátal, 1979) · H_d = 2.083 · H_r = 3.103.
@@ -82,6 +84,24 @@
 | 3 | E13 completa | {R05, R06, R11} | 3 | 6 | 2.000 | 16 | 9 | 3 |
 | 4 | E11 completa | {R04, R10} | 2 | 6 | 3.000 | 22 | 11 | 1 |
 | 5 | E18 parcial | {R08} | 1 | 3 | 3.000 | 25 | 12 | 0 |
+
+## Variante C — flujo como DAG (heurística de la ruta crítica)
+
+- Entrada: n = 20 etapas, m = 19 precedencias, B = 72 (cadena en serie). T(n, m) = O(n·(n+m)); sin garantía de optimalidad (docs/04).
+- Tiempo: **0.000066 s** (mediana de 7 repeticiones).
+- Ruta crítica inicial: E01 → E02 → E03 → E04 → E05 → E06 → E07 → E08 → E09 → E10 → E11 → E12 → E13 → E14 → E15 → E16 → E17 → E18 → E19 → E20 (duración 501).
+- **Etapas aceleradas: {E02, E03, E04, E06, E08, E12}** · costo 72 / 72 · duración final **446**.
+
+| paso | etapa acelerada | ruta crítica tras acelerarla |
+|---|---|---|
+| 1 | E03 | 497 |
+| 2 | E12 | 490 |
+| 3 | E06 | 480 |
+| 4 | E08 | 467 |
+| 5 | E02 | 458 |
+| 6 | E04 | 446 |
+
+- Verificación con Mochila (óptimo en una cadena): duración óptima 446 (✔ la heurística coincide).
 
 ## Variante B — presupuesto conjunto (la auditoría cubre todo; el resto acelera)
 

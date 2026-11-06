@@ -7,7 +7,7 @@ Tamaño mediano generado con semilla 303 (verificable contra la fuerza bruta).
 - Entrada: n = 14 etapas, presupuesto B = 30.
 - **Etapas aceleradas: {3, 6, 7, 8, 10, 11, 14}** · costo 28 / 30
 - Duración: 92 → **62** (reducción 30).
-- Tiempo: **0.000034 s** (mediana de 7 repeticiones; mín 0.000032, máx 0.000056). T(n, B) = O(n·B), pseudo-polinomial; 465 celdas.
+- Tiempo: **0.000033 s** (mediana de 7 repeticiones; mín 0.000032, máx 0.000041). T(n, B) = O(n·B), pseudo-polinomial; 465 celdas.
 
 - Verificación con fuerza bruta (2^n): reducción óptima 30 ✔ coincide
 
@@ -36,27 +36,29 @@ Tamaño mediano generado con semilla 303 (verificable contra la fuerza bruta).
 
 ### Reconstrucción (de DP[n][B] hacia atrás)
 
-| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |
-|---|---|---|---|---|---|
-| 14 | 30 | 30 | 26 | acelerar | 29 |
-| 13 | 29 | 26 | 26 | no acelerar | 29 |
-| 12 | 29 | 26 | 26 | no acelerar | 29 |
-| 11 | 29 | 26 | 22 | acelerar | 28 |
-| 10 | 28 | 22 | 20 | acelerar | 23 |
-| 9 | 23 | 19 | 19 | no acelerar | 23 |
-| 8 | 23 | 19 | 18 | acelerar | 20 |
-| 7 | 20 | 17 | 9 | acelerar | 13 |
-| 6 | 13 | 8 | 5 | acelerar | 11 |
-| 5 | 11 | 5 | 5 | no acelerar | 11 |
-| 4 | 11 | 5 | 5 | no acelerar | 11 |
-| 3 | 11 | 5 | 1 | acelerar | 2 |
-| 2 | 2 | 0 | 0 | no acelerar | 2 |
-| 1 | 2 | 0 | 0 | no acelerar | 2 |
+Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) y se queda el mayor:
+
+| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |
+|---|---|---|---|---|---|---|
+| 14 | 30 | 26 | 30 | 30 | acelerar | 29 |
+| 13 | 29 | 26 | 24 | 26 | no acelerar | 29 |
+| 12 | 29 | 26 | 24 | 26 | no acelerar | 29 |
+| 11 | 29 | 22 | 26 | 26 | acelerar | 28 |
+| 10 | 28 | 20 | 22 | 22 | acelerar | 23 |
+| 9 | 23 | 19 | 15 | 19 | no acelerar | 23 |
+| 8 | 23 | 18 | 19 | 19 | acelerar | 20 |
+| 7 | 20 | 9 | 17 | 17 | acelerar | 13 |
+| 6 | 13 | 5 | 8 | 8 | acelerar | 11 |
+| 5 | 11 | 5 | 5 | 5 | no acelerar | 11 |
+| 4 | 11 | 5 | 1 | 5 | no acelerar | 11 |
+| 3 | 11 | 1 | 5 | 5 | acelerar | 2 |
+| 2 | 2 | 0 | — | 0 | no acelerar | 2 |
+| 1 | 2 | 0 | 0 | 0 | no acelerar | 2 |
 
 ## Parte 2 — Cobertura de auditoría (Parte 2)
 
 - Entrada: 14 interacciones, 12 categorías (d = 6).
-- Tiempo: **0.000009 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
+- Tiempo: **0.000011 s** (mediana de 7 repeticiones). T(n, r) = O(n·r²).
 - **Interacciones auditadas: {1, 6, 7, 9, 11}** (orden de elección: ['6', '7', '1', '9', '11']) · cantidad 5 · costo total 5.
 - Cobertura: 12/12 categorías (completa).
 - Cota: G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979) · H_d = 2.450 · H_r = 3.103.

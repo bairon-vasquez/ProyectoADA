@@ -3,6 +3,8 @@
 Para cada caso JSON (formato en ``experimentos/casos.py``) escribe en la carpeta de salida:
   <id>.json        resultado + tiempo + traza (máquina-legible)
   <id>_traza.md    la misma traza en texto legible
+  <id>_dp.csv      la tabla DP completa, DP[i][b] (si cabe: ≤ 5000 celdas)
+  <id>_tiempos.csv el tiempo de cada repetición, en el formato de medir.COLUMNAS
 y al final ``resumen_casos.csv`` con una fila por caso.
 
 La lógica de los algoritmos NO se edita ni se envuelve: se llama a ``core`` tal cual y solo se mide
@@ -25,7 +27,8 @@ from pathlib import Path
 from typing import Any
 
 from core.combinado import combinado_cobertura_obligatoria_mascaras, evaluar_combinada
-from core.instancias import InstanciaCombinada, InstanciaMochila, InstanciaSetCover
+from core.dag import dag_exacto, dag_heuristica
+from core.instancias import InstanciaCombinada, InstanciaDAG, InstanciaMochila, InstanciaSetCover
 from core.mochila import construir_tabla_dp, mochila_dp, mochila_fuerza_bruta, reconstruir_etapas
 from core.set_cover import (
     cobertura_exacta,
@@ -36,7 +39,7 @@ from core.set_cover import (
     numero_armonico,
 )
 from experimentos.casos import Caso, CasoInvalido, cargar_caso, listar_casos
-from experimentos.medir import RESULTADOS, medir
+from experimentos.medir import RESULTADOS, escribir_csv, medir
 
 RAIZ = Path(__file__).resolve().parent.parent
 CASOS = RAIZ / "casos"
@@ -46,11 +49,12 @@ MAX_CELDAS_TABLA = 5000  # la tabla DP completa se guarda en el JSON solo si cab
 MAX_N_FUERZA_BRUTA = 20  # verificación contra la fuerza bruta (2^n; n = 20 tarda ≈ 1 s)
 MAX_N_EXACTO_SC = 16  # verificación contra el exacto de Set Cover (2^N / subconjuntos)
 MAX_R_MASCARAS = 20  # el exacto por máscaras cuesta O(N·2^r): con r ≤ 20 son ≤ ~10^6 pasos por opción
+MAX_N_DAG_EXACTO = 16  # verificación de la heurística del DAG contra el exacto (2^n · (n + m))
 
 
 def _tiempos(tiempos: list[float]) -> dict[str, Any]:
     return {"tiempo_s": statistics.median(tiempos), "tiempo_min_s": min(tiempos),
-            "tiempo_max_s": max(tiempos), "repeticiones": len(tiempos)}
+            "tiempo_max_s": max(tiempos), "repeticiones": len(tiempos), "tiempos_s": list(tiempos)}
 
 
 # ------------------------------------------------------------------------------ Parte 1
@@ -62,7 +66,9 @@ def _reconstruccion(inst: InstanciaMochila, tabla: list[list[int]]) -> list[dict
     for i in range(inst.n, 0, -1):
         con, sin = tabla[i][b], tabla[i - 1][b]
         acelerar = con != sin
-        pasos.append({"etapa": i, "presupuesto_b": b, "dp_i_b": con, "dp_i_1_b": sin,
+        # las dos opciones que compara la recurrencia: no acelerar (sin) o acelerar (si c_i ≤ b)
+        al_acelerar = tabla[i - 1][b - inst.c[i - 1]] + inst.d[i - 1] if inst.c[i - 1] <= b else None
+        pasos.append({"etapa": i, "presupuesto_b": b, "dp_i_b": con, "dp_i_1_b": sin, "dp_acelerando_i": al_acelerar,
                       "decision": "acelerar" if acelerar else "no acelerar",
                       "presupuesto_siguiente": b - inst.c[i - 1] if acelerar else b})
         if acelerar:
@@ -251,13 +257,52 @@ def resolver_variante_b(caso: Caso, p2: dict[str, Any], repeticiones: int) -> di
 
 # ----------------------------------------------------------------------------- por caso
 
+def resolver_variante_c(caso: Caso, repeticiones: int) -> dict[str, Any]:
+    """Flujo como DAG (heurística: acelerar en la ruta crítica la etapa de mejor d_i/c_i y recalcular).
+
+    Si el flujo es una cadena, su duración óptima es la de la Mochila, y se comprueba que la heurística coincida.
+    """
+    ch = caso.mochila
+    inst = InstanciaDAG(t=ch.t, c=ch.c, d=ch.d, aristas=caso.aristas, B=ch.B)
+    tiempos, sol = medir(lambda: dag_heuristica(inst), repeticiones)
+    out: dict[str, Any] = {
+        "entrada": {"n": inst.n, "m": inst.m, "B": inst.B, "es_cadena": caso.es_cadena},
+        "complejidad": "T(n, m) = O(n·(n+m)); sin garantía de optimalidad (docs/04)",
+        "resultado": {"etapas_aceleradas": [i + 1 for i in sol.aceleradas], "costo_usado": sol.costo,
+                      "duracion_inicial": sol.duracion_inicial, "duracion_final": sol.duracion,
+                      "ruta_critica_inicial": [i + 1 for i in sol.camino_inicial],
+                      "ruta_critica_final": [i + 1 for i in sol.camino_final]},
+        "traza": {"pasos": [{"paso": k, "etapa": i + 1, "ruta_critica_tras": L}
+                            for k, (i, L) in enumerate(sol.pasos, start=1)]},
+        **_tiempos(tiempos),
+    }
+    if caso.es_cadena:
+        mochila = mochila_dp(ch)
+        out["verificacion"] = {"metodo": "Mochila (óptimo en una cadena)", "duracion_optima": mochila.duracion,
+                               "coincide": sol.duracion == mochila.duracion}
+    elif inst.n <= MAX_N_DAG_EXACTO:
+        ex = dag_exacto(inst)
+        out["verificacion"] = {"metodo": "exacto por enumeración (2^n)", "duracion_optima": ex.duracion,
+                               "coincide": sol.duracion == ex.duracion}
+    else:
+        out["verificacion"] = {"metodo": "exacto", "omitida": f"n = {inst.n} > {MAX_N_DAG_EXACTO}"}
+    return out
+
+
 def resolver_caso(caso: Caso, repeticiones: int = 7) -> dict[str, Any]:
     out: dict[str, Any] = {"id": caso.id, "descripcion": caso.descripcion}
     if caso.mochila is not None:
-        out["parte1"] = resolver_parte1(caso.mochila, repeticiones)
+        if caso.es_cadena:
+            out["parte1"] = resolver_parte1(caso.mochila, repeticiones)
+        else:  # en un DAG la duración no es Σt − Σd: la Mochila no aplica, resuelve la Variante C
+            out["parte1"] = {"omitida": "el flujo no es una cadena en serie; la duración es la ruta crítica "
+                                        "(ver variante_c)"}
+        if caso.aristas:
+            out["variante_c"] = resolver_variante_c(caso, repeticiones)
     if caso.cobertura is not None:
         out["parte2"] = resolver_parte2(caso.cobertura, caso.ponderado, repeticiones, caso.grupo_interaccion)
-    if caso.presupuesto_conjunto is not None and caso.mochila is not None and caso.cobertura is not None:
+    if (caso.presupuesto_conjunto is not None and caso.mochila is not None and caso.cobertura is not None
+            and caso.es_cadena):
         out["variante_b"] = resolver_variante_b(caso, out["parte2"], repeticiones)
     if caso.nombres_etapas or caso.nombres_interacciones:  # ids originales del archivo (E01, "E03 parcial", R01)
         out["nombres"] = {"etapas": list(caso.nombres_etapas), "interacciones": list(caso.nombres_interacciones),
@@ -274,9 +319,14 @@ def _nom(res: dict[str, Any], clave: str, i: int) -> str:
 
 def _anotar_nombres(res: dict[str, Any]) -> None:
     """Agrega listas con los ids originales junto a las de índices (los índices se conservan)."""
-    if "parte1" in res:
-        r = res["parte1"]["resultado"]
-        r["etapas_aceleradas_nombres"] = [_nom(res, "etapas", i) for i in r["etapas_aceleradas"]]
+    for clave in ("parte1", "variante_c"):
+        r = res.get(clave, {}).get("resultado")
+        if r:
+            r["etapas_aceleradas_nombres"] = [_nom(res, "etapas", i) for i in r["etapas_aceleradas"]]
+    r = res.get("variante_c", {}).get("resultado")
+    if r:
+        r["ruta_critica_inicial_nombres"] = [_nom(res, "etapas", i) for i in r["ruta_critica_inicial"]]
+        r["ruta_critica_final_nombres"] = [_nom(res, "etapas", i) for i in r["ruta_critica_final"]]
     if "parte2" in res and res["parte2"]["factible"]:
         r = res["parte2"]["resultado"]
         r["interacciones_auditadas_nombres"] = [_nom(res, "interacciones", j) for j in r["interacciones_auditadas"]]
@@ -303,7 +353,9 @@ def traza_markdown(res: dict[str, Any]) -> str:
     if res["descripcion"]:
         L += [res["descripcion"], ""]
     p1 = res.get("parte1")
-    if p1:
+    if p1 and "omitida" in p1:
+        L += ["## Parte 1 — Aceleración de la cadena (Mochila 0/1)", "", f"- Omitida: {p1['omitida']}.", ""]
+    elif p1:
         r = p1["resultado"]
         L += ["## Parte 1 — Aceleración de la cadena (Mochila 0/1)", "",
               f"- Entrada: n = {p1['entrada']['n']} etapas, presupuesto B = {p1['entrada']['B']}.",
@@ -330,10 +382,14 @@ def traza_markdown(res: dict[str, Any]) -> str:
         else:
             L.append("(tabla omitida por tamaño: " + p1["traza"]["tabla_dp_omitida"] + ")")
         L += ["", "### Reconstrucción (de DP[n][B] hacia atrás)", "",
-              "| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |", "|---|---|---|---|---|---|"]
+              "Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) "
+              "y se queda el mayor:", "",
+              "| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |",
+              "|---|---|---|---|---|---|---|"]
         pasos = p1["traza"]["reconstruccion"]
         mostrar = pasos if len(pasos) <= 60 else pasos[:30]
-        L += [f"| {_nom(res, 'etapas', q['etapa'])} | {q['presupuesto_b']} | {q['dp_i_b']} | {q['dp_i_1_b']} | {q['decision']} | "
+        L += [f"| {_nom(res, 'etapas', q['etapa'])} | {q['presupuesto_b']} | {q['dp_i_1_b']} | "
+              f"{'—' if q['dp_acelerando_i'] is None else q['dp_acelerando_i']} | {q['dp_i_b']} | {q['decision']} | "
               f"{q['presupuesto_siguiente']} |" for q in mostrar]
         if len(pasos) > len(mostrar):
             L.append(f"\n(se muestran 30 de {len(pasos)} pasos; el resto está en el JSON)")
@@ -383,6 +439,26 @@ def traza_markdown(res: dict[str, Any]) -> str:
                         f"{q['costo_acumulado']} | {q['categorias_cubiertas']} | {q['categorias_pendientes']} |")
                 L.append(fila)
             L.append("")
+    vc = res.get("variante_c")
+    if vc:
+        e, r, v = vc["entrada"], vc["resultado"], vc["verificacion"]
+        L += ["## Variante C — flujo como DAG (heurística de la ruta crítica)", "",
+              f"- Entrada: n = {e['n']} etapas, m = {e['m']} precedencias, B = {e['B']} "
+              f"({'cadena en serie' if e['es_cadena'] else 'DAG general'}). {vc['complejidad']}.",
+              f"- Tiempo: **{vc['tiempo_s']:.6f} s** (mediana de {vc['repeticiones']} repeticiones).",
+              f"- Ruta crítica inicial: {' → '.join(_nom(res, 'etapas', i) for i in r['ruta_critica_inicial'])} "
+              f"(duración {r['duracion_inicial']}).",
+              f"- **Etapas aceleradas: {_lista_n(res, 'etapas', r['etapas_aceleradas'])}** · costo {r['costo_usado']} / {e['B']} · "
+              f"duración final **{r['duracion_final']}**."]
+        if vc["traza"]["pasos"]:
+            L += ["", "| paso | etapa acelerada | ruta crítica tras acelerarla |", "|---|---|---|"]
+            L += [f"| {q['paso']} | {_nom(res, 'etapas', q['etapa'])} | {q['ruta_critica_tras']} |" for q in vc["traza"]["pasos"]]
+        if "coincide" in v:
+            L += ["", f"- Verificación con {v['metodo']}: duración óptima {v['duracion_optima']} "
+                      f"({'✔ la heurística coincide' if v['coincide'] else '✘ la heurística NO es óptima aquí'})."]
+        else:
+            L += ["", f"- Verificación omitida ({v['omitida']})."]
+        L.append("")
     vb = res.get("variante_b")
     if vb:
         L += ["## Variante B — presupuesto conjunto (la auditoría cubre todo; el resto acelera)", "",
@@ -410,14 +486,16 @@ COLUMNAS_RESUMEN = [
     "caso", "n_etapas", "B", "duracion_inicial", "duracion_final", "reduccion", "costo_usado",
     "etapas_aceleradas", "tiempo_parte1_s", "verif_parte1", "interacciones", "categorias", "variante",
     "tamano_cobertura", "costo_cobertura", "optimo", "razon_voraz_optimo", "tiempo_parte2_s",
-    "B_conjunto", "duracion_b_exacta", "duracion_b_voraz",
+    "B_conjunto", "duracion_b_exacta", "duracion_b_voraz", "duracion_variante_c",
 ]
 
 
 def fila_resumen(res: dict[str, Any]) -> dict[str, Any]:
     f: dict[str, Any] = {c: "" for c in COLUMNAS_RESUMEN}
     f["caso"] = res["id"]
-    if "parte1" in res:
+    if "variante_c" in res:
+        f["duracion_variante_c"] = res["variante_c"]["resultado"]["duracion_final"]
+    if "resultado" in res.get("parte1", {}):
         p = res["parte1"]
         r = p["resultado"]
         f.update(n_etapas=p["entrada"]["n"], B=p["entrada"]["B"], duracion_inicial=r["duracion_inicial"],
@@ -445,6 +523,46 @@ def fila_resumen(res: dict[str, Any]) -> dict[str, Any]:
     return f
 
 
+def filas_tiempos(res: dict[str, Any]) -> list[dict[str, Any]]:
+    """Una fila por repetición de cada algoritmo medido, en el formato ``COLUMNAS`` de ``medir.py``.
+
+    ``barrido`` lleva el id del caso; ``valor_solucion`` es la duración (Mochila, DAG, Variante B) o el costo
+    de la cobertura.
+    """
+    filas: list[dict[str, Any]] = []
+
+    def agregar(algoritmo: str, n: int, parametro: str, valor_parametro: int, seccion: dict[str, Any], valor: Any) -> None:
+        for k, t in enumerate(seccion["tiempos_s"], start=1):
+            filas.append({"algoritmo": algoritmo, "barrido": res["id"], "n": n, "parametro": parametro,
+                          "valor_parametro": valor_parametro, "repeticion": k, "tiempo_s": f"{t:.9f}",
+                          "valor_solucion": valor, "extra": 0})
+
+    p1, p2, vc, vb = res.get("parte1", {}), res.get("parte2"), res.get("variante_c"), res.get("variante_b", {})
+    n_etapas = p1.get("entrada", {}).get("n", 0)
+    if "resultado" in p1:
+        agregar("mochila_dp", n_etapas, "B", p1["entrada"]["B"], p1, p1["resultado"]["duracion_final"])
+    if p2:
+        e = p2["entrada"]
+        nombre = "cobertura_voraz_ponderada" if e["variante"].startswith("A1") else "cobertura_voraz"
+        agregar(nombre, e["interacciones"], "r", e["categorias"], p2,
+                p2["resultado"].get("costo_total", 0) if p2["factible"] else 0)
+    if vc:
+        agregar("dag_heuristica", vc["entrada"]["n"], "m", vc["entrada"]["m"], vc, vc["resultado"]["duracion_final"])
+    if "tiempos_s" in vb.get("exacta", {}):
+        agregar("combinado_cobertura_obligatoria_mascaras", n_etapas, "B", vb["presupuesto_conjunto"],
+                vb["exacta"], vb["exacta"]["duracion_final"])
+    return filas
+
+
+def escribir_tabla_dp(ruta: Path, tabla: list[list[int]]) -> None:
+    """DP[i][b] completa en CSV (filas i = 0..n, columnas b = 0..B)."""
+    with open(ruta, "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["i\\b", *range(len(tabla[0]))])
+        for i, fila in enumerate(tabla):
+            w.writerow([i, *fila])
+
+
 def main(casos: Path = CASOS, salida: Path = SALIDA, repeticiones: int = 7) -> list[dict[str, Any]]:
     salida.mkdir(parents=True, exist_ok=True)
     resultados = []
@@ -453,6 +571,10 @@ def main(casos: Path = CASOS, salida: Path = SALIDA, repeticiones: int = 7) -> l
         res = resolver_caso(caso, repeticiones)
         (salida / f"{caso.id}.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
         (salida / f"{caso.id}_traza.md").write_text(traza_markdown(res), encoding="utf-8")
+        escribir_csv(salida / f"{caso.id}_tiempos.csv", filas_tiempos(res))
+        tabla = res.get("parte1", {}).get("traza", {}).get("tabla_dp")
+        if tabla is not None:
+            escribir_tabla_dp(salida / f"{caso.id}_dp.csv", tabla)
         resultados.append(res)
     with open(salida / "resumen_casos.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=COLUMNAS_RESUMEN)
@@ -472,7 +594,7 @@ if __name__ == "__main__":
     except CasoInvalido as e:
         raise SystemExit(f"Caso inválido: {e}")
     for r in out:
-        t1 = f"{r['parte1']['tiempo_s']:.6f} s" if "parte1" in r else "-"
+        t1 = f"{r['parte1']['tiempo_s']:.6f} s" if "tiempo_s" in r.get("parte1", {}) else "-"
         t2 = f"{r['parte2']['tiempo_s']:.6f} s" if "parte2" in r else "-"
         print(f"{r['id']:<28} parte1: {t1:>12}   parte2: {t2:>12}")
     print(f"\nSalida en {a.salida}")

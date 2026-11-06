@@ -30,10 +30,19 @@
     },
     "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
     "celdas_dp": 1037,
-    "tiempo_s": 6.399999983841553e-05,
-    "tiempo_min_s": 6.310000026132911e-05,
-    "tiempo_max_s": 7.74000000092201e-05,
+    "tiempo_s": 7.569999979750719e-05,
+    "tiempo_min_s": 7.529999857069924e-05,
+    "tiempo_max_s": 8.430000161752105e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      8.430000161752105e-05,
+      7.779999941703863e-05,
+      7.529999857069924e-05,
+      7.560000085504726e-05,
+      7.569999979750719e-05,
+      7.609999920532573e-05,
+      7.569999979750719e-05
+    ],
     "traza": {
       "etapas": [
         {
@@ -171,6 +180,7 @@
           "presupuesto_b": 60,
           "dp_i_b": 41,
           "dp_i_1_b": 32,
+          "dp_acelerando_i": 41,
           "decision": "acelerar",
           "presupuesto_siguiente": 55
         },
@@ -179,6 +189,7 @@
           "presupuesto_b": 55,
           "dp_i_b": 32,
           "dp_i_1_b": 32,
+          "dp_acelerando_i": 32,
           "decision": "no acelerar",
           "presupuesto_siguiente": 55
         },
@@ -187,6 +198,7 @@
           "presupuesto_b": 55,
           "dp_i_b": 32,
           "dp_i_1_b": 31,
+          "dp_acelerando_i": 32,
           "decision": "acelerar",
           "presupuesto_siguiente": 46
         },
@@ -195,6 +207,7 @@
           "presupuesto_b": 46,
           "dp_i_b": 30,
           "dp_i_1_b": 29,
+          "dp_acelerando_i": 30,
           "decision": "acelerar",
           "presupuesto_siguiente": 41
         },
@@ -203,6 +216,7 @@
           "presupuesto_b": 41,
           "dp_i_b": 29,
           "dp_i_1_b": 27,
+          "dp_acelerando_i": 29,
           "decision": "acelerar",
           "presupuesto_siguiente": 34
         },
@@ -211,6 +225,7 @@
           "presupuesto_b": 34,
           "dp_i_b": 26,
           "dp_i_1_b": 25,
+          "dp_acelerando_i": 26,
           "decision": "acelerar",
           "presupuesto_siguiente": 29
         },
@@ -219,6 +234,7 @@
           "presupuesto_b": 29,
           "dp_i_b": 25,
           "dp_i_1_b": 23,
+          "dp_acelerando_i": 25,
           "decision": "acelerar",
           "presupuesto_siguiente": 26
         },
@@ -227,6 +243,7 @@
           "presupuesto_b": 26,
           "dp_i_b": 23,
           "dp_i_1_b": 18,
+          "dp_acelerando_i": 23,
           "decision": "acelerar",
           "presupuesto_siguiente": 17
         },
@@ -235,6 +252,7 @@
           "presupuesto_b": 17,
           "dp_i_b": 17,
           "dp_i_1_b": 10,
+          "dp_acelerando_i": 17,
           "decision": "acelerar",
           "presupuesto_siguiente": 14
         },
@@ -243,6 +261,7 @@
           "presupuesto_b": 14,
           "dp_i_b": 10,
           "dp_i_1_b": 9,
+          "dp_acelerando_i": 10,
           "decision": "acelerar",
           "presupuesto_siguiente": 10
         },
@@ -251,6 +270,7 @@
           "presupuesto_b": 10,
           "dp_i_b": 9,
           "dp_i_1_b": 8,
+          "dp_acelerando_i": 9,
           "decision": "acelerar",
           "presupuesto_siguiente": 7
         },
@@ -259,6 +279,7 @@
           "presupuesto_b": 7,
           "dp_i_b": 8,
           "dp_i_1_b": 7,
+          "dp_acelerando_i": 8,
           "decision": "acelerar",
           "presupuesto_siguiente": 4
         },
@@ -267,6 +288,7 @@
           "presupuesto_b": 4,
           "dp_i_b": 7,
           "dp_i_1_b": 6,
+          "dp_acelerando_i": 7,
           "decision": "acelerar",
           "presupuesto_siguiente": 3
         },
@@ -275,6 +297,7 @@
           "presupuesto_b": 3,
           "dp_i_b": 6,
           "dp_i_1_b": 6,
+          "dp_acelerando_i": null,
           "decision": "no acelerar",
           "presupuesto_siguiente": 3
         },
@@ -283,6 +306,7 @@
           "presupuesto_b": 3,
           "dp_i_b": 6,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": 6,
           "decision": "acelerar",
           "presupuesto_siguiente": 1
         },
@@ -291,6 +315,7 @@
           "presupuesto_b": 1,
           "dp_i_b": 0,
           "dp_i_1_b": 0,
+          "dp_acelerando_i": null,
           "decision": "no acelerar",
           "presupuesto_siguiente": 1
         }
@@ -1386,10 +1411,19 @@
     "cota": "G ≤ H_d · óptimo (Chvátal, 1979)",
     "H_d": 2.5928571428571425,
     "H_r": 2.9289682539682538,
-    "tiempo_s": 8.499999239575118e-06,
-    "tiempo_min_s": 8.099999831756577e-06,
-    "tiempo_max_s": 2.0600000425474718e-05,
+    "tiempo_s": 1.049999991664663e-05,
+    "tiempo_min_s": 9.60000033956021e-06,
+    "tiempo_max_s": 2.519999907235615e-05,
     "repeticiones": 7,
+    "tiempos_s": [
+      2.519999907235615e-05,
+      1.2700000297627412e-05,
+      1.049999991664663e-05,
+      1.0400000974186696e-05,
+      9.60000033956021e-06,
+      1.1400001312722452e-05,
+      9.700001101009548e-06
+    ],
     "factible": true,
     "resultado": {
       "interacciones_auditadas": [

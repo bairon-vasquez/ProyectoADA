@@ -45,6 +45,7 @@ pip install -r requirements.txt
 | Variante A1 | Voraz ponderado (menor a_j / nuevas) | `cobertura_voraz_ponderada` | O(n·r·min(n, r)) ⊆ O(n·r²) | ≤ H_d · óptimo |
 | Variante A1 | Exacto ponderado (referencia) | `cobertura_exacta_ponderada` | O(2^n·n·r) | Exacto |
 | Variante A1 | Exacto por máscaras de categorías (r pequeño, a lo sumo una opción por grupo) | `cobertura_exacta_mascaras` | O(n·2^r) | Exacto |
+| Variante C | Heurística de la ruta crítica sobre el flujo (acelera en la ruta crítica la etapa de mejor d_i/c_i) | `core/dag.py` · `dag_heuristica` | O(n·(n+m)) | Sin garantía; se contrasta con la Mochila (cadena) o el exacto (n ≤ 16) |
 | Variante B | Cobertura de costo mínimo a\* + Mochila con B − a\* | `core/combinado.py` · `combinado_cobertura_obligatoria_mascaras` | O(n·2^r + n·B) | Exacto |
 
 ### 3.1 Parte 1: programación dinámica
@@ -161,11 +162,11 @@ El lector reconoce automáticamente este formato por la presencia de la clave `e
 | cada elemento de `etapas[i].variaciones_auditoria` | una interacción de la Parte 2 (Variante A1): conjunto = `riesgos_cubiertos`, costo = `costo` (≥ 1). Se nombra «E01 parcial» |
 | `categorias_riesgo[k].id` / `importancia` | categoría k de U y su peso w_k (≥ 1) |
 | `parametros.presupuesto_conjunto_aceleracion_y_auditoria` | presupuesto de la Variante B (opcional; si falta, no se ejecuta la Variante B) |
-| `flujo` | solo se **valida**: debe ser una cadena en serie que recorre todas las etapas |
+| `flujo` | se valida como DAG (etapas existentes, sin ciclos, sin aristas repetidas ni autoaristas). Si es una **cadena en serie** se resuelve la Parte 1 (Mochila, exacta) y la heurística de la Variante C sirve de contraste; si tiene ramas, la Parte 1 y la Variante B se **omiten** (la duración es la ruta crítica) y se resuelve la Variante C |
 | `parametros.numero_etapas`, `numero_categorias_riesgo` | solo se verifican contra los tamaños reales de las listas |
 | `riesgos_cubiertos_auditoria_completa` | redundante con la variación `completa`: se ignora |
 
-Regla del modelo: de cada etapa se audita **a lo sumo una variación**. Los errores de este formato se reportan igual que en §5.1, por ejemplo `etapa repetida 'E01'`, `riesgo inexistente 'R99'`, `el flujo no es una cadena en serie`.
+Regla del modelo: de cada etapa se audita **a lo sumo una variación**. Los errores de este formato se reportan igual que en §5.1, por ejemplo `etapa repetida 'E01'`, `riesgo inexistente 'R99'`, `el flujo tiene un ciclo`.
 
 **Errores.** Si un caso no cumple el formato, el ejecutor se detiene con un mensaje que indica el caso y el campo, por ejemplo:
 
@@ -177,7 +178,7 @@ Una instancia de la Parte 2 que no se puede cubrir (alguna categoría no está e
 
 ### 5.2 Salida por caso
 
-Para cada caso se escriben tres cosas en la carpeta de salida (por defecto `experimentos/resultados/casos/`).
+Para cada caso se escriben cuatro archivos más un resumen común en la carpeta de salida (por defecto `experimentos/resultados/casos/`): `<id>.json`, `<id>_traza.md`, `<id>_dp.csv` y `<id>_tiempos.csv`, y al final `resumen_casos.csv`.
 
 **`<id>.json`**: resultado, tiempo y traza (lectura por programa). Estructura:
 
@@ -191,7 +192,8 @@ Para cada caso se escriben tres cosas en la carpeta de salida (por defecto `expe
     "complejidad", "celdas_dp",
     "tiempo_s", "tiempo_min_s", "tiempo_max_s", "repeticiones",
     "traza": { "etapas": [ {etapa, t, c, d, acelerada, t_final} ],
-               "reconstruccion": [ {etapa, presupuesto_b, dp_i_b, dp_i_1_b, decision, presupuesto_siguiente} ],
+               "reconstruccion": [ {etapa, presupuesto_b, dp_i_1_b (sin acelerar), dp_acelerando_i,
+                                    dp_i_b, decision, presupuesto_siguiente} ],
                "tabla_dp": [[..]]            (se omite si tiene más de 5000 celdas) },
     "verificacion": { "metodo", "reduccion_optima", "coincide" }   (fuerza bruta, solo si n ≤ 20)
   },
@@ -208,7 +210,14 @@ Para cada caso se escriben tres cosas en la carpeta de salida (por defecto `expe
                       "razon_voraz_sobre_optimo", "cumple_cota_Hd" }   (≤ 16 interacciones por fuerza bruta;
                                                                        con grupos y r ≤ 20, por máscaras)
   },
-  "variante_b": {                         (solo con presupuesto conjunto y las dos partes)
+  "variante_c": {                         (solo si el caso trae `flujo`)
+    "entrada": { "n", "m", "B", "es_cadena" },
+    "resultado": { "etapas_aceleradas", "costo_usado", "duracion_inicial", "duracion_final",
+                   "ruta_critica_inicial", "ruta_critica_final" },
+    "traza": { "pasos": [ {paso, etapa, ruta_critica_tras} ] },
+    "verificacion": { "metodo", "duracion_optima", "coincide" }   (Mochila si es cadena; exacto si n ≤ 16)
+  },
+  "variante_b": {                         (solo con presupuesto conjunto, las dos partes y flujo en cadena)
     "presupuesto_conjunto",
     "exacta": { "interacciones_auditadas", "costo_auditoria", "presupuesto_para_acelerar",
                 "etapas_aceleradas", "costo_total", "duracion_final", "reduccion", "tiempo_s", ... },
@@ -222,9 +231,13 @@ Para cada caso se escriben tres cosas en la carpeta de salida (por defecto `expe
 
 Con el formato del docente, `resultado` incluye además listas con los ids originales (`etapas_aceleradas_nombres`, `interacciones_auditadas_nombres`) y `una_variacion_por_etapa` (`cumple`, `etapas_repetidas`, `interacciones_reparadas`, `costo_reparado`).
 
-**`<id>_traza.md`**: la misma información en texto legible: etapas y costos, tabla DP completa (casos pequeños), tabla de reconstrucción paso a paso, y las elecciones del voraz.
+**`<id>_traza.md`**: la misma información en texto legible: etapas y costos, tabla DP completa (casos pequeños), tabla de reconstrucción paso a paso, y las elecciones del voraz; con flujo, la Variante C; con presupuesto conjunto, la Variante B.
 
-**`resumen_casos.csv`**: una fila por caso. Columnas: `caso, n_etapas, B, duracion_inicial, duracion_final, reduccion, costo_usado, etapas_aceleradas, tiempo_parte1_s, verif_parte1, interacciones, categorias, variante, tamano_cobertura, costo_cobertura, optimo, razon_voraz_optimo, tiempo_parte2_s, B_conjunto, duracion_b_exacta, duracion_b_voraz` (las tres últimas solo se llenan en los casos con Variante B).
+**`<id>_dp.csv`**: la tabla DP[i][b] completa (filas i = 0…n, columnas b = 0…B); se omite si tiene más de 5000 celdas.
+
+**`<id>_tiempos.csv`**: una fila por repetición de cada algoritmo medido (Mochila, voraz de cobertura, heurística del DAG y Variante B exacta), con las columnas de `medir.COLUMNAS` (`algoritmo, barrido, n, parametro, valor_parametro, repeticion, tiempo_s, valor_solucion, extra`); `barrido` lleva el id del caso.
+
+**`resumen_casos.csv`**: una fila por caso. Columnas: `caso, n_etapas, B, duracion_inicial, duracion_final, reduccion, costo_usado, etapas_aceleradas, tiempo_parte1_s, verif_parte1, interacciones, categorias, variante, tamano_cobertura, costo_cobertura, optimo, razon_voraz_optimo, tiempo_parte2_s, B_conjunto, duracion_b_exacta, duracion_b_voraz, duracion_variante_c` (`B_conjunto` y las dos `duracion_b_*` solo se llenan en los casos con Variante B; `duracion_variante_c`, en los que traen flujo).
 
 **Convenciones de la salida.** Etapas, interacciones y categorías en base 1 (en el formato del docente se muestran sus ids: E01, R01, «E12 completa»). Los tiempos son segundos (mediana de las repeticiones; se guardan también el mínimo y el máximo). `verif_parte1` vale `ok`, `omitida` (n > 20) o `FALLA` (no debería ocurrir).
 

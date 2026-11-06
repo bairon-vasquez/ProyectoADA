@@ -1,0 +1,15 @@
+algoritmo,barrido,n,parametro,valor_parametro,repeticion,tiempo_s,valor_solucion,extra
+mochila_dp,caso_04_costos_A1,16,B,60,1,0.000084300,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,2,0.000077800,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,3,0.000075300,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,4,0.000075600,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,5,0.000075700,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,6,0.000076100,67,0
+mochila_dp,caso_04_costos_A1,16,B,60,7,0.000075700,67,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,1,0.000025200,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,2,0.000012700,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,3,0.000010500,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,4,0.000010400,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,5,0.000009600,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,6,0.000011400,10,0
+cobertura_voraz_ponderada,caso_04_costos_A1,12,r,10,7,0.000009700,10,0

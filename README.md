@@ -29,7 +29,7 @@ python -m experimentos.correr_casos casos/entrada_G3_mochila_20_nodos.json   # c
 python -m experimentos.generar_casos                             # regenera los casos de ejemplo
 ```
 
-El lector acepta el formato propio y el del docente (detectado por la clave `etapas`): ids como E01 o R01, variaciones de auditoría y presupuesto conjunto (ejecuta también la Variante B). Salida en `experimentos/resultados/casos/`: `<id>.json`, `<id>_traza.md` y `resumen_casos.csv`. Informe y manual de la entrega: carpeta [entrega/](entrega/) (Markdown y Word; se regeneran con `python entrega/md_a_docx.py`, con Word cerrado).
+El lector acepta el formato propio y el del docente (detectado por la clave `etapas`): ids como E01 o R01, variaciones de auditoría, flujo (ejecuta la Variante C) y presupuesto conjunto (ejecuta la Variante B). Salida en `experimentos/resultados/casos/`: `<id>.json`, `<id>_traza.md`, `<id>_dp.csv`, `<id>_tiempos.csv` y `resumen_casos.csv`. Informe y manual de la entrega: carpeta [entrega/](entrega/) (Markdown y Word; se regeneran con `python entrega/md_a_docx.py`, con Word cerrado).
 
 ## Experimentos (Fase 5)
 

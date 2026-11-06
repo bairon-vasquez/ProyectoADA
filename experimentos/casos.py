@@ -28,7 +28,8 @@ Formato del docente (G3, se detecta por la clave ``etapas``)::
 
 Se convierte a las mismas instancias del núcleo así:
 - Parte 1: t_i = duracion_normal, c_i = costo_aceleracion, d_i = reduccion_tiempo_si_acelera, B = presupuesto_aceleracion_B.
-  ``flujo`` debe ser una cadena en serie que recorra todas las etapas.
+  ``flujo`` se valida como DAG; si es una cadena en serie la Mochila es exacta (Parte 1), y si no, la duración
+  es la ruta crítica y se resuelve la Variante C (``Caso.aristas``, ``Caso.es_cadena``).
 - Parte 2 (Variante A1): cada VARIACIÓN de auditoría de cada etapa es una interacción (S_j = riesgos_cubiertos,
   a_j = costo); las categorías son los riesgos y w_k = importancia. De cada etapa se audita como máximo
   UNA variación (``grupo_interaccion``). ``riesgos_cubiertos_auditoria_completa`` es redundante y se ignora.
@@ -68,6 +69,8 @@ class Caso:
     nombres_categorias: tuple[str, ...] = ()
     grupo_interaccion: tuple[int, ...] = ()  # etapa (0-based) de cada interacción; de cada grupo, a lo sumo una
     presupuesto_conjunto: int | None = None  # B de la Variante B (aceleración + auditoría)
+    aristas: tuple[tuple[int, int], ...] = ()  # precedencias del flujo (0-based); vacío si el caso no trae flujo
+    es_cadena: bool = True  # False si el flujo es un DAG general (entonces aplica la Variante C, no la Mochila)
 
 
 def _entero(valor, campo: str, minimo: int = 0) -> int:
@@ -141,34 +144,48 @@ def _requerir(d: dict, claves: tuple[str, ...], donde: str) -> None:
             raise CasoInvalido(f"{donde}: falta el campo '{clave}'")
 
 
-def _validar_cadena(ids: list[str], flujo, id_caso: str) -> None:
-    """``flujo`` debe ser una cadena en serie que recorre las n etapas (Parte 1 es una cadena)."""
+def _leer_flujo(ids: list[str], flujo, id_caso: str) -> tuple[tuple[tuple[int, int], ...], bool]:
+    """Valida ``flujo`` como DAG de las etapas y devuelve (aristas 0-based, ¿es una cadena en serie?).
+
+    Una cadena es un DAG con n−1 aristas donde cada etapa tiene a lo sumo un sucesor y un predecesor:
+    ahí la duración es Σt − Σd y la Parte 1 (Mochila) es exacta. Si no lo es, la duración es la de la ruta
+    crítica y el problema es la Variante C.
+    """
     if not isinstance(flujo, list):
         raise CasoInvalido(f"{id_caso}: 'flujo' debe ser una lista de aristas")
-    sucesor: dict[str, str] = {}
-    con_entrada: set[str] = set()
+    indice = {e: i for i, e in enumerate(ids)}
+    aristas: list[tuple[int, int]] = []
     for k, a in enumerate(flujo, start=1):
         a = _objeto(a, f"{id_caso}: flujo[{k}]")
         _requerir(a, ("origen", "destino"), f"{id_caso}: flujo[{k}]")
-        u, v = a["origen"], a["destino"]
-        for x in (u, v):
-            if x not in ids:
+        for x in (a["origen"], a["destino"]):
+            if x not in indice:
                 raise CasoInvalido(f"{id_caso}: flujo[{k}] nombra una etapa inexistente ({x!r})")
-        if u in sucesor or v in con_entrada or u == v:
-            raise CasoInvalido(f"{id_caso}: el flujo no es una cadena en serie (arista {u}→{v} repetida o ramificada)")
-        sucesor[u] = v
-        con_entrada.add(v)
-    if len(flujo) != len(ids) - 1:
-        raise CasoInvalido(f"{id_caso}: el flujo tiene {len(flujo)} aristas y una cadena de {len(ids)} etapas necesita {len(ids) - 1}")
-    inicio = [e for e in ids if e not in con_entrada]
-    if len(inicio) != 1:
-        raise CasoInvalido(f"{id_caso}: el flujo no es una cadena en serie (hay un ciclo o varias cadenas)")
-    visitadas, actual = 0, inicio[0]
-    while actual is not None:  # recorre la cadena: n pasos
-        visitadas += 1
-        actual = sucesor.get(actual)
-    if visitadas != len(ids):
-        raise CasoInvalido(f"{id_caso}: el flujo no recorre todas las etapas en serie")
+        u, v = indice[a["origen"]], indice[a["destino"]]
+        if u == v:
+            raise CasoInvalido(f"{id_caso}: flujo[{k}]: la etapa {a['origen']} no puede preceder a sí misma")
+        if (u, v) in aristas:
+            raise CasoInvalido(f"{id_caso}: flujo[{k}]: arista repetida {a['origen']}→{a['destino']}")
+        aristas.append((u, v))
+    n = len(ids)
+    grado_entrada, sucesores = [0] * n, [[] for _ in range(n)]
+    for u, v in aristas:
+        grado_entrada[v] += 1
+        sucesores[u].append(v)
+    pendientes, vistas = [i for i in range(n) if grado_entrada[i] == 0], 0
+    entrada = grado_entrada[:]
+    while pendientes:  # Kahn: si no se procesan las n etapas, hay un ciclo. O(n + m)
+        u = pendientes.pop()
+        vistas += 1
+        for v in sucesores[u]:
+            entrada[v] -= 1
+            if entrada[v] == 0:
+                pendientes.append(v)
+    if vistas != n:
+        raise CasoInvalido(f"{id_caso}: el flujo tiene un ciclo; debe ser un grafo acíclico")
+    es_cadena = (len(aristas) == n - 1 and max(grado_entrada, default=0) <= 1
+                 and max((len(s) for s in sucesores), default=0) <= 1)
+    return tuple(aristas), es_cadena
 
 
 def _formato_docente(datos: dict, id_caso: str) -> Caso:
@@ -235,8 +252,7 @@ def _formato_docente(datos: dict, id_caso: str) -> Caso:
             costos.append(_entero(v["costo"], f"{eid} {vid}.costo", 1))
             nombres_int.append(f"{eid} {vid}")
             grupos.append(i)
-    if "flujo" in datos:
-        _validar_cadena(ids, datos["flujo"], id_caso)
+    aristas, es_cadena = _leer_flujo(ids, datos["flujo"], id_caso) if "flujo" in datos else ((), True)
 
     mochila = InstanciaMochila(t=tuple(t), c=tuple(c), d=tuple(dd), B=B)
     cobertura = None
@@ -245,7 +261,7 @@ def _formato_docente(datos: dict, id_caso: str) -> Caso:
     return Caso(id=id_caso, descripcion=str(datos.get("descripcion", "")), mochila=mochila, cobertura=cobertura,
                 ponderado=True, nombres_etapas=tuple(ids), nombres_interacciones=tuple(nombres_int),
                 nombres_categorias=tuple(str(cat["id"]) for cat in categorias), grupo_interaccion=tuple(grupos),
-                presupuesto_conjunto=conjunto)
+                presupuesto_conjunto=conjunto, aristas=aristas, es_cadena=es_cadena)
 
 
 def parsear_caso(datos: dict, nombre_por_defecto: str = "caso") -> Caso:

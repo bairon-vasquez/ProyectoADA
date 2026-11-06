@@ -1,0 +1,15 @@
+algoritmo,barrido,n,parametro,valor_parametro,repeticion,tiempo_s,valor_solucion,extra
+mochila_dp,caso_01_etapa0,4,B,6,1,0.000013700,18,0
+mochila_dp,caso_01_etapa0,4,B,6,2,0.000007500,18,0
+mochila_dp,caso_01_etapa0,4,B,6,3,0.000013000,18,0
+mochila_dp,caso_01_etapa0,4,B,6,4,0.000004400,18,0
+mochila_dp,caso_01_etapa0,4,B,6,5,0.000004300,18,0
+mochila_dp,caso_01_etapa0,4,B,6,6,0.000004300,18,0
+mochila_dp,caso_01_etapa0,4,B,6,7,0.000005300,18,0
+cobertura_voraz,caso_01_etapa0,5,r,5,1,0.000013800,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,2,0.000005700,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,3,0.000003400,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,4,0.000002800,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,5,0.000002600,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,6,0.000002700,2,0
+cobertura_voraz,caso_01_etapa0,5,r,5,7,0.000003500,2,0

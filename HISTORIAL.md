@@ -155,3 +155,18 @@ Bitácora de lo que se hizo en cada prompt/fase. Se agrega una entrada nueva al 
 - `tests/test_formato_docente.py`: 68 tests (máscaras contra fuerza bruta con y sin grupos, lector, validaciones, resultado del caso real, reparación). **394 tests pasan.**
 
 **Pendiente:** cerrar Word y regenerar los `.docx` (`python entrega/md_a_docx.py`; estaban abiertos y el sistema bloquea la escritura); confirmar con el docente la interpretación de las variaciones; nombres de integrantes; revisar citas (Feige, Dinur–Steurer, Lovász); commit y push.
+
+*(Después: `.docx` regenerados y nombres Bairon Vasquez · Sergio Velasquez en el informe y el manual.)*
+
+---
+
+## Prompts 18-20 — Entrega, rama del compañero y merge
+
+**Pedido:** listar qué lleva la primera entrega y qué falta para la final; traer la rama `caso-profesora-g3` de Sergio, estudiarla y fusionarla a `main` **sin duplicar código ni clases**.
+
+**Estudio de la rama:** un commit sobre `main` (lector `cargar_caso.py`, ejecutor `correr_caso.py`, `cobertura_exacta_dp`, `combinado_cobertura_obligatoria_dp`, 6 tests). Resultados idénticos a los nuestros (446; a\* = 24; Variante B 443 frente a 444). Duplicaba el lector, el ejecutor y el exacto por máscaras.
+
+**Merge (commit de nuestro trabajo `a69aa04` + merge de la rama):**
+- Se conservó nuestra versión de `core/set_cover.py`, `core/combinado.py`, `CLAUDE.md`, el caso y la traza (admiten grupos «una variación por etapa» y tienen más tests). Se descartaron `cargar_caso.py`, `correr_caso.py`, `cobertura_exacta_dp`, `combinado_cobertura_obligatoria_dp` y `test_caso_profesora.py`.
+- Se integró lo único nuevo que aportaba, dentro de nuestros módulos: **Variante C** sobre el flujo del caso (`resolver_variante_c`; el flujo se lee como DAG y los flujos con ramas omiten la Mochila), **`<id>_dp.csv`** y **`<id>_tiempos.csv`** (formato `medir.COLUMNAS`), y las **dos opciones de la recurrencia** (sin acelerar / acelerando) en la traza de la DP.
+- Tests: 414 pasan (20 nuevos: Variante C en cadena y en diamante, CSV de DP y tiempos, columnas de la recurrencia, Variante B por máscaras contra la enumeración, errores de flujo).

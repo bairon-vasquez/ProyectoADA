@@ -271,7 +271,7 @@ Es decir, el voraz es una (ln r + 1)-aproximación (Johnson, 1974; Chvátal, 197
     python -m experimentos.correr_casos              # todos los casos de casos/
     python -m experimentos.correr_casos casos/caso_01_etapa0.json
 
-Por cada caso se escribe, en `experimentos/resultados/casos/`: `<id>.json` (resultado, tiempo y traza), `<id>_traza.md` (la traza en texto legible) y, al final, `resumen_casos.csv`. El formato de los casos y de las salidas está descrito en el Manual técnico.
+Por cada caso se escribe, en `experimentos/resultados/casos/`: `<id>.json` (resultado, tiempo y traza), `<id>_traza.md` (la traza en texto legible), `<id>_dp.csv` (tabla DP), `<id>_tiempos.csv` (tiempo por repetición) y, al final, `resumen_casos.csv`. El formato de los casos y de las salidas está descrito en el Manual técnico.
 
 ### 7.3 Resultados
 
@@ -339,7 +339,7 @@ El archivo del docente describe 20 etapas en serie (E01…E20), 12 categorías d
 | cada **variación** de auditoría de cada etapa (35 en total) | una interacción j: S_j = riesgos que cubre, a_j = su costo |
 | `categorias_riesgo` (12) | U = {1..12}; `importancia` = peso w_k |
 | `presupuesto_conjunto_aceleracion_y_auditoria` = 100 | presupuesto B de la Variante B |
-| `flujo` | se valida que sea la cadena en serie E01→…→E20 |
+| `flujo` | se valida como DAG (etapas existentes, sin ciclos ni aristas repetidas); al ser la cadena E01→…→E20, la Mochila es exacta y la heurística de la Variante C sirve de contraste |
 
 Dos observaciones sobre el modelo. Primero, como las variaciones traen costo, la Parte 2 es la **Variante A1** (cobertura ponderada, cota H_d, Chvátal 1979), con d = 4 y H_4 = 2,08. Segundo, de cada etapa se audita **a lo sumo una variación** (no tiene sentido pagar `parcial` y `completa` de la misma etapa); el ejecutor comprueba esa regla sobre la elección del voraz y, si la viola, la repara conservando la variación que cubre la unión.
 
@@ -347,9 +347,10 @@ Dos observaciones sobre el modelo. Primero, como las variaciones traen costo, la
 
 - **Parte 1.** Se aceleran E02, E03, E04, E06, E08 y E12 con costo 72 de 72: la duración baja de 501 a **446** (reducción 55). La fuerza bruta sobre 2²⁰ subconjuntos da la misma reducción.
 - **Parte 2.** El voraz audita {E01 parcial, E12 completa, E13 completa, E11 completa, E18 parcial} con costo **25** y cubre las 12 categorías. El óptimo es **24** (calculado con la DP sobre máscaras, ver §6.4 y `docs/03`; se confirmó además por enumeración de todas las selecciones de hasta 7 opciones). La razón 25/24 = 1,04 respeta la cota H_4 = 2,08. El voraz **no es óptimo**, pero se queda a una unidad.
+- **Contraste con la Variante C.** La heurística de la ruta crítica, ejecutada sobre el flujo del archivo (20 etapas, 19 precedencias), acelera las mismas etapas {E02, E03, E04, E06, E08, E12} y también llega a **446**. Es lo esperado: en una cadena todas las etapas están siempre en la ruta crítica, así que acelerar una reduce la duración en su d_i completo y el problema es la Mochila. Si el flujo tuviera ramas, la Mochila dejaría de aplicar y el ejecutor la omite y resuelve solo la Variante C.
 - **Variante B (presupuesto conjunto 100).** La auditoría debe cubrir todo y lo que sobra se usa para acelerar. La solución exacta toma la cobertura de costo mínimo a\* = 24 y resuelve la DP con 100 − 24 = 76: acelera E03, E04, E06, E08, E12 y E16 y la duración final es **443** (reducción 58). Con la cobertura del voraz (a = 25) quedan 75 para acelerar y la duración es **444** (reducción 57). Se pierde **1 unidad de tiempo** por el exceso de una unidad en la auditoría, que es lo que predice el análisis: el exceso de costo de la cobertura voraz resta presupuesto a la Mochila, y esa pérdida está acotada porque la última fila de la tabla DP ya contiene la mejor reducción para cada presupuesto posible.
 
-La salida completa, con la traza paso a paso y los ids originales (E01, R01, «E12 completa»), está en `experimentos/resultados/casos/entrada_G3_mochila_20_nodos_traza.md`.
+La salida completa, con la traza paso a paso y los ids originales (E01, R01, «E12 completa»), está en `experimentos/resultados/casos/entrada_G3_mochila_20_nodos_traza.md`. Junto a ella se guardan la tabla DP completa (`_dp.csv`, 21 × 73 celdas) y el tiempo de cada repetición (`_tiempos.csv`). En la reconstrucción de la DP, cada paso muestra las dos opciones que compara la recurrencia (no acelerar: DP[i−1][b]; acelerar: DP[i−1][b−c_i] + d_i) y cuál gana.
 
 ### 7.6 Validación experimental: tiempo medido frente a T(n)
 

@@ -7,7 +7,7 @@ Parte 2 con la trampa clásica: el voraz elige primero el conjunto más grande y
 - Entrada: n = 8 etapas, presupuesto B = 20.
 - **Etapas aceleradas: {1, 2, 3, 5}** · costo 18 / 20
 - Duración: 59 → **36** (reducción 23).
-- Tiempo: **0.000013 s** (mediana de 7 repeticiones; mín 0.000013, máx 0.000019). T(n, B) = O(n·B), pseudo-polinomial; 189 celdas.
+- Tiempo: **0.000018 s** (mediana de 7 repeticiones; mín 0.000017, máx 0.000023). T(n, B) = O(n·B), pseudo-polinomial; 189 celdas.
 
 - Verificación con fuerza bruta (2^n): reducción óptima 23 ✔ coincide
 
@@ -40,16 +40,18 @@ Parte 2 con la trampa clásica: el voraz elige primero el conjunto más grande y
 
 ### Reconstrucción (de DP[n][B] hacia atrás)
 
-| etapa i | b | DP[i][b] | DP[i−1][b] | decisión | b siguiente |
-|---|---|---|---|---|---|
-| 8 | 20 | 23 | 23 | no acelerar | 20 |
-| 7 | 20 | 23 | 23 | no acelerar | 20 |
-| 6 | 20 | 23 | 23 | no acelerar | 20 |
-| 5 | 20 | 23 | 15 | acelerar | 15 |
-| 4 | 15 | 15 | 15 | no acelerar | 15 |
-| 3 | 15 | 15 | 13 | acelerar | 13 |
-| 2 | 13 | 13 | 6 | acelerar | 10 |
-| 1 | 10 | 6 | 0 | acelerar | 2 |
+Se compara no acelerar la etapa i (DP[i−1][b]) con acelerarla (DP[i−1][b−c_i] + d_i, solo si c_i ≤ b) y se queda el mayor:
+
+| etapa i | b | sin acelerar: DP[i−1][b] | acelerando: DP[i−1][b−c_i]+d_i | DP[i][b] | decisión | b siguiente |
+|---|---|---|---|---|---|---|
+| 8 | 20 | 23 | 23 | 23 | no acelerar | 20 |
+| 7 | 20 | 23 | 23 | 23 | no acelerar | 20 |
+| 6 | 20 | 23 | 22 | 23 | no acelerar | 20 |
+| 5 | 20 | 15 | 23 | 23 | acelerar | 15 |
+| 4 | 15 | 15 | 9 | 15 | no acelerar | 15 |
+| 3 | 15 | 13 | 15 | 15 | acelerar | 13 |
+| 2 | 13 | 6 | 13 | 13 | acelerar | 10 |
+| 1 | 10 | 0 | 6 | 6 | acelerar | 2 |
 
 ## Parte 2 — Cobertura de auditoría (Parte 2)
 
