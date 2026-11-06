@@ -18,6 +18,19 @@ pip install -r requirements.txt
 pytest
 ```
 
+## Ejecutar casos (primera entrega)
+
+Cada caso es un JSON (formato y salidas en [entrega/Manual_Tecnico.md](entrega/Manual_Tecnico.md)); por caso se obtienen resultado, tiempo y traza:
+
+```bash
+python -m experimentos.correr_casos                              # todos los casos de casos/
+python -m experimentos.correr_casos casos/caso_01_etapa0.json    # uno solo
+python -m experimentos.correr_casos casos/entrada_G3_mochila_20_nodos.json   # caso del docente
+python -m experimentos.generar_casos                             # regenera los casos de ejemplo
+```
+
+El lector acepta el formato propio y el del docente (detectado por la clave `etapas`): ids como E01 o R01, variaciones de auditoría y presupuesto conjunto (ejecuta también la Variante B). Salida en `experimentos/resultados/casos/`: `<id>.json`, `<id>_traza.md` y `resumen_casos.csv`. Informe y manual de la entrega: carpeta [entrega/](entrega/) (Markdown y Word; se regeneran con `python entrega/md_a_docx.py`, con Word cerrado).
+
 ## Experimentos (Fase 5)
 
 Cada `experimentos/correr_*.py` escribe sus CSV en `experimentos/resultados/` (mochila, set_cover, dag, combinado y razones heurística/óptimo):

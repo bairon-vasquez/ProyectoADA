@@ -2,7 +2,23 @@
 
 Documento de estudio para la sustentación. Reúne, fase por fase, **qué se hizo, cómo correrlo, qué ideas hay que saber defender, qué decisiones se tomaron y qué conviene revisar**. La bitácora cronológica de cada interacción está en [HISTORIAL.md](HISTORIAL.md); el contexto y las convenciones, en [CLAUDE.md](CLAUDE.md).
 
-**Estado:** las 7 fases están completas. La suite tiene **303 tests** y pasan todos.
+**Estado:** las 7 fases están completas. La suite tiene **394 tests** y pasan todos.
+
+---
+
+## Primera entrega (grupo G3 · Ruta)
+
+Requisitos de la guía del curso y dónde está cada uno:
+
+| Requisito | Dónde |
+|---|---|
+| Informe único: formalización + NP-dureza | [entrega/Informe_Primera_Entrega.md](entrega/Informe_Primera_Entrega.md) (y `.docx`) |
+| Reducciones G3: Mochila 0/1 y Cobertura de Vértices | Informe §4 y §5; detalle en [docs/02_reducciones.md](docs/02_reducciones.md) |
+| Justificación de complejidad | Informe §6; detalle en [docs/03_eficiencia_exactos.md](docs/03_eficiencia_exactos.md) |
+| Repositorio, dependencias, README | Raíz del repositorio |
+| Manual técnico (algoritmo, estructura, formatos E/S, ejecución, limitaciones) | [entrega/Manual_Tecnico.md](entrega/Manual_Tecnico.md) (y `.docx`) |
+| Resultados, tiempo y traza por caso | `python -m experimentos.correr_casos` → `experimentos/resultados/casos/` |
+| Casos de la profesora | **Pendientes de recibir**; ver Manual §6.2 |
 
 ---
 
@@ -70,7 +86,7 @@ ProyectoADA/
 │   ├── 03_eficiencia_exactos.md        deducción de T(n)
 │   ├── 04_aproximaciones.md            cotas y límites de las heurísticas
 │   └── 05_validacion_experimental.md   diseño y análisis experimental
-└── tests/                pytest (303 tests)
+└── tests/                pytest (394 tests)
 ```
 
 **Regla de las tres capas:** `core/` no imprime ni grafica; los tiempos solo se miden en `experimentos/`; `visualizacion/` solo lee. Así, lo que se mide es exactamente el código que se analiza.

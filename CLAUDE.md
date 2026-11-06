@@ -43,6 +43,12 @@ Todos los valores son enteros no negativos. Instancias sintéticas con semilla f
 - Gráficas: paleta de referencia validada (slots 1-3, todos los pares), trazos finos, rejilla recesiva, leyenda siempre, PNG en `figuras/`.
 - App (Fase 7): `visualizacion/app.py` + `dibujos.py`; tema claro en `.streamlit/config.toml`. Usa `core` solo para mostrar resultados y lee los CSV; no mide. Tope de tamaños en la UI para que el exacto sea instantáneo (Mochila n ≤ 10, Set Cover n ≤ 12, DAG n ≤ 11, Combinado N ≤ 10). `tests/test_app.py` usa `streamlit.testing.v1.AppTest`.
 
+- Primera entrega (guía `docs/Guia_Primera_Entrega_ADAG_2026B_Resumen.docx`, grupo G3 · Ruta, 2 integrantes: la variante 1 por costo no es obligatoria, pero ya está hecha como A1). Exige informe único, repositorio, manual técnico y ejecutar con los casos de la profesora, con resultado, tiempo y traza por caso.
+- Casos: JSON en `casos/` (índices base 1; `parte1` y `parte2` opcionales; `costos` activa A1). Lector con validación en `experimentos/casos.py`; ejecutor en `experimentos/correr_casos.py` (salida en `experimentos/resultados/casos/`). El I/O vive en `experimentos/`, nunca en `core/`. Los casos de la profesora aún no se han recibido: si su formato difiere, se adapta solo el lector.
+- Enunciado oficial: `docs/Proyecto-2026B.pdf` (Subproyecto 3). Fija: Variante B = cobertura obligatoria (a\* + DP con B − a\*), voraz O(n·r·min(n, r)) con factibilidad previa en O(n·r), De et al. (1997) para la NP-dureza fuerte de la Variante C, sustentación 45 %. Esto resuelve las preguntas abiertas (A1, cobertura obligatoria, Vertex Cover).
+- Formato del docente (`casos/entrada_G3_mochila_20_nodos.json`, detectado por la clave `etapas`): cada variación de auditoría de cada etapa es una interacción (A1), de cada etapa se audita a lo sumo una (`Caso.grupo_interaccion`), `importancia` = w_k, `presupuesto_conjunto_...` activa la Variante B. `cobertura_exacta_mascaras` (O(n·2^r)) da el óptimo cuando n es grande y r chico. Los ids originales se conservan en la salida. La conversión vive solo en `experimentos/casos.py`.
+- Entregables en `entrega/`: `Informe_Primera_Entrega.md`, `Manual_Tecnico.md` y sus `.docx` (generados con `entrega/md_a_docx.py`, sin pandoc). Si se cambia un `.md`, regenerar el `.docx`.
+
 ## Preguntas abiertas para el docente (de la Etapa 0)
 
 - Variante ponderada: ¿A1 (costos por interacción) o A2 (pesos por categoría con límite de auditorías)? Se implementa A1.

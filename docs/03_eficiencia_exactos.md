@@ -91,11 +91,12 @@ Código de referencia: [core/set_cover.py](../core/set_cover.py).
 - T se expresa como **T(n, r)**. Cada S_j se guarda como conjunto de a lo sumo r categorías, y se usa un arreglo de booleanos `cubierta[0..r−1]` con acceso O(1).
 - Operación elemental (costo 1): comparación, suma, asignación o acceso a arreglo/conjunto.
 
-### 2. Voraz: T(n, r) = O(n · r²)
+### 2. Voraz: T(n, r) = O(n · r · min(n, r)) ⊆ O(n · r²)
 
 ```
+paso 0: unión ← ∪ S_j ; si unión ≠ U → «sin solución»   O(Σ|S_j|) ⊆ O(n·r)
 cubierta ← [falso]*r ; n_cubiertas ← 0                  O(r)
-mientras n_cubiertas < r:                               ≤ r iteraciones
+mientras n_cubiertas < r:                               ≤ min(n, r) iteraciones
     mejor_nuevas ← 0
     para j = 1 … n:                                     n iteraciones
         nuevas ← 0
@@ -108,11 +109,11 @@ mientras n_cubiertas < r:                               ≤ r iteraciones
 
 1. **Contar las nuevas de un S_j:** a lo sumo r iteraciones de ≤ 2 operaciones ⇒ ≤ 2r.
 2. **Una ronda:** n conjuntos × (2r + 1) + marcar (≤ 2r) ⇒ ≤ 2nr + n + 2r = **O(n·r)**.
-3. **Número de rondas:** cada ronda cubre **al menos una** categoría nueva (si no, la instancia es infactible y se aborta), por lo que hay **a lo sumo r rondas**.
+3. **Número de rondas:** cada ronda cubre **al menos una** categoría nueva (el paso 0 garantiza que siempre existe una), y un conjunto ya elegido no aporta categorías nuevas, así que cada ronda elige un conjunto distinto. Por tanto hay **a lo sumo min(n, r) rondas**.
 
-$$T(n,r) \le O(r) + r\,(2nr + n + 2r) = O(n\,r^2)$$
+$$T(n,r) \le O(n\,r) + O(r) + \min(n,r)\,(2nr + n + 2r) = O\big(n\,r\,\min(n,r)\big) \subseteq O(n\,r^2)$$
 
-Además, el conteo de rondas es exactamente k = |solución voraz| ≤ r, de modo que T = Θ(k·n·r̄) donde r̄ es el tamaño medio de los S_j. En la cota general, con k ≤ r y |S_j| ≤ r, es O(n·r²). Espacio: O(n·r) por la entrada, O(r) adicional.
+Además, el conteo de rondas es exactamente k = |solución voraz| ≤ min(n, r), de modo que T = Θ(k·n·r̄) donde r̄ es el tamaño medio de los S_j. En la cota general, con k ≤ min(n, r) y |S_j| ≤ r, es O(n·r·min(n,r)) ⊆ O(n·r²). Espacio: O(n·r) por la entrada, O(r) adicional.
 
 *(Con una representación en máscaras de bits o contadores de actualización incremental se baja a O(Σ|S_j|·…), pero el código del proyecto usa ciclos explícitos para que el conteo corresponda al código.)*
 
@@ -138,7 +139,7 @@ Observaciones útiles para la sustentación:
 
 | Algoritmo | Tiempo | Calidad |
 |---|---|---|
-| Voraz | O(n·r²) | ≤ H_r · óptimo ([04_aproximaciones.md](04_aproximaciones.md)) |
+| Voraz | O(n·r·min(n, r)) ⊆ O(n·r²) | ≤ H_r · óptimo ([04_aproximaciones.md](04_aproximaciones.md)) |
 | Exacto (fuerza bruta) | O(2^n · n · r) | Óptimo |
 
 ## Variante A1 — Set Cover con costos
@@ -154,6 +155,16 @@ $$T(n,r) = O(r) + r\,(n\cdot O(r) + O(r)) = O(n\,r^2)$$
 **Exacto ponderado.** Se enumeran las 2^n máscaras. Por máscara: inicializar `cubierta` O(r), y para cada j en la máscara recorrer S_j (≤ r) ⇒ O(n·r). Total:
 
 $$T(n,r) = O(2^n\cdot n\cdot r)$$
+
+**Exacto ponderado por máscaras de categorías** (`cobertura_exacta_mascaras`). Cuando r es pequeño y n grande, 2^n es inviable pero 2^r no. Sea `dp[M]` el menor costo de una selección cuya unión es exactamente la máscara M ⊆ U (r bits); `dp[0] = 0`. Para cada opción j se recorre M = 0 … 2^r − 1 y se relaja `dp[M | S_j] ← min(dp[M | S_j], dp[M] + a_j)` en O(1). Si las opciones vienen en grupos (a lo sumo una por grupo, p. ej. una variación de auditoría por etapa), cada grupo se procesa con la fila anterior de `dp` como entrada, de modo que dos opciones del mismo grupo nunca se combinan. Conteo:
+
+- Máscaras de las opciones: O(n·r). Agrupar: O(n).
+- Por opción: 2^r iteraciones de O(1) ⇒ n · 2^r en total; por grupo, copiar `dp`: G · 2^r con G ≤ n.
+- Reconstrucción: G pasos hacia atrás, O(G).
+
+$$T(n,r) = O(n\cdot 2^r),\qquad \text{espacio } O(G\cdot 2^r)$$
+
+Es exponencial en r, no en n: no contradice la NP-dureza (el problema sigue siendo exponencial en general), pero con r = 12 son 4096 máscaras. Se usa para obtener el óptimo de la Parte 2 y la cobertura de costo mínimo a\* de la Variante B en el caso del docente (n = 35 opciones, r = 12), donde la fuerza bruta 2^35 no es viable. Se contrasta con la fuerza bruta en `tests/test_formato_docente.py`.
 
 Aquí no se puede parar en el primer tamaño que cubre (como en la Parte 2): un conjunto más grande puede costar menos, así que hay que mirar todas las máscaras.
 

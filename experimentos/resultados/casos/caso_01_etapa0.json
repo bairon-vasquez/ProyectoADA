@@ -1,0 +1,222 @@
+{
+  "id": "caso_01_etapa0",
+  "descripcion": "Ejemplo de la Etapa 0: óptimo de la Parte 1 = {2, 3} (duración 23 → 18); óptimo de la Parte 2 = {1, 4}.",
+  "parte1": {
+    "entrada": {
+      "n": 4,
+      "B": 6
+    },
+    "resultado": {
+      "etapas_aceleradas": [
+        2,
+        3
+      ],
+      "costo_usado": 6,
+      "presupuesto": 6,
+      "reduccion": 5,
+      "duracion_inicial": 23,
+      "duracion_final": 18
+    },
+    "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
+    "celdas_dp": 35,
+    "tiempo_s": 5.199999577598646e-06,
+    "tiempo_min_s": 3.6999990697950125e-06,
+    "tiempo_max_s": 1.349999729427509e-05,
+    "repeticiones": 7,
+    "traza": {
+      "etapas": [
+        {
+          "etapa": 1,
+          "t": 5,
+          "c": 3,
+          "d": 2,
+          "acelerada": false,
+          "t_final": 5
+        },
+        {
+          "etapa": 2,
+          "t": 8,
+          "c": 4,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 3,
+          "t": 6,
+          "c": 2,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 4,
+          "t": 4,
+          "c": 3,
+          "d": 2,
+          "acelerada": false,
+          "t_final": 4
+        }
+      ],
+      "reconstruccion": [
+        {
+          "etapa": 4,
+          "presupuesto_b": 6,
+          "dp_i_b": 5,
+          "dp_i_1_b": 5,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 6
+        },
+        {
+          "etapa": 3,
+          "presupuesto_b": 6,
+          "dp_i_b": 5,
+          "dp_i_1_b": 4,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 4
+        },
+        {
+          "etapa": 2,
+          "presupuesto_b": 4,
+          "dp_i_b": 4,
+          "dp_i_1_b": 2,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 0
+        },
+        {
+          "etapa": 1,
+          "presupuesto_b": 0,
+          "dp_i_b": 0,
+          "dp_i_1_b": 0,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 0
+        }
+      ],
+      "tabla_dp": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          4,
+          4,
+          4
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          4,
+          4,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          4,
+          4,
+          5
+        ]
+      ]
+    },
+    "verificacion": {
+      "metodo": "fuerza bruta (2^n)",
+      "reduccion_optima": 5,
+      "coincide": true
+    }
+  },
+  "parte2": {
+    "entrada": {
+      "interacciones": 5,
+      "categorias": 5,
+      "variante": "Parte 2",
+      "d": 3
+    },
+    "complejidad": "T(n, r) = O(n·r²)",
+    "cota": "G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979)",
+    "H_d": 1.8333333333333333,
+    "H_r": 2.283333333333333,
+    "tiempo_s": 3.0000010156072676e-06,
+    "tiempo_min_s": 2.3000029614195228e-06,
+    "tiempo_max_s": 8.700000762473792e-06,
+    "repeticiones": 7,
+    "factible": true,
+    "resultado": {
+      "interacciones_auditadas": [
+        1,
+        4
+      ],
+      "orden_de_eleccion": [
+        1,
+        4
+      ],
+      "cantidad": 2,
+      "costo_total": 2,
+      "categorias_cubiertas": 5,
+      "categorias_totales": 5,
+      "cobertura_completa": true
+    },
+    "traza": {
+      "pasos": [
+        {
+          "paso": 1,
+          "interaccion": 1,
+          "categorias_nuevas": [
+            1,
+            2,
+            3
+          ],
+          "n_nuevas": 3,
+          "costo_a": 1,
+          "costo_acumulado": 1,
+          "categorias_cubiertas": 3,
+          "categorias_pendientes": 2
+        },
+        {
+          "paso": 2,
+          "interaccion": 4,
+          "categorias_nuevas": [
+            4,
+            5
+          ],
+          "n_nuevas": 2,
+          "costo_a": 1,
+          "costo_acumulado": 2,
+          "categorias_cubiertas": 5,
+          "categorias_pendientes": 0
+        }
+      ]
+    },
+    "verificacion": {
+      "metodo": "exacto por fuerza bruta",
+      "optimo": 2,
+      "optimo_interacciones": [
+        1,
+        4
+      ],
+      "razon_voraz_sobre_optimo": 1.0,
+      "cumple_cota_Hd": true
+    }
+  }
+}

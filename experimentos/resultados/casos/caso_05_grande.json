@@ -1,0 +1,5354 @@
+{
+  "id": "caso_05_grande",
+  "descripcion": "Tamaño grande (n = 300, B = 1500; 200 interacciones, 80 categorías): muestra tiempos; sin verificación exacta.",
+  "parte1": {
+    "entrada": {
+      "n": 300,
+      "B": 1500
+    },
+    "resultado": {
+      "etapas_aceleradas": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        85,
+        86,
+        87,
+        90,
+        92,
+        93,
+        94,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        165,
+        167,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        190,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        224,
+        225,
+        226,
+        227,
+        230,
+        231,
+        232,
+        233,
+        234,
+        236,
+        237,
+        238,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        262,
+        263,
+        264,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        288,
+        289,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "costo_usado": 1421,
+      "presupuesto": 1500,
+      "reduccion": 1580,
+      "duracion_inicial": 3170,
+      "duracion_final": 1590
+    },
+    "complejidad": "T(n, B) = O(n·B), pseudo-polinomial",
+    "celdas_dp": 451801,
+    "tiempo_s": 0.035156400001142174,
+    "tiempo_min_s": 0.03307479999784846,
+    "tiempo_max_s": 0.03690160000041942,
+    "repeticiones": 7,
+    "traza": {
+      "etapas": [
+        {
+          "etapa": 1,
+          "t": 5,
+          "c": 6,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 2,
+          "t": 9,
+          "c": 8,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 3,
+          "t": 10,
+          "c": 8,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 4,
+          "t": 9,
+          "c": 9,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 5,
+          "t": 11,
+          "c": 3,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 6,
+          "t": 16,
+          "c": 4,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 7,
+          "t": 10,
+          "c": 2,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 8,
+          "t": 18,
+          "c": 2,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 17
+        },
+        {
+          "etapa": 9,
+          "t": 18,
+          "c": 9,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 10,
+          "t": 12,
+          "c": 8,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 11,
+          "t": 2,
+          "c": 7,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 12,
+          "t": 14,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 12
+        },
+        {
+          "etapa": 13,
+          "t": 20,
+          "c": 8,
+          "d": 20,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 14,
+          "t": 13,
+          "c": 8,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 15,
+          "t": 19,
+          "c": 9,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 12
+        },
+        {
+          "etapa": 16,
+          "t": 18,
+          "c": 2,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 17,
+          "t": 4,
+          "c": 7,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 18,
+          "t": 11,
+          "c": 5,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 19,
+          "t": 18,
+          "c": 6,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 20,
+          "t": 15,
+          "c": 10,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 15
+        },
+        {
+          "etapa": 21,
+          "t": 8,
+          "c": 7,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 22,
+          "t": 4,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 4
+        },
+        {
+          "etapa": 23,
+          "t": 1,
+          "c": 10,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 24,
+          "t": 10,
+          "c": 10,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 25,
+          "t": 9,
+          "c": 8,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 26,
+          "t": 5,
+          "c": 6,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 27,
+          "t": 7,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 28,
+          "t": 4,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 29,
+          "t": 14,
+          "c": 6,
+          "d": 13,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 30,
+          "t": 17,
+          "c": 1,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 31,
+          "t": 9,
+          "c": 9,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 32,
+          "t": 2,
+          "c": 4,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 2
+        },
+        {
+          "etapa": 33,
+          "t": 13,
+          "c": 4,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 34,
+          "t": 10,
+          "c": 8,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 35,
+          "t": 10,
+          "c": 10,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 36,
+          "t": 10,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 37,
+          "t": 8,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 38,
+          "t": 12,
+          "c": 9,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 39,
+          "t": 6,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 40,
+          "t": 18,
+          "c": 6,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 12
+        },
+        {
+          "etapa": 41,
+          "t": 3,
+          "c": 8,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 42,
+          "t": 13,
+          "c": 10,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 10
+        },
+        {
+          "etapa": 43,
+          "t": 19,
+          "c": 3,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 16
+        },
+        {
+          "etapa": 44,
+          "t": 14,
+          "c": 2,
+          "d": 13,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 45,
+          "t": 13,
+          "c": 2,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 46,
+          "t": 12,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 12
+        },
+        {
+          "etapa": 47,
+          "t": 9,
+          "c": 5,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 9
+        },
+        {
+          "etapa": 48,
+          "t": 1,
+          "c": 9,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 49,
+          "t": 6,
+          "c": 5,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 50,
+          "t": 6,
+          "c": 10,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 51,
+          "t": 20,
+          "c": 1,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 52,
+          "t": 11,
+          "c": 3,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 53,
+          "t": 14,
+          "c": 8,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 54,
+          "t": 1,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 55,
+          "t": 17,
+          "c": 3,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 56,
+          "t": 20,
+          "c": 10,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 19
+        },
+        {
+          "etapa": 57,
+          "t": 11,
+          "c": 3,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 58,
+          "t": 20,
+          "c": 10,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 16
+        },
+        {
+          "etapa": 59,
+          "t": 10,
+          "c": 5,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 60,
+          "t": 3,
+          "c": 4,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 61,
+          "t": 11,
+          "c": 10,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 62,
+          "t": 13,
+          "c": 5,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 63,
+          "t": 18,
+          "c": 1,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 14
+        },
+        {
+          "etapa": 64,
+          "t": 17,
+          "c": 6,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 65,
+          "t": 19,
+          "c": 8,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 15
+        },
+        {
+          "etapa": 66,
+          "t": 4,
+          "c": 9,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 67,
+          "t": 17,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 15
+        },
+        {
+          "etapa": 68,
+          "t": 15,
+          "c": 6,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 69,
+          "t": 3,
+          "c": 1,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 70,
+          "t": 13,
+          "c": 1,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 71,
+          "t": 11,
+          "c": 2,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 72,
+          "t": 9,
+          "c": 8,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 73,
+          "t": 16,
+          "c": 5,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 74,
+          "t": 8,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 75,
+          "t": 18,
+          "c": 4,
+          "d": 18,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 76,
+          "t": 18,
+          "c": 7,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 77,
+          "t": 5,
+          "c": 9,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 78,
+          "t": 16,
+          "c": 9,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 79,
+          "t": 17,
+          "c": 10,
+          "d": 14,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 80,
+          "t": 4,
+          "c": 10,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 81,
+          "t": 9,
+          "c": 3,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 82,
+          "t": 17,
+          "c": 8,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 83,
+          "t": 13,
+          "c": 6,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 84,
+          "t": 1,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 1
+        },
+        {
+          "etapa": 85,
+          "t": 6,
+          "c": 1,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 86,
+          "t": 11,
+          "c": 2,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 10
+        },
+        {
+          "etapa": 87,
+          "t": 9,
+          "c": 2,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 88,
+          "t": 1,
+          "c": 4,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 1
+        },
+        {
+          "etapa": 89,
+          "t": 9,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 9
+        },
+        {
+          "etapa": 90,
+          "t": 4,
+          "c": 3,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 91,
+          "t": 16,
+          "c": 5,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 16
+        },
+        {
+          "etapa": 92,
+          "t": 3,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 93,
+          "t": 15,
+          "c": 6,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 94,
+          "t": 16,
+          "c": 8,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 95,
+          "t": 7,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 7
+        },
+        {
+          "etapa": 96,
+          "t": 4,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 97,
+          "t": 18,
+          "c": 4,
+          "d": 17,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 98,
+          "t": 13,
+          "c": 8,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 99,
+          "t": 6,
+          "c": 6,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 6
+        },
+        {
+          "etapa": 100,
+          "t": 4,
+          "c": 6,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 101,
+          "t": 2,
+          "c": 7,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 102,
+          "t": 17,
+          "c": 5,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 103,
+          "t": 9,
+          "c": 2,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 104,
+          "t": 2,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 105,
+          "t": 16,
+          "c": 8,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 15
+        },
+        {
+          "etapa": 106,
+          "t": 11,
+          "c": 2,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 107,
+          "t": 1,
+          "c": 10,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 108,
+          "t": 16,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 16
+        },
+        {
+          "etapa": 109,
+          "t": 18,
+          "c": 3,
+          "d": 18,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 110,
+          "t": 5,
+          "c": 9,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 111,
+          "t": 3,
+          "c": 2,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 112,
+          "t": 15,
+          "c": 4,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 113,
+          "t": 1,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 114,
+          "t": 16,
+          "c": 3,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 115,
+          "t": 17,
+          "c": 1,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 116,
+          "t": 7,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 7
+        },
+        {
+          "etapa": 117,
+          "t": 18,
+          "c": 8,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 16
+        },
+        {
+          "etapa": 118,
+          "t": 13,
+          "c": 6,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 119,
+          "t": 3,
+          "c": 6,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 120,
+          "t": 18,
+          "c": 9,
+          "d": 14,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 121,
+          "t": 15,
+          "c": 9,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 122,
+          "t": 7,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 123,
+          "t": 4,
+          "c": 10,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 124,
+          "t": 6,
+          "c": 5,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 125,
+          "t": 5,
+          "c": 3,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 126,
+          "t": 13,
+          "c": 10,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 127,
+          "t": 18,
+          "c": 8,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 128,
+          "t": 11,
+          "c": 6,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 129,
+          "t": 5,
+          "c": 1,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 130,
+          "t": 20,
+          "c": 5,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 131,
+          "t": 20,
+          "c": 3,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 132,
+          "t": 8,
+          "c": 2,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 133,
+          "t": 2,
+          "c": 3,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 134,
+          "t": 6,
+          "c": 2,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 135,
+          "t": 18,
+          "c": 8,
+          "d": 17,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 136,
+          "t": 13,
+          "c": 6,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 137,
+          "t": 15,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 14
+        },
+        {
+          "etapa": 138,
+          "t": 6,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 139,
+          "t": 1,
+          "c": 8,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 140,
+          "t": 2,
+          "c": 10,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 2
+        },
+        {
+          "etapa": 141,
+          "t": 15,
+          "c": 4,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 142,
+          "t": 1,
+          "c": 9,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 143,
+          "t": 6,
+          "c": 1,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 144,
+          "t": 17,
+          "c": 7,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 145,
+          "t": 17,
+          "c": 5,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 146,
+          "t": 13,
+          "c": 10,
+          "d": 13,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 147,
+          "t": 10,
+          "c": 1,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 148,
+          "t": 10,
+          "c": 7,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 149,
+          "t": 12,
+          "c": 2,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 150,
+          "t": 13,
+          "c": 3,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 10
+        },
+        {
+          "etapa": 151,
+          "t": 18,
+          "c": 10,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 152,
+          "t": 3,
+          "c": 3,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 153,
+          "t": 4,
+          "c": 9,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 154,
+          "t": 6,
+          "c": 9,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 155,
+          "t": 11,
+          "c": 4,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 156,
+          "t": 8,
+          "c": 2,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 157,
+          "t": 16,
+          "c": 2,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 158,
+          "t": 11,
+          "c": 1,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 159,
+          "t": 5,
+          "c": 1,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 160,
+          "t": 10,
+          "c": 6,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 161,
+          "t": 14,
+          "c": 5,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 162,
+          "t": 4,
+          "c": 8,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 163,
+          "t": 10,
+          "c": 1,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 164,
+          "t": 13,
+          "c": 7,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 13
+        },
+        {
+          "etapa": 165,
+          "t": 1,
+          "c": 1,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 166,
+          "t": 5,
+          "c": 4,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 5
+        },
+        {
+          "etapa": 167,
+          "t": 1,
+          "c": 1,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 168,
+          "t": 8,
+          "c": 4,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 169,
+          "t": 3,
+          "c": 7,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 170,
+          "t": 18,
+          "c": 1,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 171,
+          "t": 7,
+          "c": 7,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 172,
+          "t": 8,
+          "c": 10,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 173,
+          "t": 15,
+          "c": 4,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 174,
+          "t": 7,
+          "c": 1,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 175,
+          "t": 8,
+          "c": 7,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 176,
+          "t": 8,
+          "c": 9,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 177,
+          "t": 11,
+          "c": 5,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 178,
+          "t": 18,
+          "c": 6,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 179,
+          "t": 9,
+          "c": 6,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 180,
+          "t": 4,
+          "c": 6,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 4
+        },
+        {
+          "etapa": 181,
+          "t": 19,
+          "c": 4,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 182,
+          "t": 4,
+          "c": 5,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 183,
+          "t": 11,
+          "c": 2,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 184,
+          "t": 17,
+          "c": 8,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 185,
+          "t": 9,
+          "c": 10,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 186,
+          "t": 9,
+          "c": 5,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 187,
+          "t": 19,
+          "c": 1,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 188,
+          "t": 20,
+          "c": 8,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 14
+        },
+        {
+          "etapa": 189,
+          "t": 3,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 190,
+          "t": 3,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 191,
+          "t": 1,
+          "c": 2,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 1
+        },
+        {
+          "etapa": 192,
+          "t": 6,
+          "c": 8,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 6
+        },
+        {
+          "etapa": 193,
+          "t": 13,
+          "c": 4,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 194,
+          "t": 18,
+          "c": 3,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 195,
+          "t": 14,
+          "c": 2,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 196,
+          "t": 16,
+          "c": 1,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 197,
+          "t": 5,
+          "c": 9,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 198,
+          "t": 18,
+          "c": 9,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 199,
+          "t": 17,
+          "c": 4,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 200,
+          "t": 18,
+          "c": 5,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 18
+        },
+        {
+          "etapa": 201,
+          "t": 20,
+          "c": 8,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 202,
+          "t": 11,
+          "c": 10,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 203,
+          "t": 9,
+          "c": 7,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 204,
+          "t": 11,
+          "c": 7,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 205,
+          "t": 4,
+          "c": 3,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 206,
+          "t": 2,
+          "c": 8,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 207,
+          "t": 15,
+          "c": 2,
+          "d": 13,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 208,
+          "t": 9,
+          "c": 1,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 209,
+          "t": 8,
+          "c": 1,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 210,
+          "t": 11,
+          "c": 2,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 211,
+          "t": 10,
+          "c": 9,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 212,
+          "t": 3,
+          "c": 4,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 213,
+          "t": 8,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 214,
+          "t": 15,
+          "c": 2,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 15
+        },
+        {
+          "etapa": 215,
+          "t": 16,
+          "c": 5,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 12
+        },
+        {
+          "etapa": 216,
+          "t": 14,
+          "c": 6,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 217,
+          "t": 8,
+          "c": 10,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 218,
+          "t": 9,
+          "c": 1,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 219,
+          "t": 12,
+          "c": 8,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 220,
+          "t": 10,
+          "c": 3,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 221,
+          "t": 9,
+          "c": 3,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 222,
+          "t": 3,
+          "c": 3,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 223,
+          "t": 3,
+          "c": 2,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 224,
+          "t": 11,
+          "c": 2,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 225,
+          "t": 12,
+          "c": 7,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 226,
+          "t": 7,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 227,
+          "t": 8,
+          "c": 8,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 228,
+          "t": 3,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 3
+        },
+        {
+          "etapa": 229,
+          "t": 20,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 20
+        },
+        {
+          "etapa": 230,
+          "t": 16,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 14
+        },
+        {
+          "etapa": 231,
+          "t": 19,
+          "c": 8,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 15
+        },
+        {
+          "etapa": 232,
+          "t": 5,
+          "c": 7,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 233,
+          "t": 19,
+          "c": 1,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 17
+        },
+        {
+          "etapa": 234,
+          "t": 18,
+          "c": 3,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 235,
+          "t": 6,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 6
+        },
+        {
+          "etapa": 236,
+          "t": 10,
+          "c": 9,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 237,
+          "t": 12,
+          "c": 10,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 238,
+          "t": 8,
+          "c": 3,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 239,
+          "t": 1,
+          "c": 2,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 1
+        },
+        {
+          "etapa": 240,
+          "t": 16,
+          "c": 8,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 241,
+          "t": 7,
+          "c": 7,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 242,
+          "t": 16,
+          "c": 5,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 243,
+          "t": 20,
+          "c": 4,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 244,
+          "t": 11,
+          "c": 6,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 245,
+          "t": 8,
+          "c": 9,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 246,
+          "t": 12,
+          "c": 3,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 247,
+          "t": 13,
+          "c": 1,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 248,
+          "t": 19,
+          "c": 7,
+          "d": 16,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 249,
+          "t": 14,
+          "c": 4,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 250,
+          "t": 4,
+          "c": 10,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 251,
+          "t": 4,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 252,
+          "t": 20,
+          "c": 10,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 19
+        },
+        {
+          "etapa": 253,
+          "t": 3,
+          "c": 5,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 254,
+          "t": 9,
+          "c": 7,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 255,
+          "t": 15,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 256,
+          "t": 18,
+          "c": 1,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 12
+        },
+        {
+          "etapa": 257,
+          "t": 20,
+          "c": 2,
+          "d": 14,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 258,
+          "t": 16,
+          "c": 4,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 259,
+          "t": 18,
+          "c": 1,
+          "d": 8,
+          "acelerada": true,
+          "t_final": 10
+        },
+        {
+          "etapa": 260,
+          "t": 6,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 261,
+          "t": 7,
+          "c": 9,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 7
+        },
+        {
+          "etapa": 262,
+          "t": 12,
+          "c": 4,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 263,
+          "t": 12,
+          "c": 8,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 264,
+          "t": 13,
+          "c": 9,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 265,
+          "t": 4,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 4
+        },
+        {
+          "etapa": 266,
+          "t": 9,
+          "c": 8,
+          "d": 9,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 267,
+          "t": 13,
+          "c": 3,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 11
+        },
+        {
+          "etapa": 268,
+          "t": 15,
+          "c": 3,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 269,
+          "t": 10,
+          "c": 5,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 270,
+          "t": 18,
+          "c": 5,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 271,
+          "t": 4,
+          "c": 1,
+          "d": 4,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 272,
+          "t": 1,
+          "c": 1,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 1
+        },
+        {
+          "etapa": 273,
+          "t": 4,
+          "c": 6,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 4
+        },
+        {
+          "etapa": 274,
+          "t": 15,
+          "c": 6,
+          "d": 15,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 275,
+          "t": 6,
+          "c": 8,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 276,
+          "t": 5,
+          "c": 9,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 4
+        },
+        {
+          "etapa": 277,
+          "t": 12,
+          "c": 7,
+          "d": 7,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 278,
+          "t": 9,
+          "c": 7,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 279,
+          "t": 7,
+          "c": 4,
+          "d": 6,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 280,
+          "t": 7,
+          "c": 10,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 281,
+          "t": 4,
+          "c": 5,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 282,
+          "t": 9,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 283,
+          "t": 12,
+          "c": 1,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 9
+        },
+        {
+          "etapa": 284,
+          "t": 4,
+          "c": 1,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 285,
+          "t": 2,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 286,
+          "t": 10,
+          "c": 2,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 287,
+          "t": 15,
+          "c": 3,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 15
+        },
+        {
+          "etapa": 288,
+          "t": 15,
+          "c": 10,
+          "d": 12,
+          "acelerada": true,
+          "t_final": 3
+        },
+        {
+          "etapa": 289,
+          "t": 15,
+          "c": 1,
+          "d": 5,
+          "acelerada": true,
+          "t_final": 10
+        },
+        {
+          "etapa": 290,
+          "t": 8,
+          "c": 8,
+          "d": 0,
+          "acelerada": false,
+          "t_final": 8
+        },
+        {
+          "etapa": 291,
+          "t": 10,
+          "c": 6,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 8
+        },
+        {
+          "etapa": 292,
+          "t": 19,
+          "c": 3,
+          "d": 13,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 293,
+          "t": 6,
+          "c": 3,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 5
+        },
+        {
+          "etapa": 294,
+          "t": 18,
+          "c": 3,
+          "d": 11,
+          "acelerada": true,
+          "t_final": 7
+        },
+        {
+          "etapa": 295,
+          "t": 18,
+          "c": 1,
+          "d": 18,
+          "acelerada": true,
+          "t_final": 0
+        },
+        {
+          "etapa": 296,
+          "t": 12,
+          "c": 5,
+          "d": 10,
+          "acelerada": true,
+          "t_final": 2
+        },
+        {
+          "etapa": 297,
+          "t": 3,
+          "c": 10,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 1
+        },
+        {
+          "etapa": 298,
+          "t": 9,
+          "c": 8,
+          "d": 3,
+          "acelerada": true,
+          "t_final": 6
+        },
+        {
+          "etapa": 299,
+          "t": 15,
+          "c": 4,
+          "d": 2,
+          "acelerada": true,
+          "t_final": 13
+        },
+        {
+          "etapa": 300,
+          "t": 12,
+          "c": 8,
+          "d": 1,
+          "acelerada": true,
+          "t_final": 11
+        }
+      ],
+      "reconstruccion": [
+        {
+          "etapa": 300,
+          "presupuesto_b": 1500,
+          "dp_i_b": 1580,
+          "dp_i_1_b": 1579,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1492
+        },
+        {
+          "etapa": 299,
+          "presupuesto_b": 1492,
+          "dp_i_b": 1579,
+          "dp_i_1_b": 1577,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1488
+        },
+        {
+          "etapa": 298,
+          "presupuesto_b": 1488,
+          "dp_i_b": 1577,
+          "dp_i_1_b": 1574,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1480
+        },
+        {
+          "etapa": 297,
+          "presupuesto_b": 1480,
+          "dp_i_b": 1574,
+          "dp_i_1_b": 1572,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1470
+        },
+        {
+          "etapa": 296,
+          "presupuesto_b": 1470,
+          "dp_i_b": 1572,
+          "dp_i_1_b": 1562,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1465
+        },
+        {
+          "etapa": 295,
+          "presupuesto_b": 1465,
+          "dp_i_b": 1562,
+          "dp_i_1_b": 1544,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1464
+        },
+        {
+          "etapa": 294,
+          "presupuesto_b": 1464,
+          "dp_i_b": 1544,
+          "dp_i_1_b": 1533,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1461
+        },
+        {
+          "etapa": 293,
+          "presupuesto_b": 1461,
+          "dp_i_b": 1533,
+          "dp_i_1_b": 1532,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1458
+        },
+        {
+          "etapa": 292,
+          "presupuesto_b": 1458,
+          "dp_i_b": 1532,
+          "dp_i_1_b": 1519,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1455
+        },
+        {
+          "etapa": 291,
+          "presupuesto_b": 1455,
+          "dp_i_b": 1519,
+          "dp_i_1_b": 1517,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1449
+        },
+        {
+          "etapa": 290,
+          "presupuesto_b": 1449,
+          "dp_i_b": 1517,
+          "dp_i_1_b": 1517,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1449
+        },
+        {
+          "etapa": 289,
+          "presupuesto_b": 1449,
+          "dp_i_b": 1517,
+          "dp_i_1_b": 1512,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1448
+        },
+        {
+          "etapa": 288,
+          "presupuesto_b": 1448,
+          "dp_i_b": 1512,
+          "dp_i_1_b": 1500,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1438
+        },
+        {
+          "etapa": 287,
+          "presupuesto_b": 1438,
+          "dp_i_b": 1500,
+          "dp_i_1_b": 1500,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1438
+        },
+        {
+          "etapa": 286,
+          "presupuesto_b": 1438,
+          "dp_i_b": 1500,
+          "dp_i_1_b": 1490,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1436
+        },
+        {
+          "etapa": 285,
+          "presupuesto_b": 1436,
+          "dp_i_b": 1490,
+          "dp_i_1_b": 1488,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1432
+        },
+        {
+          "etapa": 284,
+          "presupuesto_b": 1432,
+          "dp_i_b": 1488,
+          "dp_i_1_b": 1486,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1431
+        },
+        {
+          "etapa": 283,
+          "presupuesto_b": 1431,
+          "dp_i_b": 1486,
+          "dp_i_1_b": 1483,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1430
+        },
+        {
+          "etapa": 282,
+          "presupuesto_b": 1430,
+          "dp_i_b": 1483,
+          "dp_i_1_b": 1481,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1424
+        },
+        {
+          "etapa": 281,
+          "presupuesto_b": 1424,
+          "dp_i_b": 1481,
+          "dp_i_1_b": 1478,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1419
+        },
+        {
+          "etapa": 280,
+          "presupuesto_b": 1419,
+          "dp_i_b": 1478,
+          "dp_i_1_b": 1477,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1409
+        },
+        {
+          "etapa": 279,
+          "presupuesto_b": 1409,
+          "dp_i_b": 1477,
+          "dp_i_1_b": 1471,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1405
+        },
+        {
+          "etapa": 278,
+          "presupuesto_b": 1405,
+          "dp_i_b": 1471,
+          "dp_i_1_b": 1470,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1398
+        },
+        {
+          "etapa": 277,
+          "presupuesto_b": 1398,
+          "dp_i_b": 1470,
+          "dp_i_1_b": 1463,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1391
+        },
+        {
+          "etapa": 276,
+          "presupuesto_b": 1391,
+          "dp_i_b": 1463,
+          "dp_i_1_b": 1462,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1382
+        },
+        {
+          "etapa": 275,
+          "presupuesto_b": 1382,
+          "dp_i_b": 1462,
+          "dp_i_1_b": 1459,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1374
+        },
+        {
+          "etapa": 274,
+          "presupuesto_b": 1374,
+          "dp_i_b": 1459,
+          "dp_i_1_b": 1444,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1368
+        },
+        {
+          "etapa": 273,
+          "presupuesto_b": 1368,
+          "dp_i_b": 1444,
+          "dp_i_1_b": 1444,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1368
+        },
+        {
+          "etapa": 272,
+          "presupuesto_b": 1368,
+          "dp_i_b": 1444,
+          "dp_i_1_b": 1444,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1368
+        },
+        {
+          "etapa": 271,
+          "presupuesto_b": 1368,
+          "dp_i_b": 1444,
+          "dp_i_1_b": 1440,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1367
+        },
+        {
+          "etapa": 270,
+          "presupuesto_b": 1367,
+          "dp_i_b": 1440,
+          "dp_i_1_b": 1435,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1362
+        },
+        {
+          "etapa": 269,
+          "presupuesto_b": 1362,
+          "dp_i_b": 1435,
+          "dp_i_1_b": 1429,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1357
+        },
+        {
+          "etapa": 268,
+          "presupuesto_b": 1357,
+          "dp_i_b": 1429,
+          "dp_i_1_b": 1414,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1354
+        },
+        {
+          "etapa": 267,
+          "presupuesto_b": 1354,
+          "dp_i_b": 1414,
+          "dp_i_1_b": 1412,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1351
+        },
+        {
+          "etapa": 266,
+          "presupuesto_b": 1351,
+          "dp_i_b": 1412,
+          "dp_i_1_b": 1403,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1343
+        },
+        {
+          "etapa": 265,
+          "presupuesto_b": 1343,
+          "dp_i_b": 1403,
+          "dp_i_1_b": 1403,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1343
+        },
+        {
+          "etapa": 264,
+          "presupuesto_b": 1343,
+          "dp_i_b": 1403,
+          "dp_i_1_b": 1396,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1334
+        },
+        {
+          "etapa": 263,
+          "presupuesto_b": 1334,
+          "dp_i_b": 1396,
+          "dp_i_1_b": 1386,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1326
+        },
+        {
+          "etapa": 262,
+          "presupuesto_b": 1326,
+          "dp_i_b": 1386,
+          "dp_i_1_b": 1385,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1322
+        },
+        {
+          "etapa": 261,
+          "presupuesto_b": 1322,
+          "dp_i_b": 1385,
+          "dp_i_1_b": 1385,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1322
+        },
+        {
+          "etapa": 260,
+          "presupuesto_b": 1322,
+          "dp_i_b": 1385,
+          "dp_i_1_b": 1384,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1318
+        },
+        {
+          "etapa": 259,
+          "presupuesto_b": 1318,
+          "dp_i_b": 1384,
+          "dp_i_1_b": 1376,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1317
+        },
+        {
+          "etapa": 258,
+          "presupuesto_b": 1317,
+          "dp_i_b": 1376,
+          "dp_i_1_b": 1369,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1313
+        },
+        {
+          "etapa": 257,
+          "presupuesto_b": 1313,
+          "dp_i_b": 1369,
+          "dp_i_1_b": 1355,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1311
+        },
+        {
+          "etapa": 256,
+          "presupuesto_b": 1311,
+          "dp_i_b": 1355,
+          "dp_i_1_b": 1349,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1310
+        },
+        {
+          "etapa": 255,
+          "presupuesto_b": 1310,
+          "dp_i_b": 1349,
+          "dp_i_1_b": 1347,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1306
+        },
+        {
+          "etapa": 254,
+          "presupuesto_b": 1306,
+          "dp_i_b": 1347,
+          "dp_i_1_b": 1341,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1299
+        },
+        {
+          "etapa": 253,
+          "presupuesto_b": 1299,
+          "dp_i_b": 1341,
+          "dp_i_1_b": 1339,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1294
+        },
+        {
+          "etapa": 252,
+          "presupuesto_b": 1294,
+          "dp_i_b": 1339,
+          "dp_i_1_b": 1338,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1284
+        },
+        {
+          "etapa": 251,
+          "presupuesto_b": 1284,
+          "dp_i_b": 1338,
+          "dp_i_1_b": 1336,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1274
+        },
+        {
+          "etapa": 250,
+          "presupuesto_b": 1274,
+          "dp_i_b": 1336,
+          "dp_i_1_b": 1333,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1264
+        },
+        {
+          "etapa": 249,
+          "presupuesto_b": 1264,
+          "dp_i_b": 1333,
+          "dp_i_1_b": 1322,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1260
+        },
+        {
+          "etapa": 248,
+          "presupuesto_b": 1260,
+          "dp_i_b": 1322,
+          "dp_i_1_b": 1306,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1253
+        },
+        {
+          "etapa": 247,
+          "presupuesto_b": 1253,
+          "dp_i_b": 1306,
+          "dp_i_1_b": 1304,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1252
+        },
+        {
+          "etapa": 246,
+          "presupuesto_b": 1252,
+          "dp_i_b": 1304,
+          "dp_i_1_b": 1299,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1249
+        },
+        {
+          "etapa": 245,
+          "presupuesto_b": 1249,
+          "dp_i_b": 1299,
+          "dp_i_1_b": 1295,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1240
+        },
+        {
+          "etapa": 244,
+          "presupuesto_b": 1240,
+          "dp_i_b": 1295,
+          "dp_i_1_b": 1290,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1234
+        },
+        {
+          "etapa": 243,
+          "presupuesto_b": 1234,
+          "dp_i_b": 1290,
+          "dp_i_1_b": 1279,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1230
+        },
+        {
+          "etapa": 242,
+          "presupuesto_b": 1230,
+          "dp_i_b": 1279,
+          "dp_i_1_b": 1271,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1225
+        },
+        {
+          "etapa": 241,
+          "presupuesto_b": 1225,
+          "dp_i_b": 1271,
+          "dp_i_1_b": 1270,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1218
+        },
+        {
+          "etapa": 240,
+          "presupuesto_b": 1218,
+          "dp_i_b": 1270,
+          "dp_i_1_b": 1255,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1210
+        },
+        {
+          "etapa": 239,
+          "presupuesto_b": 1210,
+          "dp_i_b": 1255,
+          "dp_i_1_b": 1255,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1210
+        },
+        {
+          "etapa": 238,
+          "presupuesto_b": 1210,
+          "dp_i_b": 1255,
+          "dp_i_1_b": 1251,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1207
+        },
+        {
+          "etapa": 237,
+          "presupuesto_b": 1207,
+          "dp_i_b": 1251,
+          "dp_i_1_b": 1248,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1197
+        },
+        {
+          "etapa": 236,
+          "presupuesto_b": 1197,
+          "dp_i_b": 1248,
+          "dp_i_1_b": 1247,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1188
+        },
+        {
+          "etapa": 235,
+          "presupuesto_b": 1188,
+          "dp_i_b": 1247,
+          "dp_i_1_b": 1247,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1188
+        },
+        {
+          "etapa": 234,
+          "presupuesto_b": 1188,
+          "dp_i_b": 1247,
+          "dp_i_1_b": 1237,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1185
+        },
+        {
+          "etapa": 233,
+          "presupuesto_b": 1185,
+          "dp_i_b": 1237,
+          "dp_i_1_b": 1235,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1184
+        },
+        {
+          "etapa": 232,
+          "presupuesto_b": 1184,
+          "dp_i_b": 1235,
+          "dp_i_1_b": 1231,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1177
+        },
+        {
+          "etapa": 231,
+          "presupuesto_b": 1177,
+          "dp_i_b": 1231,
+          "dp_i_1_b": 1227,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1169
+        },
+        {
+          "etapa": 230,
+          "presupuesto_b": 1169,
+          "dp_i_b": 1227,
+          "dp_i_1_b": 1225,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1165
+        },
+        {
+          "etapa": 229,
+          "presupuesto_b": 1165,
+          "dp_i_b": 1225,
+          "dp_i_1_b": 1225,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1165
+        },
+        {
+          "etapa": 228,
+          "presupuesto_b": 1165,
+          "dp_i_b": 1225,
+          "dp_i_1_b": 1225,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1165
+        },
+        {
+          "etapa": 227,
+          "presupuesto_b": 1165,
+          "dp_i_b": 1225,
+          "dp_i_1_b": 1223,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1157
+        },
+        {
+          "etapa": 226,
+          "presupuesto_b": 1157,
+          "dp_i_b": 1223,
+          "dp_i_1_b": 1221,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1151
+        },
+        {
+          "etapa": 225,
+          "presupuesto_b": 1151,
+          "dp_i_b": 1221,
+          "dp_i_1_b": 1214,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1144
+        },
+        {
+          "etapa": 224,
+          "presupuesto_b": 1144,
+          "dp_i_b": 1214,
+          "dp_i_1_b": 1212,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1142
+        },
+        {
+          "etapa": 223,
+          "presupuesto_b": 1142,
+          "dp_i_b": 1212,
+          "dp_i_1_b": 1212,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1142
+        },
+        {
+          "etapa": 222,
+          "presupuesto_b": 1142,
+          "dp_i_b": 1212,
+          "dp_i_1_b": 1210,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1139
+        },
+        {
+          "etapa": 221,
+          "presupuesto_b": 1139,
+          "dp_i_b": 1210,
+          "dp_i_1_b": 1209,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1136
+        },
+        {
+          "etapa": 220,
+          "presupuesto_b": 1136,
+          "dp_i_b": 1209,
+          "dp_i_1_b": 1200,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1133
+        },
+        {
+          "etapa": 219,
+          "presupuesto_b": 1133,
+          "dp_i_b": 1200,
+          "dp_i_1_b": 1195,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1125
+        },
+        {
+          "etapa": 218,
+          "presupuesto_b": 1125,
+          "dp_i_b": 1195,
+          "dp_i_1_b": 1191,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1124
+        },
+        {
+          "etapa": 217,
+          "presupuesto_b": 1124,
+          "dp_i_b": 1191,
+          "dp_i_1_b": 1187,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1114
+        },
+        {
+          "etapa": 216,
+          "presupuesto_b": 1114,
+          "dp_i_b": 1187,
+          "dp_i_1_b": 1184,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1108
+        },
+        {
+          "etapa": 215,
+          "presupuesto_b": 1108,
+          "dp_i_b": 1184,
+          "dp_i_1_b": 1180,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1103
+        },
+        {
+          "etapa": 214,
+          "presupuesto_b": 1103,
+          "dp_i_b": 1180,
+          "dp_i_1_b": 1180,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1103
+        },
+        {
+          "etapa": 213,
+          "presupuesto_b": 1103,
+          "dp_i_b": 1180,
+          "dp_i_1_b": 1180,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1103
+        },
+        {
+          "etapa": 212,
+          "presupuesto_b": 1103,
+          "dp_i_b": 1180,
+          "dp_i_1_b": 1180,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1103
+        },
+        {
+          "etapa": 211,
+          "presupuesto_b": 1103,
+          "dp_i_b": 1180,
+          "dp_i_1_b": 1173,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1094
+        },
+        {
+          "etapa": 210,
+          "presupuesto_b": 1094,
+          "dp_i_b": 1173,
+          "dp_i_1_b": 1162,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1092
+        },
+        {
+          "etapa": 209,
+          "presupuesto_b": 1092,
+          "dp_i_b": 1162,
+          "dp_i_1_b": 1161,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1091
+        },
+        {
+          "etapa": 208,
+          "presupuesto_b": 1091,
+          "dp_i_b": 1161,
+          "dp_i_1_b": 1160,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1090
+        },
+        {
+          "etapa": 207,
+          "presupuesto_b": 1090,
+          "dp_i_b": 1160,
+          "dp_i_1_b": 1147,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1088
+        },
+        {
+          "etapa": 206,
+          "presupuesto_b": 1088,
+          "dp_i_b": 1147,
+          "dp_i_1_b": 1146,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1080
+        },
+        {
+          "etapa": 205,
+          "presupuesto_b": 1080,
+          "dp_i_b": 1146,
+          "dp_i_1_b": 1145,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1077
+        },
+        {
+          "etapa": 204,
+          "presupuesto_b": 1077,
+          "dp_i_b": 1145,
+          "dp_i_1_b": 1135,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1070
+        },
+        {
+          "etapa": 203,
+          "presupuesto_b": 1070,
+          "dp_i_b": 1135,
+          "dp_i_1_b": 1132,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1063
+        },
+        {
+          "etapa": 202,
+          "presupuesto_b": 1063,
+          "dp_i_b": 1132,
+          "dp_i_1_b": 1121,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1053
+        },
+        {
+          "etapa": 201,
+          "presupuesto_b": 1053,
+          "dp_i_b": 1121,
+          "dp_i_1_b": 1109,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1045
+        },
+        {
+          "etapa": 200,
+          "presupuesto_b": 1045,
+          "dp_i_b": 1109,
+          "dp_i_1_b": 1109,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1045
+        },
+        {
+          "etapa": 199,
+          "presupuesto_b": 1045,
+          "dp_i_b": 1109,
+          "dp_i_1_b": 1094,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1041
+        },
+        {
+          "etapa": 198,
+          "presupuesto_b": 1041,
+          "dp_i_b": 1094,
+          "dp_i_1_b": 1084,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1032
+        },
+        {
+          "etapa": 197,
+          "presupuesto_b": 1032,
+          "dp_i_b": 1084,
+          "dp_i_1_b": 1081,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1023
+        },
+        {
+          "etapa": 196,
+          "presupuesto_b": 1023,
+          "dp_i_b": 1081,
+          "dp_i_1_b": 1076,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1022
+        },
+        {
+          "etapa": 195,
+          "presupuesto_b": 1022,
+          "dp_i_b": 1076,
+          "dp_i_1_b": 1066,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1020
+        },
+        {
+          "etapa": 194,
+          "presupuesto_b": 1020,
+          "dp_i_b": 1066,
+          "dp_i_1_b": 1051,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1017
+        },
+        {
+          "etapa": 193,
+          "presupuesto_b": 1017,
+          "dp_i_b": 1051,
+          "dp_i_1_b": 1041,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1013
+        },
+        {
+          "etapa": 192,
+          "presupuesto_b": 1013,
+          "dp_i_b": 1041,
+          "dp_i_1_b": 1041,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1013
+        },
+        {
+          "etapa": 191,
+          "presupuesto_b": 1013,
+          "dp_i_b": 1041,
+          "dp_i_1_b": 1041,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1013
+        },
+        {
+          "etapa": 190,
+          "presupuesto_b": 1013,
+          "dp_i_b": 1041,
+          "dp_i_1_b": 1040,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1009
+        },
+        {
+          "etapa": 189,
+          "presupuesto_b": 1009,
+          "dp_i_b": 1040,
+          "dp_i_1_b": 1040,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 1009
+        },
+        {
+          "etapa": 188,
+          "presupuesto_b": 1009,
+          "dp_i_b": 1040,
+          "dp_i_1_b": 1034,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1001
+        },
+        {
+          "etapa": 187,
+          "presupuesto_b": 1001,
+          "dp_i_b": 1034,
+          "dp_i_1_b": 1026,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 1000
+        },
+        {
+          "etapa": 186,
+          "presupuesto_b": 1000,
+          "dp_i_b": 1026,
+          "dp_i_1_b": 1018,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 995
+        },
+        {
+          "etapa": 185,
+          "presupuesto_b": 995,
+          "dp_i_b": 1018,
+          "dp_i_1_b": 1013,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 985
+        },
+        {
+          "etapa": 184,
+          "presupuesto_b": 985,
+          "dp_i_b": 1013,
+          "dp_i_1_b": 997,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 977
+        },
+        {
+          "etapa": 183,
+          "presupuesto_b": 977,
+          "dp_i_b": 997,
+          "dp_i_1_b": 994,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 975
+        },
+        {
+          "etapa": 182,
+          "presupuesto_b": 975,
+          "dp_i_b": 994,
+          "dp_i_1_b": 990,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 970
+        },
+        {
+          "etapa": 181,
+          "presupuesto_b": 970,
+          "dp_i_b": 990,
+          "dp_i_1_b": 978,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 966
+        },
+        {
+          "etapa": 180,
+          "presupuesto_b": 966,
+          "dp_i_b": 978,
+          "dp_i_1_b": 978,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 966
+        },
+        {
+          "etapa": 179,
+          "presupuesto_b": 966,
+          "dp_i_b": 978,
+          "dp_i_1_b": 974,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 960
+        },
+        {
+          "etapa": 178,
+          "presupuesto_b": 960,
+          "dp_i_b": 974,
+          "dp_i_1_b": 967,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 954
+        },
+        {
+          "etapa": 177,
+          "presupuesto_b": 954,
+          "dp_i_b": 967,
+          "dp_i_1_b": 963,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 949
+        },
+        {
+          "etapa": 176,
+          "presupuesto_b": 949,
+          "dp_i_b": 963,
+          "dp_i_1_b": 958,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 940
+        },
+        {
+          "etapa": 175,
+          "presupuesto_b": 940,
+          "dp_i_b": 958,
+          "dp_i_1_b": 951,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 933
+        },
+        {
+          "etapa": 174,
+          "presupuesto_b": 933,
+          "dp_i_b": 951,
+          "dp_i_1_b": 946,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 932
+        },
+        {
+          "etapa": 173,
+          "presupuesto_b": 932,
+          "dp_i_b": 946,
+          "dp_i_1_b": 936,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 928
+        },
+        {
+          "etapa": 172,
+          "presupuesto_b": 928,
+          "dp_i_b": 936,
+          "dp_i_1_b": 928,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 918
+        },
+        {
+          "etapa": 171,
+          "presupuesto_b": 918,
+          "dp_i_b": 928,
+          "dp_i_1_b": 925,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 911
+        },
+        {
+          "etapa": 170,
+          "presupuesto_b": 911,
+          "dp_i_b": 925,
+          "dp_i_1_b": 910,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 910
+        },
+        {
+          "etapa": 169,
+          "presupuesto_b": 910,
+          "dp_i_b": 910,
+          "dp_i_1_b": 910,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 910
+        },
+        {
+          "etapa": 168,
+          "presupuesto_b": 910,
+          "dp_i_b": 910,
+          "dp_i_1_b": 910,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 910
+        },
+        {
+          "etapa": 167,
+          "presupuesto_b": 910,
+          "dp_i_b": 910,
+          "dp_i_1_b": 909,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 909
+        },
+        {
+          "etapa": 166,
+          "presupuesto_b": 909,
+          "dp_i_b": 909,
+          "dp_i_1_b": 909,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 909
+        },
+        {
+          "etapa": 165,
+          "presupuesto_b": 909,
+          "dp_i_b": 909,
+          "dp_i_1_b": 908,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 908
+        },
+        {
+          "etapa": 164,
+          "presupuesto_b": 908,
+          "dp_i_b": 908,
+          "dp_i_1_b": 908,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 908
+        },
+        {
+          "etapa": 163,
+          "presupuesto_b": 908,
+          "dp_i_b": 908,
+          "dp_i_1_b": 898,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 907
+        },
+        {
+          "etapa": 162,
+          "presupuesto_b": 907,
+          "dp_i_b": 898,
+          "dp_i_1_b": 895,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 899
+        },
+        {
+          "etapa": 161,
+          "presupuesto_b": 899,
+          "dp_i_b": 895,
+          "dp_i_1_b": 890,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 894
+        },
+        {
+          "etapa": 160,
+          "presupuesto_b": 894,
+          "dp_i_b": 890,
+          "dp_i_1_b": 880,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 888
+        },
+        {
+          "etapa": 159,
+          "presupuesto_b": 888,
+          "dp_i_b": 880,
+          "dp_i_1_b": 879,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 887
+        },
+        {
+          "etapa": 158,
+          "presupuesto_b": 887,
+          "dp_i_b": 879,
+          "dp_i_1_b": 877,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 886
+        },
+        {
+          "etapa": 157,
+          "presupuesto_b": 886,
+          "dp_i_b": 877,
+          "dp_i_1_b": 870,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 884
+        },
+        {
+          "etapa": 156,
+          "presupuesto_b": 884,
+          "dp_i_b": 870,
+          "dp_i_1_b": 862,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 882
+        },
+        {
+          "etapa": 155,
+          "presupuesto_b": 882,
+          "dp_i_b": 862,
+          "dp_i_1_b": 856,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 878
+        },
+        {
+          "etapa": 154,
+          "presupuesto_b": 878,
+          "dp_i_b": 856,
+          "dp_i_1_b": 850,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 869
+        },
+        {
+          "etapa": 153,
+          "presupuesto_b": 869,
+          "dp_i_b": 850,
+          "dp_i_1_b": 848,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 860
+        },
+        {
+          "etapa": 152,
+          "presupuesto_b": 860,
+          "dp_i_b": 848,
+          "dp_i_1_b": 848,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 860
+        },
+        {
+          "etapa": 151,
+          "presupuesto_b": 860,
+          "dp_i_b": 848,
+          "dp_i_1_b": 836,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 850
+        },
+        {
+          "etapa": 150,
+          "presupuesto_b": 850,
+          "dp_i_b": 836,
+          "dp_i_1_b": 833,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 847
+        },
+        {
+          "etapa": 149,
+          "presupuesto_b": 847,
+          "dp_i_b": 833,
+          "dp_i_1_b": 825,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 845
+        },
+        {
+          "etapa": 148,
+          "presupuesto_b": 845,
+          "dp_i_b": 825,
+          "dp_i_1_b": 823,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 838
+        },
+        {
+          "etapa": 147,
+          "presupuesto_b": 838,
+          "dp_i_b": 823,
+          "dp_i_1_b": 816,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 837
+        },
+        {
+          "etapa": 146,
+          "presupuesto_b": 837,
+          "dp_i_b": 816,
+          "dp_i_1_b": 803,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 827
+        },
+        {
+          "etapa": 145,
+          "presupuesto_b": 827,
+          "dp_i_b": 803,
+          "dp_i_1_b": 791,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 822
+        },
+        {
+          "etapa": 144,
+          "presupuesto_b": 822,
+          "dp_i_b": 791,
+          "dp_i_1_b": 787,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 815
+        },
+        {
+          "etapa": 143,
+          "presupuesto_b": 815,
+          "dp_i_b": 787,
+          "dp_i_1_b": 782,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 814
+        },
+        {
+          "etapa": 142,
+          "presupuesto_b": 814,
+          "dp_i_b": 782,
+          "dp_i_1_b": 781,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 805
+        },
+        {
+          "etapa": 141,
+          "presupuesto_b": 805,
+          "dp_i_b": 781,
+          "dp_i_1_b": 774,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 801
+        },
+        {
+          "etapa": 140,
+          "presupuesto_b": 801,
+          "dp_i_b": 774,
+          "dp_i_1_b": 774,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 801
+        },
+        {
+          "etapa": 139,
+          "presupuesto_b": 801,
+          "dp_i_b": 774,
+          "dp_i_1_b": 773,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 793
+        },
+        {
+          "etapa": 138,
+          "presupuesto_b": 793,
+          "dp_i_b": 773,
+          "dp_i_1_b": 772,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 789
+        },
+        {
+          "etapa": 137,
+          "presupuesto_b": 789,
+          "dp_i_b": 772,
+          "dp_i_1_b": 771,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 785
+        },
+        {
+          "etapa": 136,
+          "presupuesto_b": 785,
+          "dp_i_b": 771,
+          "dp_i_1_b": 761,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 779
+        },
+        {
+          "etapa": 135,
+          "presupuesto_b": 779,
+          "dp_i_b": 761,
+          "dp_i_1_b": 744,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 771
+        },
+        {
+          "etapa": 134,
+          "presupuesto_b": 771,
+          "dp_i_b": 744,
+          "dp_i_1_b": 740,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 769
+        },
+        {
+          "etapa": 133,
+          "presupuesto_b": 769,
+          "dp_i_b": 740,
+          "dp_i_1_b": 739,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 766
+        },
+        {
+          "etapa": 132,
+          "presupuesto_b": 766,
+          "dp_i_b": 739,
+          "dp_i_1_b": 735,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 764
+        },
+        {
+          "etapa": 131,
+          "presupuesto_b": 764,
+          "dp_i_b": 735,
+          "dp_i_1_b": 719,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 761
+        },
+        {
+          "etapa": 130,
+          "presupuesto_b": 761,
+          "dp_i_b": 719,
+          "dp_i_1_b": 703,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 756
+        },
+        {
+          "etapa": 129,
+          "presupuesto_b": 756,
+          "dp_i_b": 703,
+          "dp_i_1_b": 698,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 755
+        },
+        {
+          "etapa": 128,
+          "presupuesto_b": 755,
+          "dp_i_b": 698,
+          "dp_i_1_b": 692,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 749
+        },
+        {
+          "etapa": 127,
+          "presupuesto_b": 749,
+          "dp_i_b": 692,
+          "dp_i_1_b": 680,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 741
+        },
+        {
+          "etapa": 126,
+          "presupuesto_b": 741,
+          "dp_i_b": 680,
+          "dp_i_1_b": 676,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 731
+        },
+        {
+          "etapa": 125,
+          "presupuesto_b": 731,
+          "dp_i_b": 676,
+          "dp_i_1_b": 671,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 728
+        },
+        {
+          "etapa": 124,
+          "presupuesto_b": 728,
+          "dp_i_b": 671,
+          "dp_i_1_b": 667,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 723
+        },
+        {
+          "etapa": 123,
+          "presupuesto_b": 723,
+          "dp_i_b": 667,
+          "dp_i_1_b": 664,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 713
+        },
+        {
+          "etapa": 122,
+          "presupuesto_b": 713,
+          "dp_i_b": 664,
+          "dp_i_1_b": 662,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 703
+        },
+        {
+          "etapa": 121,
+          "presupuesto_b": 703,
+          "dp_i_b": 662,
+          "dp_i_1_b": 660,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 694
+        },
+        {
+          "etapa": 120,
+          "presupuesto_b": 694,
+          "dp_i_b": 660,
+          "dp_i_1_b": 646,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 685
+        },
+        {
+          "etapa": 119,
+          "presupuesto_b": 685,
+          "dp_i_b": 646,
+          "dp_i_1_b": 643,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 679
+        },
+        {
+          "etapa": 118,
+          "presupuesto_b": 679,
+          "dp_i_b": 643,
+          "dp_i_1_b": 636,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 673
+        },
+        {
+          "etapa": 117,
+          "presupuesto_b": 673,
+          "dp_i_b": 636,
+          "dp_i_1_b": 634,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 665
+        },
+        {
+          "etapa": 116,
+          "presupuesto_b": 665,
+          "dp_i_b": 634,
+          "dp_i_1_b": 634,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 665
+        },
+        {
+          "etapa": 115,
+          "presupuesto_b": 665,
+          "dp_i_b": 634,
+          "dp_i_1_b": 625,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 664
+        },
+        {
+          "etapa": 114,
+          "presupuesto_b": 664,
+          "dp_i_b": 625,
+          "dp_i_1_b": 610,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 661
+        },
+        {
+          "etapa": 113,
+          "presupuesto_b": 661,
+          "dp_i_b": 610,
+          "dp_i_1_b": 609,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 657
+        },
+        {
+          "etapa": 112,
+          "presupuesto_b": 657,
+          "dp_i_b": 609,
+          "dp_i_1_b": 600,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 653
+        },
+        {
+          "etapa": 111,
+          "presupuesto_b": 653,
+          "dp_i_b": 600,
+          "dp_i_1_b": 597,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 651
+        },
+        {
+          "etapa": 110,
+          "presupuesto_b": 651,
+          "dp_i_b": 597,
+          "dp_i_1_b": 594,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 642
+        },
+        {
+          "etapa": 109,
+          "presupuesto_b": 642,
+          "dp_i_b": 594,
+          "dp_i_1_b": 576,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 639
+        },
+        {
+          "etapa": 108,
+          "presupuesto_b": 639,
+          "dp_i_b": 576,
+          "dp_i_1_b": 576,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 639
+        },
+        {
+          "etapa": 107,
+          "presupuesto_b": 639,
+          "dp_i_b": 576,
+          "dp_i_1_b": 575,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 629
+        },
+        {
+          "etapa": 106,
+          "presupuesto_b": 629,
+          "dp_i_b": 575,
+          "dp_i_1_b": 566,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 627
+        },
+        {
+          "etapa": 105,
+          "presupuesto_b": 627,
+          "dp_i_b": 566,
+          "dp_i_1_b": 565,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 619
+        },
+        {
+          "etapa": 104,
+          "presupuesto_b": 619,
+          "dp_i_b": 565,
+          "dp_i_1_b": 563,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 609
+        },
+        {
+          "etapa": 103,
+          "presupuesto_b": 609,
+          "dp_i_b": 563,
+          "dp_i_1_b": 562,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 607
+        },
+        {
+          "etapa": 102,
+          "presupuesto_b": 607,
+          "dp_i_b": 562,
+          "dp_i_1_b": 546,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 602
+        },
+        {
+          "etapa": 101,
+          "presupuesto_b": 602,
+          "dp_i_b": 546,
+          "dp_i_1_b": 544,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 595
+        },
+        {
+          "etapa": 100,
+          "presupuesto_b": 595,
+          "dp_i_b": 544,
+          "dp_i_1_b": 541,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 589
+        },
+        {
+          "etapa": 99,
+          "presupuesto_b": 589,
+          "dp_i_b": 541,
+          "dp_i_1_b": 541,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 589
+        },
+        {
+          "etapa": 98,
+          "presupuesto_b": 589,
+          "dp_i_b": 541,
+          "dp_i_1_b": 534,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 581
+        },
+        {
+          "etapa": 97,
+          "presupuesto_b": 581,
+          "dp_i_b": 534,
+          "dp_i_1_b": 517,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 577
+        },
+        {
+          "etapa": 96,
+          "presupuesto_b": 577,
+          "dp_i_b": 517,
+          "dp_i_1_b": 515,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 573
+        },
+        {
+          "etapa": 95,
+          "presupuesto_b": 573,
+          "dp_i_b": 515,
+          "dp_i_1_b": 515,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 573
+        },
+        {
+          "etapa": 94,
+          "presupuesto_b": 573,
+          "dp_i_b": 515,
+          "dp_i_1_b": 504,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 565
+        },
+        {
+          "etapa": 93,
+          "presupuesto_b": 565,
+          "dp_i_b": 504,
+          "dp_i_1_b": 493,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 559
+        },
+        {
+          "etapa": 92,
+          "presupuesto_b": 559,
+          "dp_i_b": 493,
+          "dp_i_1_b": 491,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 555
+        },
+        {
+          "etapa": 91,
+          "presupuesto_b": 555,
+          "dp_i_b": 491,
+          "dp_i_1_b": 491,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 555
+        },
+        {
+          "etapa": 90,
+          "presupuesto_b": 555,
+          "dp_i_b": 491,
+          "dp_i_1_b": 490,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 552
+        },
+        {
+          "etapa": 89,
+          "presupuesto_b": 552,
+          "dp_i_b": 490,
+          "dp_i_1_b": 490,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 552
+        },
+        {
+          "etapa": 88,
+          "presupuesto_b": 552,
+          "dp_i_b": 490,
+          "dp_i_1_b": 490,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 552
+        },
+        {
+          "etapa": 87,
+          "presupuesto_b": 552,
+          "dp_i_b": 490,
+          "dp_i_1_b": 489,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 550
+        },
+        {
+          "etapa": 86,
+          "presupuesto_b": 550,
+          "dp_i_b": 489,
+          "dp_i_1_b": 488,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 548
+        },
+        {
+          "etapa": 85,
+          "presupuesto_b": 548,
+          "dp_i_b": 488,
+          "dp_i_1_b": 485,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 547
+        },
+        {
+          "etapa": 84,
+          "presupuesto_b": 547,
+          "dp_i_b": 485,
+          "dp_i_1_b": 485,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 547
+        },
+        {
+          "etapa": 83,
+          "presupuesto_b": 547,
+          "dp_i_b": 485,
+          "dp_i_1_b": 474,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 541
+        },
+        {
+          "etapa": 82,
+          "presupuesto_b": 541,
+          "dp_i_b": 474,
+          "dp_i_1_b": 464,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 533
+        },
+        {
+          "etapa": 81,
+          "presupuesto_b": 533,
+          "dp_i_b": 464,
+          "dp_i_1_b": 460,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 530
+        },
+        {
+          "etapa": 80,
+          "presupuesto_b": 530,
+          "dp_i_b": 460,
+          "dp_i_1_b": 457,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 520
+        },
+        {
+          "etapa": 79,
+          "presupuesto_b": 520,
+          "dp_i_b": 457,
+          "dp_i_1_b": 443,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 510
+        },
+        {
+          "etapa": 78,
+          "presupuesto_b": 510,
+          "dp_i_b": 443,
+          "dp_i_1_b": 435,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 501
+        },
+        {
+          "etapa": 77,
+          "presupuesto_b": 501,
+          "dp_i_b": 435,
+          "dp_i_1_b": 430,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 492
+        },
+        {
+          "etapa": 76,
+          "presupuesto_b": 492,
+          "dp_i_b": 430,
+          "dp_i_1_b": 421,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 485
+        },
+        {
+          "etapa": 75,
+          "presupuesto_b": 485,
+          "dp_i_b": 421,
+          "dp_i_1_b": 403,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 481
+        },
+        {
+          "etapa": 74,
+          "presupuesto_b": 481,
+          "dp_i_b": 403,
+          "dp_i_1_b": 403,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 481
+        },
+        {
+          "etapa": 73,
+          "presupuesto_b": 481,
+          "dp_i_b": 403,
+          "dp_i_1_b": 388,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 476
+        },
+        {
+          "etapa": 72,
+          "presupuesto_b": 476,
+          "dp_i_b": 388,
+          "dp_i_1_b": 386,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 468
+        },
+        {
+          "etapa": 71,
+          "presupuesto_b": 468,
+          "dp_i_b": 386,
+          "dp_i_1_b": 377,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 466
+        },
+        {
+          "etapa": 70,
+          "presupuesto_b": 466,
+          "dp_i_b": 377,
+          "dp_i_1_b": 366,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 465
+        },
+        {
+          "etapa": 69,
+          "presupuesto_b": 465,
+          "dp_i_b": 366,
+          "dp_i_1_b": 363,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 464
+        },
+        {
+          "etapa": 68,
+          "presupuesto_b": 464,
+          "dp_i_b": 363,
+          "dp_i_1_b": 356,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 458
+        },
+        {
+          "etapa": 67,
+          "presupuesto_b": 458,
+          "dp_i_b": 356,
+          "dp_i_1_b": 354,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 452
+        },
+        {
+          "etapa": 66,
+          "presupuesto_b": 452,
+          "dp_i_b": 354,
+          "dp_i_1_b": 350,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 443
+        },
+        {
+          "etapa": 65,
+          "presupuesto_b": 443,
+          "dp_i_b": 350,
+          "dp_i_1_b": 346,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 435
+        },
+        {
+          "etapa": 64,
+          "presupuesto_b": 435,
+          "dp_i_b": 346,
+          "dp_i_1_b": 336,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 429
+        },
+        {
+          "etapa": 63,
+          "presupuesto_b": 429,
+          "dp_i_b": 336,
+          "dp_i_1_b": 332,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 428
+        },
+        {
+          "etapa": 62,
+          "presupuesto_b": 428,
+          "dp_i_b": 332,
+          "dp_i_1_b": 320,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 423
+        },
+        {
+          "etapa": 61,
+          "presupuesto_b": 423,
+          "dp_i_b": 320,
+          "dp_i_1_b": 315,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 413
+        },
+        {
+          "etapa": 60,
+          "presupuesto_b": 413,
+          "dp_i_b": 315,
+          "dp_i_1_b": 312,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 409
+        },
+        {
+          "etapa": 59,
+          "presupuesto_b": 409,
+          "dp_i_b": 312,
+          "dp_i_1_b": 302,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 404
+        },
+        {
+          "etapa": 58,
+          "presupuesto_b": 404,
+          "dp_i_b": 302,
+          "dp_i_1_b": 298,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 394
+        },
+        {
+          "etapa": 57,
+          "presupuesto_b": 394,
+          "dp_i_b": 298,
+          "dp_i_1_b": 288,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 391
+        },
+        {
+          "etapa": 56,
+          "presupuesto_b": 391,
+          "dp_i_b": 288,
+          "dp_i_1_b": 287,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 381
+        },
+        {
+          "etapa": 55,
+          "presupuesto_b": 381,
+          "dp_i_b": 287,
+          "dp_i_1_b": 281,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 378
+        },
+        {
+          "etapa": 54,
+          "presupuesto_b": 378,
+          "dp_i_b": 281,
+          "dp_i_1_b": 280,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 374
+        },
+        {
+          "etapa": 53,
+          "presupuesto_b": 374,
+          "dp_i_b": 280,
+          "dp_i_1_b": 269,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 366
+        },
+        {
+          "etapa": 52,
+          "presupuesto_b": 366,
+          "dp_i_b": 269,
+          "dp_i_1_b": 261,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 363
+        },
+        {
+          "etapa": 51,
+          "presupuesto_b": 363,
+          "dp_i_b": 261,
+          "dp_i_1_b": 245,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 362
+        },
+        {
+          "etapa": 50,
+          "presupuesto_b": 362,
+          "dp_i_b": 245,
+          "dp_i_1_b": 241,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 352
+        },
+        {
+          "etapa": 49,
+          "presupuesto_b": 352,
+          "dp_i_b": 241,
+          "dp_i_1_b": 240,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 347
+        },
+        {
+          "etapa": 48,
+          "presupuesto_b": 347,
+          "dp_i_b": 240,
+          "dp_i_1_b": 239,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 338
+        },
+        {
+          "etapa": 47,
+          "presupuesto_b": 338,
+          "dp_i_b": 239,
+          "dp_i_1_b": 239,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 338
+        },
+        {
+          "etapa": 46,
+          "presupuesto_b": 338,
+          "dp_i_b": 239,
+          "dp_i_1_b": 239,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 338
+        },
+        {
+          "etapa": 45,
+          "presupuesto_b": 338,
+          "dp_i_b": 239,
+          "dp_i_1_b": 231,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 336
+        },
+        {
+          "etapa": 44,
+          "presupuesto_b": 336,
+          "dp_i_b": 231,
+          "dp_i_1_b": 218,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 334
+        },
+        {
+          "etapa": 43,
+          "presupuesto_b": 334,
+          "dp_i_b": 218,
+          "dp_i_1_b": 215,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 331
+        },
+        {
+          "etapa": 42,
+          "presupuesto_b": 331,
+          "dp_i_b": 215,
+          "dp_i_1_b": 212,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 321
+        },
+        {
+          "etapa": 41,
+          "presupuesto_b": 321,
+          "dp_i_b": 212,
+          "dp_i_1_b": 209,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 313
+        },
+        {
+          "etapa": 40,
+          "presupuesto_b": 313,
+          "dp_i_b": 209,
+          "dp_i_1_b": 203,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 307
+        },
+        {
+          "etapa": 39,
+          "presupuesto_b": 307,
+          "dp_i_b": 203,
+          "dp_i_1_b": 201,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 297
+        },
+        {
+          "etapa": 38,
+          "presupuesto_b": 297,
+          "dp_i_b": 201,
+          "dp_i_1_b": 198,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 288
+        },
+        {
+          "etapa": 37,
+          "presupuesto_b": 288,
+          "dp_i_b": 198,
+          "dp_i_1_b": 198,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 288
+        },
+        {
+          "etapa": 36,
+          "presupuesto_b": 288,
+          "dp_i_b": 198,
+          "dp_i_1_b": 196,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 282
+        },
+        {
+          "etapa": 35,
+          "presupuesto_b": 282,
+          "dp_i_b": 196,
+          "dp_i_1_b": 192,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 272
+        },
+        {
+          "etapa": 34,
+          "presupuesto_b": 272,
+          "dp_i_b": 192,
+          "dp_i_1_b": 185,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 264
+        },
+        {
+          "etapa": 33,
+          "presupuesto_b": 264,
+          "dp_i_b": 185,
+          "dp_i_1_b": 175,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 260
+        },
+        {
+          "etapa": 32,
+          "presupuesto_b": 260,
+          "dp_i_b": 175,
+          "dp_i_1_b": 175,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 260
+        },
+        {
+          "etapa": 31,
+          "presupuesto_b": 260,
+          "dp_i_b": 175,
+          "dp_i_1_b": 167,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 251
+        },
+        {
+          "etapa": 30,
+          "presupuesto_b": 251,
+          "dp_i_b": 167,
+          "dp_i_1_b": 163,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 250
+        },
+        {
+          "etapa": 29,
+          "presupuesto_b": 250,
+          "dp_i_b": 163,
+          "dp_i_1_b": 150,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 244
+        },
+        {
+          "etapa": 28,
+          "presupuesto_b": 244,
+          "dp_i_b": 150,
+          "dp_i_1_b": 148,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 238
+        },
+        {
+          "etapa": 27,
+          "presupuesto_b": 238,
+          "dp_i_b": 148,
+          "dp_i_1_b": 146,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 234
+        },
+        {
+          "etapa": 26,
+          "presupuesto_b": 234,
+          "dp_i_b": 146,
+          "dp_i_1_b": 143,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 228
+        },
+        {
+          "etapa": 25,
+          "presupuesto_b": 228,
+          "dp_i_b": 143,
+          "dp_i_1_b": 134,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 220
+        },
+        {
+          "etapa": 24,
+          "presupuesto_b": 220,
+          "dp_i_b": 134,
+          "dp_i_1_b": 129,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 210
+        },
+        {
+          "etapa": 23,
+          "presupuesto_b": 210,
+          "dp_i_b": 129,
+          "dp_i_1_b": 128,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 200
+        },
+        {
+          "etapa": 22,
+          "presupuesto_b": 200,
+          "dp_i_b": 128,
+          "dp_i_1_b": 128,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 200
+        },
+        {
+          "etapa": 21,
+          "presupuesto_b": 200,
+          "dp_i_b": 128,
+          "dp_i_1_b": 128,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 200
+        },
+        {
+          "etapa": 20,
+          "presupuesto_b": 200,
+          "dp_i_b": 128,
+          "dp_i_1_b": 128,
+          "decision": "no acelerar",
+          "presupuesto_siguiente": 200
+        },
+        {
+          "etapa": 19,
+          "presupuesto_b": 200,
+          "dp_i_b": 128,
+          "dp_i_1_b": 118,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 194
+        },
+        {
+          "etapa": 18,
+          "presupuesto_b": 194,
+          "dp_i_b": 118,
+          "dp_i_1_b": 110,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 189
+        },
+        {
+          "etapa": 17,
+          "presupuesto_b": 189,
+          "dp_i_b": 110,
+          "dp_i_1_b": 109,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 182
+        },
+        {
+          "etapa": 16,
+          "presupuesto_b": 182,
+          "dp_i_b": 109,
+          "dp_i_1_b": 94,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 180
+        },
+        {
+          "etapa": 15,
+          "presupuesto_b": 180,
+          "dp_i_b": 94,
+          "dp_i_1_b": 87,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 171
+        },
+        {
+          "etapa": 14,
+          "presupuesto_b": 171,
+          "dp_i_b": 87,
+          "dp_i_1_b": 75,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 163
+        },
+        {
+          "etapa": 13,
+          "presupuesto_b": 163,
+          "dp_i_b": 75,
+          "dp_i_1_b": 55,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 155
+        },
+        {
+          "etapa": 12,
+          "presupuesto_b": 155,
+          "dp_i_b": 55,
+          "dp_i_1_b": 53,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 145
+        },
+        {
+          "etapa": 11,
+          "presupuesto_b": 145,
+          "dp_i_b": 53,
+          "dp_i_1_b": 52,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 138
+        },
+        {
+          "etapa": 10,
+          "presupuesto_b": 138,
+          "dp_i_b": 52,
+          "dp_i_1_b": 45,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 130
+        },
+        {
+          "etapa": 9,
+          "presupuesto_b": 130,
+          "dp_i_b": 45,
+          "dp_i_1_b": 30,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 121
+        },
+        {
+          "etapa": 8,
+          "presupuesto_b": 121,
+          "dp_i_b": 30,
+          "dp_i_1_b": 29,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 119
+        },
+        {
+          "etapa": 7,
+          "presupuesto_b": 119,
+          "dp_i_b": 29,
+          "dp_i_1_b": 19,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 117
+        },
+        {
+          "etapa": 6,
+          "presupuesto_b": 117,
+          "dp_i_b": 19,
+          "dp_i_1_b": 14,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 113
+        },
+        {
+          "etapa": 5,
+          "presupuesto_b": 113,
+          "dp_i_b": 14,
+          "dp_i_1_b": 12,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 110
+        },
+        {
+          "etapa": 4,
+          "presupuesto_b": 110,
+          "dp_i_b": 12,
+          "dp_i_1_b": 10,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 101
+        },
+        {
+          "etapa": 3,
+          "presupuesto_b": 101,
+          "dp_i_b": 10,
+          "dp_i_1_b": 6,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 93
+        },
+        {
+          "etapa": 2,
+          "presupuesto_b": 93,
+          "dp_i_b": 6,
+          "dp_i_1_b": 5,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 85
+        },
+        {
+          "etapa": 1,
+          "presupuesto_b": 85,
+          "dp_i_b": 5,
+          "dp_i_1_b": 0,
+          "decision": "acelerar",
+          "presupuesto_siguiente": 79
+        }
+      ],
+      "tabla_dp_omitida": "la tabla tiene 451801 celdas (> 5000); se conserva la reconstrucción completa"
+    },
+    "verificacion": {
+      "metodo": "fuerza bruta",
+      "omitida": "n = 300 > 20"
+    }
+  },
+  "parte2": {
+    "entrada": {
+      "interacciones": 200,
+      "categorias": 80,
+      "variante": "Parte 2",
+      "d": 15
+    },
+    "complejidad": "T(n, r) = O(n·r²)",
+    "cota": "G ≤ H_d · óptimo (Johnson 1974; Chvátal 1979)",
+    "H_d": 3.3182289932289937,
+    "H_r": 4.965479278945517,
+    "tiempo_s": 0.0005046999976912048,
+    "tiempo_min_s": 0.0004981000020052306,
+    "tiempo_max_s": 0.0005218000005697832,
+    "repeticiones": 7,
+    "factible": true,
+    "resultado": {
+      "interacciones_auditadas": [
+        2,
+        9,
+        13,
+        36,
+        45,
+        53,
+        119,
+        149,
+        153,
+        163,
+        172
+      ],
+      "orden_de_eleccion": [
+        119,
+        153,
+        172,
+        45,
+        9,
+        53,
+        13,
+        163,
+        36,
+        149,
+        2
+      ],
+      "cantidad": 11,
+      "costo_total": 11,
+      "categorias_cubiertas": 80,
+      "categorias_totales": 80,
+      "cobertura_completa": true
+    },
+    "traza": {
+      "pasos": [
+        {
+          "paso": 1,
+          "interaccion": 119,
+          "categorias_nuevas": [
+            6,
+            13,
+            15,
+            18,
+            21,
+            37,
+            44,
+            51,
+            52,
+            54,
+            57,
+            72,
+            73,
+            79,
+            80
+          ],
+          "n_nuevas": 15,
+          "costo_a": 1,
+          "costo_acumulado": 1,
+          "categorias_cubiertas": 15,
+          "categorias_pendientes": 65
+        },
+        {
+          "paso": 2,
+          "interaccion": 153,
+          "categorias_nuevas": [
+            7,
+            10,
+            14,
+            20,
+            26,
+            27,
+            28,
+            42,
+            45,
+            46,
+            55,
+            62,
+            67
+          ],
+          "n_nuevas": 13,
+          "costo_a": 1,
+          "costo_acumulado": 2,
+          "categorias_cubiertas": 28,
+          "categorias_pendientes": 52
+        },
+        {
+          "paso": 3,
+          "interaccion": 172,
+          "categorias_nuevas": [
+            4,
+            9,
+            12,
+            16,
+            35,
+            49,
+            59,
+            70,
+            71,
+            76,
+            78
+          ],
+          "n_nuevas": 11,
+          "costo_a": 1,
+          "costo_acumulado": 3,
+          "categorias_cubiertas": 39,
+          "categorias_pendientes": 41
+        },
+        {
+          "paso": 4,
+          "interaccion": 45,
+          "categorias_nuevas": [
+            24,
+            30,
+            32,
+            40,
+            50,
+            53,
+            65,
+            68,
+            75
+          ],
+          "n_nuevas": 9,
+          "costo_a": 1,
+          "costo_acumulado": 4,
+          "categorias_cubiertas": 48,
+          "categorias_pendientes": 32
+        },
+        {
+          "paso": 5,
+          "interaccion": 9,
+          "categorias_nuevas": [
+            1,
+            2,
+            17,
+            29,
+            33,
+            38,
+            61,
+            69
+          ],
+          "n_nuevas": 8,
+          "costo_a": 1,
+          "costo_acumulado": 5,
+          "categorias_cubiertas": 56,
+          "categorias_pendientes": 24
+        },
+        {
+          "paso": 6,
+          "interaccion": 53,
+          "categorias_nuevas": [
+            8,
+            22,
+            23,
+            47,
+            56,
+            60,
+            63
+          ],
+          "n_nuevas": 7,
+          "costo_a": 1,
+          "costo_acumulado": 6,
+          "categorias_cubiertas": 63,
+          "categorias_pendientes": 17
+        },
+        {
+          "paso": 7,
+          "interaccion": 13,
+          "categorias_nuevas": [
+            3,
+            31,
+            36,
+            39,
+            64
+          ],
+          "n_nuevas": 5,
+          "costo_a": 1,
+          "costo_acumulado": 7,
+          "categorias_cubiertas": 68,
+          "categorias_pendientes": 12
+        },
+        {
+          "paso": 8,
+          "interaccion": 163,
+          "categorias_nuevas": [
+            5,
+            19,
+            43,
+            48,
+            74
+          ],
+          "n_nuevas": 5,
+          "costo_a": 1,
+          "costo_acumulado": 8,
+          "categorias_cubiertas": 73,
+          "categorias_pendientes": 7
+        },
+        {
+          "paso": 9,
+          "interaccion": 36,
+          "categorias_nuevas": [
+            41,
+            66,
+            77
+          ],
+          "n_nuevas": 3,
+          "costo_a": 1,
+          "costo_acumulado": 9,
+          "categorias_cubiertas": 76,
+          "categorias_pendientes": 4
+        },
+        {
+          "paso": 10,
+          "interaccion": 149,
+          "categorias_nuevas": [
+            11,
+            25,
+            58
+          ],
+          "n_nuevas": 3,
+          "costo_a": 1,
+          "costo_acumulado": 10,
+          "categorias_cubiertas": 79,
+          "categorias_pendientes": 1
+        },
+        {
+          "paso": 11,
+          "interaccion": 2,
+          "categorias_nuevas": [
+            34
+          ],
+          "n_nuevas": 1,
+          "costo_a": 1,
+          "costo_acumulado": 11,
+          "categorias_cubiertas": 80,
+          "categorias_pendientes": 0
+        }
+      ]
+    },
+    "verificacion": {
+      "metodo": "exacto",
+      "omitida": "N = 200 > 16"
+    }
+  }
+}

@@ -109,3 +109,49 @@ Bitácora de lo que se hizo en cada prompt/fase. Se agrega una entrada nueva al 
 **Hecho:**
 - `GUIA_DEL_PROYECTO.md` en la raíz: resumen en una página, mapa del proyecto, comandos, las 7 fases (qué se hizo, ideas clave, decisiones y observaciones; la Fase 7 con el texto completo de pestañas), hallazgos principales, 12 preguntas probables con respuesta corta, recomendaciones y pendientes, y limitaciones.
 - `README.md` enlaza la guía y la bitácora. Sin cambios de código.
+
+---
+
+## Prompt 9 — Diagrama de clases (Mermaid)
+
+**Pedido:** un diagrama de clases de lo que se está realizando, en Mermaid.
+
+**Hecho:**
+- `docs/06_diagrama_de_clases.md` con 4 diagramas: (1) `core`: dataclasses de instancias y soluciones + módulos de algoritmos con sus dependencias; (2) `experimentos` y `visualizacion` (medir, ajuste, graficas, dibujos, app) y los CSV/PNG que producen; (3) dependencias entre capas; (4) relación de reducciones entre los problemas.
+- Los módulos de funciones se modelan con el estereotipo `<<module>>`; solo las dataclasses son clases reales. Sin cambios de código.
+
+---
+
+## Prompts 10-12 — Primera entrega (guía del curso, G3 · Ruta)
+
+**Pedido:** revisar `Guia_Primera_Entrega_ADAG_2026B_Resumen.docx` y decir qué está listo; somos 2 integrantes y no tenemos los casos de la profesora; la fecha está cerca → hacer lo primordial.
+
+**Hallazgos de la revisión:** la guía exige informe único, repositorio, manual técnico (con formatos de entrada/salida) y ejecutar los casos de la profesora con resultado, tiempo y traza por caso. Con 2 integrantes la variante 1 (A1) no es obligatoria. Faltaban: el ejecutor por caso, los formatos E/S documentados y el informe en un solo documento.
+
+**Hecho:**
+- `experimentos/casos.py`: lector y validación de casos JSON (índices base 1, mensajes de error con caso y campo).
+- `experimentos/correr_casos.py`: por caso, resultado + tiempo (mediana de 7 repeticiones) + traza (estados de la DP, reconstrucción, etapas aceleradas y costos, elecciones del voraz y cobertura) en `<id>.json`, `<id>_traza.md` y `resumen_casos.csv`; verificación contra fuerza bruta/exacto en casos pequeños; soporta A1 (campo `costos`). `core/` no se tocó.
+- `experimentos/generar_casos.py` y 5 casos de ejemplo en `casos/` (Etapa 0, trampa del voraz, mediano, A1, grande n = 300).
+- `entrega/Informe_Primera_Entrega.md` (formalización de las 2 partes, reducciones Mochila 0/1 y Cobertura de Vértices, T(n), cota H_r, resultados y trazas de los 5 casos) y `entrega/Manual_Tecnico.md` (algoritmos, estructura, formatos E/S, ejecución, limitaciones); ambos en `.docx` con `entrega/md_a_docx.py` (python-docx, sin pandoc).
+- `docs/01_formalizacion.md` ya no es un placeholder (enlaza Etapa 0 e informe). README, CLAUDE.md y la guía actualizados.
+- `tests/test_casos.py`: 23 tests (lector, validación, consistencia de la traza, A1, infactible, tabla grande, archivos de salida, casos versionados). **326 tests pasan** (suite completa).
+
+**Pendiente:** recibir los casos de la profesora y, si su formato difiere, adaptar solo el lector; completar nombres de integrantes en el informe y manual; revisar las citas; commit y push.
+
+---
+
+## Prompts 13-17 — Contexto del enunciado (PDF), ajustes al informe y formato del docente
+
+**Pedido:** (a) explicar con palabras la definición de n, dónde sale T(n) en el código y el `DP[i][b]`; (b) analizar `casos/entrada_G3_mochila_20_nodos.json` (caso del docente); (c) leer `docs/Proyecto-2026B.pdf` y (d) aplicar los ajustes sugeridos y leer ese archivo con el formato nuevo.
+
+**Hallazgos del PDF (enunciado oficial, Subproyecto 3):** confirma la recurrencia, la reducción desde Mochila 0/1 y desde Cobertura de Vértices, la cota H(d) y la Variante A1 (costo por interacción); la Variante B es de **cobertura obligatoria** (a\* + DP con B − a\*); el voraz se acota por O(n·r·min(n, r)); se exige verificar la factibilidad en O(n·r) antes de correr; De et al. (1997) respalda la NP-dureza fuerte de la Variante C. Sustentación pesa 45 %.
+
+**Hecho:**
+- `core/set_cover.py`: paso 0 explícito de factibilidad en los dos voraces y comentarios con min(n, r) rondas; nueva `cobertura_exacta_mascaras` (DP sobre máscaras de categorías, O(n·2^r), con «a lo sumo una opción por grupo»). `core/combinado.py`: `combinado_cobertura_obligatoria_mascaras`.
+- `experimentos/casos.py`: lector del formato del docente (etapas, flujo validado como cadena, categorías con importancia, variaciones de auditoría = interacciones, presupuesto conjunto); `Caso` guarda nombres originales, grupos por etapa y presupuesto conjunto.
+- `experimentos/correr_casos.py`: salida con ids originales (E01, R01, «E12 completa»), regla «una variación por etapa» (con reparación), óptimo por máscaras, Variante B (exacta frente a voraz y tiempo perdido), columnas nuevas en el CSV; fuerza bruta de la Parte 1 hasta n = 20.
+- Resultado del caso del docente: DP 501 → 446 (E02, E03, E04, E06, E08, E12; verificado con la fuerza bruta 2²⁰); voraz de cobertura costo 25 frente al óptimo 24 (razón 1,04 ≤ H_4 = 2,08); Variante B con presupuesto 100: exacta 443 frente a voraz 444.
+- Informe: T(n) del voraz con min(n, r) y paso 0, exacto por máscaras (§6.4), caso del docente (§7.5), validación experimental con tabla y 3 figuras (§7.6), De et al. 1997 en las referencias. Manual: formato del docente (§5.1b), Variante B y columnas nuevas. `docs/03` actualizado. `md_a_docx.py` ahora inserta imágenes.
+- `tests/test_formato_docente.py`: 68 tests (máscaras contra fuerza bruta con y sin grupos, lector, validaciones, resultado del caso real, reparación). **394 tests pasan.**
+
+**Pendiente:** cerrar Word y regenerar los `.docx` (`python entrega/md_a_docx.py`; estaban abiertos y el sistema bloquea la escritura); confirmar con el docente la interpretación de las variaciones; nombres de integrantes; revisar citas (Feige, Dinur–Steurer, Lovász); commit y push.

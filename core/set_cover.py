@@ -45,16 +45,19 @@ def cobertura_voraz(inst: InstanciaSetCover) -> SolucionCobertura | None:
     """Voraz: repetir "tomar la interacción que cubre más categorías aún no cubiertas".
 
     Devuelve None si la instancia no es factible. Desempate: menor índice.
-    T(n, r) = O(n·r²):  ≤ r iteraciones del while × n conjuntos × O(r) por conteo.
+    T(n, r) = O(n·r·min(n, r)) ⊆ O(n·r²):  O(n·r) de factibilidad + ≤ min(n, r) iteraciones del
+    while × n conjuntos × O(r) por conteo.
     Garantía: |voraz| ≤ H_d · |óptimo|, d = max|S_j| ≤ r (docs/04).
     """
+    if not inst.es_factible():  # paso 0: unión de los S_j == U, O(Σ|S_j|) ⊆ O(n·r)
+        return None
     r = inst.r  # O(1)
     n = inst.n  # O(1)
     cubierta = [False] * r  # O(r)
     n_cubiertas = 0  # O(1)
     elegidos: list[int] = []
     pasos: list[tuple[int, tuple[int, ...]]] = []
-    while n_cubiertas < r:  # ≤ r iteraciones: cada una cubre ≥ 1 categoría nueva
+    while n_cubiertas < r:  # ≤ min(n, r) iteraciones: cada una cubre ≥ 1 categoría nueva y no repite conjunto
         mejor_j = -1  # O(1)
         mejor_nuevas = 0  # O(1)
         for j in range(n):  # n iteraciones
@@ -78,7 +81,7 @@ def cobertura_voraz(inst: InstanciaSetCover) -> SolucionCobertura | None:
         elegidos.append(mejor_j)  # O(1)
         pasos.append((mejor_j, tuple(sorted(nuevas_cat))))  # O(r log r) ≤ O(r²), no domina
         # costo por ronda: O(n·r) + O(r) = O(n·r)
-    # Total: r rondas × O(n·r) = O(n·r²)
+    # Total: O(n·r) + min(n, r) rondas × O(n·r) = O(n·r·min(n, r)) ⊆ O(n·r²)
     return SolucionCobertura(
         indices=tuple(elegidos),
         costo=sum(inst.a[j] for j in elegidos),
@@ -120,16 +123,18 @@ def cobertura_voraz_ponderada(inst: InstanciaSetCover) -> SolucionCobertura | No
     Devuelve None si la instancia es infactible. Las razones se comparan sin
     división (productos cruzados enteros): a_j/nuevas_j < a_m/nuevas_m
     ⇔ a_j·nuevas_m < a_m·nuevas_j. Desempate: menor índice.
-    T(n, r) = O(n·r²), igual que el voraz sin pesos.
+    T(n, r) = O(n·r·min(n, r)) ⊆ O(n·r²), igual que el voraz sin pesos.
     Garantía (Chvátal, 1979): costo(voraz) ≤ H_d · costo(óptimo), d = max|S_j|.
     """
+    if not inst.es_factible():  # paso 0: unión de los S_j == U, O(Σ|S_j|) ⊆ O(n·r)
+        return None
     r = inst.r  # O(1)
     n = inst.n  # O(1)
     cubierta = [False] * r  # O(r)
     n_cubiertas = 0  # O(1)
     elegidos: list[int] = []
     pasos: list[tuple[int, tuple[int, ...]]] = []
-    while n_cubiertas < r:  # ≤ r iteraciones: cada una cubre ≥ 1 categoría nueva
+    while n_cubiertas < r:  # ≤ min(n, r) iteraciones: cada una cubre ≥ 1 categoría nueva y no repite conjunto
         mejor_j = -1  # O(1)
         mejor_nuevas = 0  # O(1)
         for j in range(n):  # n iteraciones
@@ -154,7 +159,7 @@ def cobertura_voraz_ponderada(inst: InstanciaSetCover) -> SolucionCobertura | No
         elegidos.append(mejor_j)  # O(1)
         pasos.append((mejor_j, tuple(sorted(nuevas_cat))))
         # costo por ronda: O(n·r)
-    # Total: r rondas × O(n·r) = O(n·r²)
+    # Total: O(n·r) + min(n, r) rondas × O(n·r) = O(n·r·min(n, r)) ⊆ O(n·r²)
     return SolucionCobertura(
         indices=tuple(elegidos),
         costo=sum(inst.a[j] for j in elegidos),
@@ -191,3 +196,65 @@ def cobertura_exacta_ponderada(inst: InstanciaSetCover) -> SolucionCobertura | N
     if mejor_costo == -1:
         return None
     return SolucionCobertura(indices=mejor, costo=mejor_costo)
+
+
+def cobertura_exacta_mascaras(
+    inst: InstanciaSetCover, grupos: tuple[int, ...] | None = None
+) -> SolucionCobertura | None:
+    """Exacto ponderado por programación dinámica sobre máscaras de categorías (r pequeño).
+
+    dp[M] = menor costo de una selección cuya unión es EXACTAMENTE M ⊆ U (M es una máscara de r bits).
+    ``grupos[j]`` es el grupo de la opción j (p. ej. la etapa a la que pertenece una variación de
+    auditoría) y de cada grupo se elige COMO MÁXIMO una opción; sin ``grupos`` cada opción es su
+    propio grupo. Devuelve None si la instancia es infactible.
+
+    Es exponencial en r (no en n): T(n, r) = O(n·2^r), útil cuando r es chico y n grande.
+    Espacio O(G·2^r) para reconstruir la elección (G = número de grupos ≤ n).
+    """
+    n, r = inst.n, inst.r  # O(1)
+    n_masc = 1 << r  # O(1)
+    completa = n_masc - 1  # O(1)
+    masc = [0] * n  # O(n)
+    for j in range(n):  # n iteraciones
+        for k in inst.conjuntos[j]:  # |S_j| ≤ r iteraciones
+            masc[j] |= 1 << k  # O(1)
+    # máscaras de las opciones: O(n·r)
+    orden: list[int] = []  # ids de grupo en orden de aparición
+    miembros: dict[int, list[int]] = {}
+    for j in range(n):  # n iteraciones
+        g = j if grupos is None else grupos[j]  # O(1)
+        if g not in miembros:  # O(1) esperado
+            miembros[g] = []
+            orden.append(g)
+        miembros[g].append(j)
+    # agrupar: O(n)
+    infinito = 1 + sum(inst.a)  # O(n): ninguna selección cuesta tanto
+    dp = [infinito] * n_masc  # 2^r
+    dp[0] = 0  # O(1)
+    historia: list[tuple[list[int], list[int]]] = []  # por grupo: (opción elegida, máscara anterior)
+    for g in orden:  # G ≤ n grupos
+        nuevo = dp[:]  # 2^r: elegir ninguna opción del grupo
+        opcion = [-1] * n_masc  # 2^r
+        anterior = [0] * n_masc  # 2^r
+        for j in miembros[g]:  # |grupo| iteraciones (Σ sobre grupos = n)
+            for M in range(n_masc):  # 2^r iteraciones
+                if dp[M] < infinito:  # O(1)
+                    M2 = M | masc[j]  # O(1)
+                    costo = dp[M] + inst.a[j]  # O(1)
+                    if costo < nuevo[M2]:  # O(1)
+                        nuevo[M2] = costo
+                        opcion[M2] = j
+                        anterior[M2] = M
+        dp = nuevo  # O(1) (referencia)
+        historia.append((opcion, anterior))
+    # llenado: G·O(2^r) + n·O(2^r) = O(n·2^r)
+    if dp[completa] >= infinito:  # O(1)
+        return None
+    elegidas: list[int] = []
+    M = completa
+    for opcion, anterior in reversed(historia):  # G iteraciones
+        if opcion[M] != -1:  # O(1)
+            elegidas.append(opcion[M])
+            M = anterior[M]
+    # reconstrucción: O(G) ⊆ O(n)
+    return SolucionCobertura(indices=tuple(sorted(elegidas)), costo=dp[completa])

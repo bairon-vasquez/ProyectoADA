@@ -1,0 +1,1 @@
+{"id": "caso_01_etapa0", "descripcion": "Ejemplo de la Etapa 0: óptimo de la Parte 1 = {2, 3} (duración 23 → 18); óptimo de la Parte 2 = {1, 4}.", "parte1": {"t": [5, 8, 6, 4], "c": [3, 4, 2, 3], "d": [2, 4, 1, 2], "B": 6}, "parte2": {"r": 5, "conjuntos": [[1, 2, 3], [2, 4], [3, 4], [4, 5], [1, 5]]}}

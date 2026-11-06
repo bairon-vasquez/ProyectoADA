@@ -18,7 +18,11 @@ from dataclasses import dataclass
 
 from core.instancias import InstanciaCombinada, InstanciaMochila
 from core.mochila import construir_tabla_dp, mochila_dp
-from core.set_cover import cobertura_exacta_ponderada, cobertura_voraz_ponderada
+from core.set_cover import (
+    cobertura_exacta_mascaras,
+    cobertura_exacta_ponderada,
+    cobertura_voraz_ponderada,
+)
 
 
 @dataclass(frozen=True)
@@ -86,6 +90,24 @@ def combinado_cobertura_obligatoria(
         cob = cobertura_exacta_ponderada(inst.cobertura)  # O(2^N·N·r)
     else:
         cob = cobertura_voraz_ponderada(inst.cobertura)  # O(N·r²)
+    if cob is None or cob.costo > inst.B:  # O(1)
+        return None
+    resto = inst.B - cob.costo  # O(1)
+    sol = mochila_dp(_cadena_con_presupuesto(inst, resto))  # O(n·resto) ≤ O(n·B)
+    return evaluar_combinada(inst, sol.etapas, cob.indices)  # O(n + N·r)
+
+
+def combinado_cobertura_obligatoria_mascaras(
+    inst: InstanciaCombinada, grupos: tuple[int, ...] | None = None
+) -> SolucionCombinada | None:
+    """Igual que ``combinado_cobertura_obligatoria(exacta=True)`` pero con a* por máscaras.
+
+    a* = costo mínimo de cubrir U (a lo sumo una opción por grupo si se pasan ``grupos``), luego la
+    Mochila con B − a*. Es óptimo y sirve cuando r es chico y N grande, donde 2^N es inviable.
+
+    T = O(N·2^r) + O(n·B).
+    """
+    cob = cobertura_exacta_mascaras(inst.cobertura, grupos)  # O(N·2^r)
     if cob is None or cob.costo > inst.B:  # O(1)
         return None
     resto = inst.B - cob.costo  # O(1)
